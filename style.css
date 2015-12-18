@@ -1,0 +1,64 @@
+body {
+	background-image: url(bg.jpg);
+	background-size: 100%;
+	background-position: center right;
+	background-attachment: fixed;
+	color: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+#main {
+	margin: 10px 30px;
+	border: 1px dashed white;
+}
+
+#toggle {
+	color: red;
+	width: 6em;
+}
+
+#fade {
+	display: none;
+	width: 6em;
+}
+
+/* för att sätta samma storlek på alla menyval */
+.menuChoices {
+	width: 6em;
+}
+
+.btn-group-vertical {
+	position: fixed;
+}
+
+/* Ändra färg på knappar */
+.btn {
+	color: white;
+	background-color: black;
+	border-color: white;
+}
+
+.btn-primary:visited, .btn-primary.visited, .btn-primary:focus, .btn-primary.focus {
+	color: white;
+	background-color: black;
+	border-color: white;
+}
+
+.btn-primary:hover, .btn-primary.hover {
+	color: black;
+	background-color: white;
+	border-color: white;
+}
+
+.btn-primary:active, .btn-primary.active {
+	color: red;
+	background-color: black;
+	border-color: white;
+}
+
+div ul li a {
+	color: red;
+}
