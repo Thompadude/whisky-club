@@ -4,6 +4,8 @@ body {
 	background-position: center right;
 	background-attachment: fixed;
 	color: white;
+	position: relative;
+	left: 0;
 }
 
 a {
@@ -61,4 +63,9 @@ a {
 
 div ul li a {
 	color: red;
+}
+
+#menu {
+	position: fixed;
+	left: -250px;
 }
