@@ -1,0 +1,23 @@
+body {
+	background-color: black;
+}
+
+.content {
+	position: relative;
+	left: 7.5em;
+	top: 2em;	
+}
+
+.icon {
+	width: 2em;
+	height: 2em;
+}
+
+#iconOpenMenu {
+	position: fixed;
+}
+
+#menu {
+	position: fixed;
+	left: -250px;
+}
