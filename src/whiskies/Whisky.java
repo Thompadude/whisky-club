@@ -5,7 +5,9 @@ public class Whisky {
 	String region;
 	String type;
 	String info;
-	Double alc;
+	String imgUrl;
+	double alc;
+	int grade;
 
 	public String getName() {
 		return name;
@@ -39,12 +41,33 @@ public class Whisky {
 		this.info = info;
 	}
 
-	public Double getAlc() {
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+	public double getAlc() {
 		return alc;
 	}
 
-	public void setAlc(Double alc) {
+	public void setAlc(double alc) {
 		this.alc = alc;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		if (grade > 5) {
+			grade = 5;
+		} else if (grade < 0) {
+			grade = 0;
+		}
+		this.grade = grade;
 	}
 
 }
