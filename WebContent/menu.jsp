@@ -12,12 +12,12 @@
 		<div id="iconCloseMenu">
 			<img class="icon" src="http://www.entypo.com/images/cross.svg" alt="cross">
 		</div>
-		<ul>
-			<li><a href="#">Whiskies</a></li>
-			<li><a href="#">Favorites</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="about.jsp">About</a></li>
-		</ul>
+			<div class="btn-group-vertical menubtn">
+				<a href="#" class="btn btn-default menubtn">Whiskies</a>
+				<a href="#" class="btn btn-default menubtn">Info</a>
+				<a href="#" class="btn btn-default menubtn">List</a>
+				<a href="about.jsp" class="btn btn-default menubtn">About</a>
+			</div>
 	</div>
 	<div id="iconOpenMenu">
 		<img class="icon" src="http://www.entypo.com/images/menu.svg" alt="menu" style="background-color: black">

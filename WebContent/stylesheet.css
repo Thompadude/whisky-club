@@ -34,3 +34,15 @@ body {
 	position: fixed;
 	left: -250px;
 }
+
+a, a:hover, a:visited, a:active, a:link {
+	text-decoration: none;
+}
+
+.menubtn {
+	background-color: rgb(245,160,49);
+	border-radius: 2em;
+	font-family: tahoma, sans-serif;
+	font-weight: bold;
+	color: black;
+}
