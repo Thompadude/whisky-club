@@ -1,6 +1,13 @@
 body {
 	background-color: black;
+	height: 100%;
 }
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+
 
 .content {
 	position: relative;
@@ -28,11 +35,28 @@ body {
 
 #iconOpenMenu {
 	position: fixed;
+	z-index: 100;
 }
 
 #menu {
+	z-index: 100;
 	position: fixed;
 	left: -250px;
+	height: 100%;
+	background-color: rgb(64,64,64);
+	box-shadow: 1px 0 20px 1px rgba(150,150,150,0.68) ;
+}
+
+.overlay {
+	position: fixed;
+	z-index: 1;
+	background-color: rgba(0,0,0,0.5);
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	visibility: hidden;
 }
 
 a, a:hover, a:visited, a:active, a:link {
@@ -40,9 +64,9 @@ a, a:hover, a:visited, a:active, a:link {
 }
 
 .menubtn {
-	background-color: rgb(245,160,49);
-	border-radius: 2em;
+	background-color: rgb(64,64,64);
+	border: none;
 	font-family: tahoma, sans-serif;
 	font-weight: bold;
-	color: black;
+	color: lightgrey;
 }

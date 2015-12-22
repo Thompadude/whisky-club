@@ -22,5 +22,6 @@
 	<div id="iconOpenMenu">
 		<img class="icon" src="http://www.entypo.com/images/menu.svg" alt="menu" style="background-color: black">
 	</div>
+	<div class="overlay"></div>
 </body>
 </html>
