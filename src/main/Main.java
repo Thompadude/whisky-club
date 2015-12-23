@@ -29,8 +29,8 @@ public class Main extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 
-		String usrName = request.getParameter("usrName").toString();
-		String password = request.getParameter("password").toString();
+		String usrName = request.getParameter("usrName");
+		String password = request.getParameter("password");
 
 		LoginHandler loginHandler = new LoginHandler();
 		boolean isSuccessfulLogin = loginHandler.authenticate(usrName, password);

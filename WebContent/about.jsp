@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page import="main.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +14,9 @@
 	<%@ include file="/background.jsp"%>
 	<div class="container">
 		<div class="jumbotron">
-			<h1>About Us</h1>
-			<p>School Project by xPadde and Thompadude.</p>
+			<% AboutText aboutText = new AboutText(); %>
+			<h1><%= aboutText.getAboutHeadline() %></h1>
+			<p><%= aboutText.getAboutText() %></p>
 		</div>
 	</div>
 	<script
