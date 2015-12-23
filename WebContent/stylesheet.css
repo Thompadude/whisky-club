@@ -1,3 +1,5 @@
+/* General styles */
+
 body {
 	background-color: black;
 	height: 100%;
@@ -9,17 +11,19 @@ html {
 }
 
 
-.content {
-	position: relative;
-	left: 7.5em;
-	top: 2em;	
+a, a:hover, a:visited, a:active, a:link {
+	text-decoration: none;
 }
 
-.icon {
-	width: 2em;
-	height: 2em;
+/* Used in "About Us"-section. */
+
+.jumbotron {
+	margin-top: 2em;
+	background-color: black;
+	color: white;
 }
 
+/* Style for top background image. */
 
 #top_background {
 	width: 100%;
@@ -33,9 +37,16 @@ html {
 	width: 75%;
 }
 
+/* Style for the menu. */
+
 #iconOpenMenu {
 	position: fixed;
 	z-index: 100;
+}
+
+.icon {
+	width: 2em;
+	height: 2em;
 }
 
 #menu {
@@ -45,6 +56,14 @@ html {
 	height: 100%;
 	background-color: rgb(64,64,64);
 	box-shadow: 1px 0 20px 1px rgba(150,150,150,0.68) ;
+}
+
+.menubtn {
+	background-color: rgb(64,64,64);
+	border: none;
+	font-family: tahoma, sans-serif;
+	font-weight: bold;
+	color: lightgrey;
 }
 
 .overlay {
@@ -57,16 +76,4 @@ html {
 	height: 100%;
 	width: 100%;
 	visibility: hidden;
-}
-
-a, a:hover, a:visited, a:active, a:link {
-	text-decoration: none;
-}
-
-.menubtn {
-	background-color: rgb(64,64,64);
-	border: none;
-	font-family: tahoma, sans-serif;
-	font-weight: bold;
-	color: lightgrey;
 }
