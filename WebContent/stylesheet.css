@@ -81,7 +81,7 @@ a, a:hover, a:visited, a:active, a:link {
 /* Style for presenting a whiskey */
 
 .aboutwhiskyconent {
-	color: white;
+	color: rgb(224,244,244);
 	margin-top: 2em;
 	margin-left: 10em;
 }
