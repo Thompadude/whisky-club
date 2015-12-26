@@ -29,13 +29,11 @@ public class Comments extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String newComment = request.getParameter("comment");
-		commentHandler.addComment(newComment);
+		this.commentHandler.addComment(newComment);
 
-		for (String comments : commentHandler.getComments()) {
+		for (String comments : this.commentHandler.getComments()) {
 			System.out.println(comments);
 		}
-
-		response.sendRedirect("comments.jsp");
 	}
 
 	/**

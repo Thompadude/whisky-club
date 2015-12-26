@@ -80,7 +80,7 @@ a, a:hover, a:visited, a:active, a:link {
 
 /* Style for presenting a whiskey */
 
-.aboutwhiskyconent {
+.aboutwhiskycontent {
 	color: rgb(224,244,244);
 	margin-top: 2em;
 	margin-left: 10em;
@@ -88,7 +88,26 @@ a, a:hover, a:visited, a:active, a:link {
 
 /* Removes margin if using a smaller device. */
 @media (max-width: 480px) {
-	.aboutwhiskyconent {
+	.aboutwhiskycontent {
 		margin-left: 0;
 	}
+}
+
+/* Comment section styles */
+
+.formfield {
+	color: black;
+}
+
+.formbutton {
+	color: black;
+	border: none;
+	border-radius: .25em;	
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+.formbutton:hover {
+    background-color: black;
+    color: white;
 }
