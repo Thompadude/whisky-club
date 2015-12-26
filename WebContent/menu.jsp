@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}stylesheet.css">
 <title>Menu</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 				<a href="#" class="btn btn-default menubtn">Whiskies</a>
 				<a href="#" class="btn btn-default menubtn">Info</a>
 				<a href="#" class="btn btn-default menubtn">List</a>
-				<a href="about.jsp" class="btn btn-default menubtn">About</a>
+				<a href="${pageContext.request.contextPath}/about.jsp" class="btn btn-default menubtn">About</a>
 			</div>
 	</div>
 	<div id="iconOpenMenu">

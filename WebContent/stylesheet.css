@@ -77,3 +77,18 @@ a, a:hover, a:visited, a:active, a:link {
 	width: 100%;
 	visibility: hidden;
 }
+
+/* Style for presenting a whiskey */
+
+.aboutwhiskyconent {
+	color: white;
+	margin-top: 2em;
+	margin-left: 10em;
+}
+
+/* Removes margin if using a smaller device. */
+@media (max-width: 480px) {
+	.aboutwhiskyconent {
+		margin-left: 0;
+	}
+}
