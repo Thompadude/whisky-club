@@ -15,8 +15,9 @@
 			<div class="btn-group-vertical menubtn">
 				<a href="#" class="btn btn-default menubtn">Whiskies</a>
 				<a href="#" class="btn btn-default menubtn">Info</a>
-				<a href="#" class="btn btn-default menubtn">List</a>
+				<a href="${pageContext.request.contextPath}/list.jsp" class="btn btn-default menubtn">List</a>
 				<a href="${pageContext.request.contextPath}/about.jsp" class="btn btn-default menubtn">About</a>
+				<a href="index.jsp" class="btn btn-default menubtn">HOME</a>
 			</div>
 	</div>
 	<div id="iconOpenMenu">

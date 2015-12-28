@@ -11,11 +11,13 @@
 <body>
 	<%@ include file="/menu.jsp"%>
 	<%@ include file="background.jsp"%>
-	<div class="container">
-		<div class="jumbotron">
-			<% AboutText aboutText = new AboutText(); %>
-			<h1><%= aboutText.getAboutHeadline() %></h1>
-			<p><%= aboutText.getAboutText() %></p>
+	<div class="content">
+		<div class="container">
+			<div class="jumbotron">
+				<% AboutText aboutText = new AboutText(); %>
+				<h1><%= aboutText.getAboutHeadline() %></h1>
+				<p><%= aboutText.getAboutText() %></p>
+			</div>
 		</div>
 	</div>
 	<script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
