@@ -18,7 +18,10 @@
 	<%@ include file="/menu.jsp"%>
 	<%@ include file="background.jsp"%>
 	<div class="content">
-		<a href="#top" id="backToTheTop"><span class="glyphicon glyphicon-triangle-top" id=""></span></a>
+		
+		<a href="#top" id="backToTheTop"><span class="glyphicon glyphicon-triangle-top"></span></a>
+		
+		
 		<ul class="nav nav-tabs">
 		  <li><a href="#abc">ABC</a></li>
 		  <li><a href="#def">DEF</a></li>
@@ -29,11 +32,7 @@
 		  <li><a href="#tuvw">TUVW</a></li>
 		  <li><a href="#xyz">XYZ<span>&#35;</span></a></li>
 		</ul>
-		<h3 id="abc">
-  			<span class="alignleft">ABC</span>
-  			<span class="alignright"><a href="#top">Top <span class="glyphicon glyphicon-triangle-top" id="defaultUpArrow"></span></a></span>
-		</h3>
-		<div class="clear"></div>
+		<h3 id="abc">ABC</h3>
 		
 		<ul class="listPictures">
 	
@@ -84,11 +83,7 @@
 				
 			</ul><div class="clear"></div>
 		
-		<h3 id="def">
-  			<span class="alignleft">DEF</span>
-  			<span class="alignright"><a href="#top">Top <span class="glyphicon glyphicon-triangle-top" id="defaultUpArrow"></span></a></span>
-		</h3>
-		<div class="clear"></div>
+		<h3 id="def">DEF</h3>
 		
 		<ul class="listPictures">
 	
@@ -139,11 +134,7 @@
 				
 			</ul><div class="clear"></div>
 
-		<h3 id="ghi">
-  			<span class="alignleft">GHI</span>
-  			<span class="alignright"><a href="#top">Top <span class="glyphicon glyphicon-triangle-top" id="defaultUpArrow"></span></a></span>
-		</h3>
-		<div class="clear"></div>
+		<h3 id="ghi">GHI</h3>
 		
 		<ul class="listPictures">
 	
@@ -203,35 +194,15 @@
 				
 			</ul><div class="clear"></div>
 
-		<h3 id="jkl">
-  			<span class="alignleft">JKL</span>
-  			<span class="alignright"><a href="#top">Top <span class="glyphicon glyphicon-triangle-top" id="defaultUpArrow"></span></a></span>
-		</h3>
-		<div class="clear"></div>
+		<h3 id="jkl">JKL</h3>
 		
-		<h3 id="mno">
-  			<span class="alignleft">MNO</span>
-  			<span class="alignright"><a href="#top">Top <span class="glyphicon glyphicon-triangle-top" id="defaultUpArrow"></span></a></span>
-		</h3>
-		<div class="clear"></div>
+		<h3 id="mno">MNO</h3>
 
-		<h3 id="pqrs">
-  			<span class="alignleft">PQRS</span>
-  			<span class="alignright"><a href="#top">Top <span class="glyphicon glyphicon-triangle-top" id="defaultUpArrow"></span></a></span>
-		</h3>
-		<div class="clear"></div>
+		<h3 id="pqrs">PQRS</h3>
 		
-		<h3 id="tuvw">
-  			<span class="alignleft">TUVW</span>
-  			<span class="alignright"><a href="#top">Top <span class="glyphicon glyphicon-triangle-top" id="defaultUpArrow"></span></a></span>
-		</h3>
-		<div class="clear"></div>
+		<h3 id="tuvw">TUVW</h3>
 
-		<h3 id="xyz">
-  			<span class="alignleft">XYZ<span>&#35;</span></span>
-  			<span class="alignright"><a href="#top">Top <span class="glyphicon glyphicon-triangle-top" id="defaultUpArrow"></span></a></span>
-		</h3>
-		<div class="clear"></div>
+		<h3 id="xyz">XYZ<span>&#35;</span></h3>
 
 	</div>
 </body>

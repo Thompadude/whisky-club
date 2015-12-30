@@ -5,11 +5,17 @@
 	color: #ffffff;
 }
 
-#bigUpArrow:hover {
-	color: red;
+#backToTheTop:hover {
+	color: #666666;
 }
 
-#bigUpArrow {
+.glyphicon-triangle-top {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.glyphicon-triangle-top:hover {
+    color: #666666;
     font-size: 50px;
 }
 
