@@ -44,15 +44,6 @@
 				</a>
 				<p>Laphroaig</p>
 				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
 
 				<li>
 				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
@@ -196,13 +187,79 @@
 
 		<h3 id="jkl">JKL</h3>
 		
+		<ul class="listPictures">
+			<li>
+			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/talisker.jpg"
+				alt="Talisker">
+			</a>
+			<p>Talisker</p>
+			</li>
+		</ul><div class="clear"></div>
+		
 		<h3 id="mno">MNO</h3>
+		
+		<ul class="listPictures">
+			<li>
+			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/talisker.jpg"
+				alt="Talisker">
+			</a>
+			<p>Talisker</p>
+			</li>
+		</ul><div class="clear"></div>
 
 		<h3 id="pqrs">PQRS</h3>
 		
+		<ul class="listPictures">
+			<li>
+			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/talisker.jpg"
+				alt="Talisker">
+			</a>
+			<p>Talisker</p>
+			</li>
+		</ul><div class="clear"></div>
+		
 		<h3 id="tuvw">TUVW</h3>
+		
+		<ul class="listPictures">
+			<li>
+			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/talisker.jpg"
+				alt="Talisker">
+			</a>
+			<p>Talisker</p>
+			</li>
+		</ul><div class="clear"></div>
+		
+		<ul class="listPictures">
+			<li>
+			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/talisker.jpg"
+				alt="Talisker">
+			</a>
+			<p>Talisker</p>
+			</li>
+		</ul><div class="clear"></div>
 
 		<h3 id="xyz">XYZ<span>&#35;</span></h3>
+		
+		<ul class="listPictures">
+			<li>
+			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/talisker.jpg"
+				alt="Talisker">
+			</a>
+			<p>Talisker</p>
+			</li>
+		</ul><div class="clear"></div>
 
 	</div>
 </body>
