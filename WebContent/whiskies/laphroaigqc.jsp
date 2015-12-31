@@ -28,7 +28,7 @@
 	<div class="row aboutwhiskycontent">
 		<div class="col-lg-4">
 			<p>Region: <%=quarterCask.getRegion()%></p>
-			<p>Country: <%=quarterCask.getCountry() %></p>
+			<p>Country: <%=quarterCask.getCountry()%></p>
 			<p>Type: <%=quarterCask.getType()%></p>
 			<p>Alcohol: <%=quarterCask.getAlc()%>%</p>
 		</div>

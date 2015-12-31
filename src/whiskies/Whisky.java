@@ -1,6 +1,7 @@
 package whiskies;
 
 public class Whisky {
+	private String id;
 	private String name;
 	private String region;
 	private String country;
@@ -20,6 +21,18 @@ public class Whisky {
 		this.imgUrl = imgUrl;
 		this.alc = alc;
 		this.grade = grade;
+	}
+	
+	public Whisky() {
+		
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getName() {

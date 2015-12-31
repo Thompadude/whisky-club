@@ -36,191 +36,195 @@
 		
 		<ul class="listPictures">
 	
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
+			<li>
+			<a href="ListHandler?param=talisker">
+			<img class="img-responsive" 
+			src="${pageContext.request.contextPath}/images/talisker.jpg"
+			alt="Talisker">
+			</a>
+			<p>TestPåDenna TALISKER!</p>
+			</li>
+	
+			<li>
+			<a href="ListHandler?param=laphroaig">
+			<img class="img-responsive" 
+			src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
+			alt="Talisker">
+			</a>
+			<p>TestPåDenna Lappen!</p>
+			</li>
 				
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+				
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+		
 			</ul><div class="clear"></div>
 		
 		<h3 id="def">DEF</h3>
 		
 		<ul class="listPictures">
-	
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
 
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
 				
-			</ul><div class="clear"></div>
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+				
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+				
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+			
+		</ul><div class="clear"></div>
 
 		<h3 id="ghi">GHI</h3>
 		
 		<ul class="listPictures">
-	
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
 
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
-					
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
 				
-				<li>
-				<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
-				<img class="img-responsive" 
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Laphroaig Quarter Cask">
-				</a>
-				<p>Laphroaig</p>
-				</li>
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
 				
-			</ul><div class="clear"></div>
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+				
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+			
+			<li>
+			<a href="">
+			<img class="img-responsive" 
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
+			</a>
+			<p>Coming Soon</p>
+			</li>
+			
+		</ul><div class="clear"></div>
 
 		<h3 id="jkl">JKL</h3>
 		
 		<ul class="listPictures">
+				
 			<li>
-			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<a href="">
 			<img class="img-responsive" 
-				src="${pageContext.request.contextPath}/images/talisker.jpg"
-				alt="Talisker">
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
 			</a>
-			<p>Talisker</p>
+			<p>Coming Soon</p>
 			</li>
+				
 		</ul><div class="clear"></div>
 		
 		<h3 id="mno">MNO</h3>
 		
 		<ul class="listPictures">
+			
 			<li>
-			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<a href="">
 			<img class="img-responsive" 
-				src="${pageContext.request.contextPath}/images/talisker.jpg"
-				alt="Talisker">
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
 			</a>
-			<p>Talisker</p>
+			<p>Coming Soon</p>
 			</li>
+		
 		</ul><div class="clear"></div>
 
 		<h3 id="pqrs">PQRS</h3>
 		
 		<ul class="listPictures">
 			<li>
-			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<a href="">
 			<img class="img-responsive" 
-				src="${pageContext.request.contextPath}/images/talisker.jpg"
-				alt="Talisker">
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
 			</a>
-			<p>Talisker</p>
+			<p>Coming Soon</p>
 			</li>
 		</ul><div class="clear"></div>
 		
@@ -228,37 +232,38 @@
 		
 		<ul class="listPictures">
 			<li>
-			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<a href="">
 			<img class="img-responsive" 
-				src="${pageContext.request.contextPath}/images/talisker.jpg"
-				alt="Talisker">
+				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+				alt="Laphroaig Quarter Cask">
 			</a>
-			<p>Talisker</p>
+			<p>Coming Soon</p>
 			</li>
-		</ul><div class="clear"></div>
-		
-		<ul class="listPictures">
+
 			<li>
-			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<a href="">
 			<img class="img-responsive" 
-				src="${pageContext.request.contextPath}/images/talisker.jpg"
-				alt="Talisker">
+			src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+			alt="Laphroaig Quarter Cask">
 			</a>
-			<p>Talisker</p>
+			<p>Coming Soon</p>
 			</li>
+	
 		</ul><div class="clear"></div>
 
 		<h3 id="xyz">XYZ<span>&#35;</span></h3>
 		
 		<ul class="listPictures">
+			
 			<li>
-			<a href="${pageContext.request.contextPath}/whiskies/laphroaigqc.jsp">
+			<a href="">
 			<img class="img-responsive" 
-				src="${pageContext.request.contextPath}/images/talisker.jpg"
-				alt="Talisker">
+			src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+			alt="Laphroaig Quarter Cask">
 			</a>
-			<p>Talisker</p>
+			<p>Coming Soon</p>
 			</li>
+		
 		</ul><div class="clear"></div>
 
 	</div>

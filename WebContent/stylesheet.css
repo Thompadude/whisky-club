@@ -89,7 +89,6 @@ a, a:hover, a:visited, a:active, a:link {
 .aboutwhiskycontent {
 	color: rgb(224,244,244);
 	margin-top: 2em;
-	margin-left: 10em;
 }
 
 /* Removes margin if using a smaller device. */
