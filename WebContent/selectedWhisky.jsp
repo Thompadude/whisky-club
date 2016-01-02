@@ -39,8 +39,13 @@
 			</div>
 		</div>
 	<div class="row aboutwhiskycontent">
-		<div class="col-lg-12">
+		<div class="col-lg-8">
 			<%@include file="../comments.jsp" %>
+		</div>
+		<div class="col-lg-1">
+			<a href="${pageContext.request.contextPath}/list.jsp"><img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg"></a>
+		</div>
+		<div class="col-lg-3">
 		</div>
 	</div>		
 </div>
