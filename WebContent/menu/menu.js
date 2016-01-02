@@ -1,3 +1,13 @@
+/*
+ * Handles animation of the menu.
+ * 
+ * When open icon is clicked, move menu to the right.
+ * When close icon is clicked, move menu back to the left, hiding it.
+ * 
+ * While the menu is open an overlay fades the rest of the screen,
+ * thus putting the focus on the menu.
+ */
+
 var menuAnimation = function() {
 	$("#iconOpenMenu").click(function() {
 		$("#menu").animate({

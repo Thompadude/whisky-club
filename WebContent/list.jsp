@@ -15,7 +15,7 @@
 </head>
 <body>
 	<span id="top"></span>
-	<%@ include file="/menu.jsp"%>
+	<%@ include file="menu/menu.jsp"%>
 	<%@ include file="background.jsp"%>
 	<div class="content">
 		

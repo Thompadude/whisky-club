@@ -12,7 +12,7 @@
 <script src="menu.js"></script>
 </head>
 <body>
-<%@ include file="/menu.jsp"%>
+<%@ include file="menu/menu.jsp"%>
 <%@ include file="/background.jsp"%>
 <div class="content">
 	<div class="row aboutwhiskycontent">

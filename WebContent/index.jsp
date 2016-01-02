@@ -8,7 +8,7 @@
 <title>Whiskey in the Jar</title>
 </head>
 <body>
-	<%@ include file="/menu.jsp"%>
+	<%@ include file="menu/menu.jsp"%>
 	<%@ include file="/background.jsp"%>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -9,7 +9,7 @@
 <title>Laphroaig Quarter Cask</title>
 </head>
 <body>
-<%@ include file="/menu.jsp"%>
+<%@ include file="../menu/menu.jsp"%>
 <%@ include file="/background.jsp"%>
 <% LaphroaigQuarterCask quarterCask = new LaphroaigQuarterCask(); %>
 

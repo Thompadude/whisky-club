@@ -9,7 +9,7 @@
 <title>Whiskey in the Jar</title>
 </head>
 <body>
-	<%@ include file="/menu.jsp"%>
+	<%@ include file="menu/menu.jsp"%>
 	<%@ include file="background.jsp"%>
 	<div class="content">
 		<div class="container">
