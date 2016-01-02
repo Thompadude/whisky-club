@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
  * Servlet implementation class Main
  */
@@ -21,7 +20,6 @@ public class Main extends HttpServlet {
 	 */
 	public Main() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -30,13 +28,16 @@ public class Main extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		
+
+		// Get a user name and a password from login.jsp
 		String usrName = request.getParameter("usrName");
 		String password = request.getParameter("password");
 
+		// Checks if login is valid.
 		LoginHandler loginHandler = new LoginHandler();
 		boolean isSuccessfulLogin = loginHandler.authenticate(usrName, password);
 
+		// If login is OK, redirect to main page, if not - nothing happens.
 		if (isSuccessfulLogin) {
 			response.sendRedirect("index.jsp");
 		} else {

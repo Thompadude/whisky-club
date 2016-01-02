@@ -11,8 +11,26 @@ public class Whisky {
 	private double alc;
 	private int grade;
 
-	public Whisky(String id,String name, String region, String country, String type, String info, String imgUrl, double alc,
-			int grade) {
+	/**
+	 * Whisky super class.
+	 * 
+	 * @param id is a unique String to identify the whisky.
+	 * @param imgUrl is the path to the photo.
+	 * @param alc is the alcoholic percentage.
+	 * @param grade is a user defined grade from a scale of 1 to 5.
+	 */
+
+	public Whisky(
+			String id,
+			String name,
+			String region,
+			String country,
+			String type,
+			String info,
+			String imgUrl,
+			double alc,
+			int grade)
+	{
 		this.id = id;
 		this.name = name;
 		this.region = region;
@@ -25,7 +43,6 @@ public class Whisky {
 	}
 	
 	public Whisky() {
-		
 	}
 
 	public String getId() {
