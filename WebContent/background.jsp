@@ -1,5 +1,4 @@
 <!-- Handles the big background image at the top of every page. -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,9 +9,8 @@
 <title>Background</title>
 </head>
 <body>
-	<div id="topdiv" class="containter-fluid">
-		<img id="top_background" src="${pageContext.request.contextPath}/images/top_background.jpg" alt="whiskey">
-	</div>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<div id="topdiv" class="containter-fluid">
+	<img id="top_background" src="${pageContext.request.contextPath}/images/top_background.jpg" alt="whiskey">
+</div>
 </body>
 </html>

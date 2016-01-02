@@ -32,12 +32,14 @@ public class ListHandler extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		WhiskyHandler wHandle = new WhiskyHandler();
+		// Gets the database of whiskies.
+		WhiskyHandler whiskyHandler = new WhiskyHandler();		
+		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies();
 		
-		ArrayList<Whisky> whiskies = wHandle.getWhiskies();
+		// TODO add comment about what this do
+		String userWhiskyChoice = request.getParameter("whisky");
 		
-		String userWhiskyChoice = request.getParameter("param");
+		// For testing purposes.
 		System.out.println(userWhiskyChoice);
 		
 		HttpSession session = request.getSession();
