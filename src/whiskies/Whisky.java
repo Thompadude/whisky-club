@@ -11,8 +11,9 @@ public class Whisky {
 	private double alc;
 	private int grade;
 
-	public Whisky(String name, String region, String country, String type, String info, String imgUrl, double alc,
+	public Whisky(String id,String name, String region, String country, String type, String info, String imgUrl, double alc,
 			int grade) {
+		this.id = id;
 		this.name = name;
 		this.region = region;
 		this.country = country;

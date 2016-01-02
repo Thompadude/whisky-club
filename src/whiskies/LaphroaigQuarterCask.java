@@ -3,7 +3,7 @@ package whiskies;
 public class LaphroaigQuarterCask extends Whisky {
 
 	public LaphroaigQuarterCask() {
-		super("Laphroaig Quarter Cask", "Islay Whisky", "Scotland", "Single Malt Whisky",
+		super("laphroaig", "Laphroaig Quarter Cask", "Islay Whisky", "Scotland", "Single Malt Whisky",
 
 				"Released in 2004, this bottling was aged for around five "
 						+ "years before being finished in a quarter cask for several "

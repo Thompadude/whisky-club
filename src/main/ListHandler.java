@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import whiskies.Whisky;
+import whiskies.WhiskyHandler;
 
 /**
  * Servlet implementation class ListHandler
@@ -32,35 +33,9 @@ public class ListHandler extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Whisky laphroaig = new Whisky();
-		laphroaig.setId("laphroaig");
-		laphroaig.setName("Laphroaig Quarter Cask");
-		laphroaig.setRegion("Islay");
-		laphroaig.setCountry("Scotland");
-		laphroaig.setType("Single Malt Whisky");
-		laphroaig.setImgUrl("laphroaigquartercask.jpg");
-		laphroaig.setInfo("Released in 2004, this bottling was aged for around five "
-						+ "years before being finished in a quarter cask for several "
-						+ "months, the size of the cask is quite small, thus does not "
-						+ "require such a long maturation. This remains a truly great achievement from Laphroaig.");
-		laphroaig.setAlc(48);
-		laphroaig.setGrade(0);
+		WhiskyHandler wHandle = new WhiskyHandler();
 		
-		
-		Whisky talisker = new Whisky();
-		talisker.setId("talisker");
-		talisker.setName("Talisker");
-		talisker.setRegion("Isle of Skye");
-		talisker.setCountry("Scotland");
-		talisker.setType("Single Malt Whisky");
-		talisker.setImgUrl("talisker.jpg");
-		talisker.setInfo("Write some info here please");
-		talisker.setAlc(45.8);
-		talisker.setGrade(0);
-		
-		ArrayList<Whisky> whiskies = new ArrayList<Whisky>();
-		whiskies.add(talisker);
-		whiskies.add(laphroaig);
+		ArrayList<Whisky> whiskies = wHandle.getWhiskies();
 		
 		String userWhiskyChoice = request.getParameter("param");
 		System.out.println(userWhiskyChoice);
