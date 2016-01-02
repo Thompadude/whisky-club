@@ -6,13 +6,13 @@
 }
 
 .glyphicon-triangle-top {
-    color: #ffffff;
-    font-size: 50px;
+	color: #ffffff;
+	font-size: 50px;
 }
 
 .glyphicon-triangle-top:hover {
-    color: #666666;
-    font-size: 50px;
+	color: #666666;
+	font-size: 50px;
 }
 
 .alignleft {
@@ -24,9 +24,8 @@
 }
 
 /* List Navbar */
-
 .nav {
-    border-color: #FFFFFF;
+	border-color: #FFFFFF;
 }
 
 .nav-tabs li a {
@@ -34,13 +33,11 @@
 	color: white;
 }
 
-.nav-tabs li a:hover, .nav-tabs a:focus{
+.nav-tabs li a:hover, .nav-tabs a:focus {
 	color: black;
 }
 
-
 /* List Pictures formats */
-
 .listPictures {
 	padding: 0;
 	list-style-type: none;
@@ -62,4 +59,13 @@
 
 .clear {
 	clear: left;
+}
+
+/* Adds an effect on all images in the list when hoovering */
+.img-responsive {
+	opacity: 0.8;
+}
+
+.img-responsive:hover {
+	opacity: 1;
 }
