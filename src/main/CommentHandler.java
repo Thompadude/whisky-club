@@ -42,7 +42,7 @@ public class CommentHandler extends HttpServlet {
 		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies();
 		
 		String writtenComment = request.getParameter("theName");
-		String currentwhiskyId = request.getParameter("submit");
+		String currentwhiskyId = request.getParameter("whiskyId");
 
 		if (writtenComment != null && writtenComment != "") {
 			for (int i = 0; i < whiskies.size(); i++) {
