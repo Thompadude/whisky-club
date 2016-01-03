@@ -39,9 +39,9 @@
 		</div>
 	<div class="log-lg-8"></div>
 	</div>
-	<form action="CommentServlet" method="post">
-		<label><input class="formfield" type="text" name="userName" placeholder="Name"></label>
-		<label><input class="formfield" type="text" name="comment" placeholder="Comment"></label>
+	<form action="CommentServlet" method="post" name="validate">
+		<label><input class="formfield" id="uName" type="text" name="userName" placeholder="Name"></label>
+		<label><input class="formfield" id="cmnt" type="text" name="comment" placeholder="Comment"></label>
 		<input type="reset" class="formbutton">
 		<input type="submit" class="formbutton" value="Submit">
 		<input type="hidden" name="whiskyId" value="${chosenWhisky.getId()}">
@@ -68,5 +68,6 @@
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="validateSelectedWhiskyForm.js"></script>
 </body>
 </html>

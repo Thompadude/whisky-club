@@ -64,7 +64,7 @@ public class CommentServlet extends HttpServlet {
 			}
 			response.sendRedirect("list.jsp");
 		} else {
-			System.out.println("Ay Caramba!!");
+			request.setAttribute("error", "Something went wrong!");
 		}
 	}
 
