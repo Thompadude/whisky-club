@@ -11,13 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import database.Data;
 import database.WhiskyDatabase;
-import guestbook.GuestbookHandler;
 import whiskies.Whisky;
 
 /**
  * Servlet implementation class CommentHandler
  */
-@WebServlet("/CommentHandler")
+@WebServlet("/CommentServlet")
 public class CommentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private WhiskyDatabase whiskyHandler;

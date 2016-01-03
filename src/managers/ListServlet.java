@@ -17,7 +17,7 @@ import whiskies.Whisky;
 /**
  * Servlet implementation class ListHandler
  */
-@WebServlet("/ListHandler")
+@WebServlet("/ListServlet")
 public class ListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private WhiskyDatabase whiskyHandler;
