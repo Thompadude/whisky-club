@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import managers.WhiskyComments;
 
-public class Whisky {
+public class Whisky implements java.io.Serializable {
 	private String id;
 	private String name;
 	private String region;

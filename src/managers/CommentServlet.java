@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import database.Data;
 import database.WhiskyDatabase;
+import saveAndLoad.SaveToFile;
 import whiskies.Whisky;
 
 /**
@@ -20,8 +21,7 @@ import whiskies.Whisky;
 @WebServlet("/CommentServlet")
 public class CommentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private WhiskyDatabase whiskyHandler;
-       
+    private WhiskyDatabase whiskyDatabase;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -31,15 +31,25 @@ public class CommentServlet extends HttpServlet {
     }
     
     public void init() throws ServletException{
-    	whiskyHandler = Data.getWhiskyHandler();
+    	whiskyDatabase = Data.getWhiskyHandler();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies();
+		String absolutePath = getServletContext().getRealPath("/");
+		String fileName = "tryAbsoluteFooPath.dat";
+		String filePath = absolutePath+fileName;
+		
+		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhisky(filePath);
 		
 		String userName = request.getParameter("userName");
 		String comment = request.getParameter("comment");
@@ -60,20 +70,15 @@ public class CommentServlet extends HttpServlet {
 			for (int i = 0; i < whiskies.size(); i++) {
 				if (whiskies.get(i).getId().equals(currentwhiskyId)) {					
 					whiskies.get(i).addComment(whiskyComment);
+					//Save changes
+					SaveToFile saveToFile = new SaveToFile();
+					saveToFile.saveToFile(whiskies, filePath);
 				}
 			}
-			response.sendRedirect("list.jsp");
+			response.sendRedirect("index.jsp");
 		} else {
 			request.setAttribute("error", "Something went wrong!");
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

@@ -2,10 +2,10 @@ package database;
 
 public class Data {
 
-	private static WhiskyDatabase whiskyHandler = new WhiskyDatabase();
+	private static WhiskyDatabase whiskyDatabase = new WhiskyDatabase();
 
 	public static WhiskyDatabase getWhiskyHandler() {
-		return whiskyHandler;
+		return whiskyDatabase;
 	}	
 	
 }

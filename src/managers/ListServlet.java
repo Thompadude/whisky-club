@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import database.Data;
 import database.WhiskyDatabase;
+import saveAndLoad.SaveToFile;
 import whiskies.Whisky;
 
 /**
@@ -39,8 +40,14 @@ public class ListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Gets the database of whiskies.
-				
+		String absoluteFooWebPath = getServletContext().getRealPath("/");
+		String fileName = "tryAbsoluteFooPath.dat";
+		String filePath = absoluteFooWebPath+fileName;
+
 		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies();
+				
+		whiskies = whiskyHandler.loadWhisky(filePath);
+		//whiskyHandler.saveWhisky(whiskies, filePath);
 		
 		// TODO add comment about what this do
 		String userWhiskyChoice = request.getParameter("whisky");

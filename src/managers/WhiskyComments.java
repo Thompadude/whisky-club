@@ -1,6 +1,6 @@
 package managers;
 
-public class WhiskyComments {
+public class WhiskyComments implements java.io.Serializable {
 
 	private String userName;
 	private String comment;
