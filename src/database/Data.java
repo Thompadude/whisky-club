@@ -1,12 +1,10 @@
 package database;
 
-import whiskies.WhiskyHandler;
-
 public class Data {
 
-	private static WhiskyHandler whiskyHandler = new WhiskyHandler();
+	private static WhiskyDatabase whiskyHandler = new WhiskyDatabase();
 
-	public static WhiskyHandler getWhiskyHandler() {
+	public static WhiskyDatabase getWhiskyHandler() {
 		return whiskyHandler;
 	}	
 	

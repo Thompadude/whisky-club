@@ -1,4 +1,4 @@
-package main;
+package managers;
 
 import java.io.IOException;
 
@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import whiskies.WhiskyHandler;
+import database.WhiskyDatabase;
 
 /**
  * Servlet implementation class Main
  */
 @WebServlet("/Main")
-public class Main extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Main() {
+	public LoginServlet() {
 		super();
 	}
 

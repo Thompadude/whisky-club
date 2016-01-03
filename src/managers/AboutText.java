@@ -1,4 +1,4 @@
-package main;
+package managers;
 
 /**
  * Handles text content in about.jsp

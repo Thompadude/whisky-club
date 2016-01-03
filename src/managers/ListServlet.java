@@ -1,4 +1,4 @@
-package main;
+package managers;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,21 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import database.Data;
+import database.WhiskyDatabase;
 import whiskies.Whisky;
-import whiskies.WhiskyHandler;
 
 /**
  * Servlet implementation class ListHandler
  */
 @WebServlet("/ListHandler")
-public class ListHandler extends HttpServlet {
+public class ListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private WhiskyHandler whiskyHandler;
+    private WhiskyDatabase whiskyHandler;
     
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListHandler() {
+    public ListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
