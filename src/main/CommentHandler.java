@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import database.Data;
 import guestbook.GuestbookHandler;
 import whiskies.Whisky;
 import whiskies.WhiskyHandler;
@@ -19,7 +20,7 @@ import whiskies.WhiskyHandler;
 @WebServlet("/CommentHandler")
 public class CommentHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private WhiskyHandler whiskyHandler;		
+	private WhiskyHandler whiskyHandler;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -29,8 +30,8 @@ public class CommentHandler extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    public void init() throws ServletException{    	
-    	this.whiskyHandler = new WhiskyHandler();
+    public void init() throws ServletException{
+    	whiskyHandler = Data.getWhiskyHandler();
     }
 
 	/**
@@ -48,7 +49,7 @@ public class CommentHandler extends HttpServlet {
 				if (whiskies.get(i).getId().equals(currentwhiskyId)) {
 					System.out.println("Kommentar: " + writtenComment + ", Whisky: " + whiskies.get(i));
 					whiskies.get(i).addComment(writtenComment);
-					System.out.println("Storlek på listan" + whiskies.get(i).getComment().size());
+					System.out.println("Storlek på listan" + whiskies.get(i).getComments().size());
 				}
 			}
 			response.sendRedirect("list.jsp");

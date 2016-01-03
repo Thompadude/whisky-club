@@ -125,7 +125,7 @@ public class Whisky {
 		this.grade = grade;
 	}
 
-	public ArrayList<String> getComment() {
+	public ArrayList<String> getComments() {
 		if (comment == null) {
 			comment = new ArrayList<>();
 		}

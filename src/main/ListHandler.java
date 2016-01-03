@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import database.Data;
 import whiskies.Whisky;
 import whiskies.WhiskyHandler;
 
@@ -20,6 +21,7 @@ import whiskies.WhiskyHandler;
 public class ListHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private WhiskyHandler whiskyHandler;
+    
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,7 +31,7 @@ public class ListHandler extends HttpServlet {
     }
     
     public void init() throws ServletException{    	
-    	this.whiskyHandler = new WhiskyHandler();
+    	whiskyHandler = Data.getWhiskyHandler();
     }
 
 	/**
@@ -52,7 +54,7 @@ public class ListHandler extends HttpServlet {
 			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
 				response.sendRedirect("selectedWhisky.jsp");
 				session.setAttribute("chosenWhisky", whiskies.get(i));
-				session.setAttribute("commentsKey", whiskies.get(i).getComment());
+				session.setAttribute("commentsKey", whiskies.get(i).getComments());
 			} else {
 				System.out.println("Something was terribly wrong with what you just did!");
 			}

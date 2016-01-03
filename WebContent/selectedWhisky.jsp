@@ -42,7 +42,7 @@
         		<tr>
           <%
             ArrayList<String> whiskyComments = (ArrayList<String>) session.getAttribute("commentsKey");
-            for (String comment : whiskyComments) {
+          	for (String comment : whiskyComments) {
           %>
             <td><%=comment%>,</td>
           <%}%>
