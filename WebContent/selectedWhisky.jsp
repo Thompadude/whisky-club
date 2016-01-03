@@ -1,6 +1,7 @@
 <!-- TODO add comments about what this jsp do -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ page import="whiskies.*"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +36,18 @@
 				<p>Type: ${chosenWhisky.getType()}</p>
 				<p>Alcohol: ${chosenWhisky.getAlc()}</p>
 				<p>Grade: ${chosenWhisky.getGrade()}</p>
+				
+				
+				<table>
+        		<tr>
+          <%
+            ArrayList<String> whiskyComments = (ArrayList<String>) session.getAttribute("commentsKey");
+            for (String comment : whiskyComments) {
+          %>
+            <td><%=comment%>,</td>
+          <%}%>
+        </tr>
+    </table>
 			</div>
 			<div class="log-lg-8">
 			</div>
@@ -43,7 +56,16 @@
 		<div class="col-lg-1">
 			<a href="${pageContext.request.contextPath}/list.jsp"><img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg"></a>
 		</div>
-	</div>		
+	</div>
+	<form action="CommentHandler" method="post">
+
+		<p>
+			<label style="color:grey">Write a comment: <input type="text" name="theName"></label>
+		</p>
+		<p><br>
+			<input type="reset"> <input type="submit" name="submit" value="${chosenWhisky.getId()}">
+		</p>
+	</form>	
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

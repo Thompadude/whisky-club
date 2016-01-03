@@ -1,5 +1,7 @@
 package whiskies;
 
+import java.util.ArrayList;
+
 public class Whisky {
 	private String id;
 	private String name;
@@ -10,6 +12,7 @@ public class Whisky {
 	private String imgUrl;
 	private double alc;
 	private int grade;
+	private ArrayList<String> comment;
 
 	/**
 	 * Whisky super class.
@@ -120,6 +123,20 @@ public class Whisky {
 			grade = 0;
 		}
 		this.grade = grade;
+	}
+
+	public ArrayList<String> getComment() {
+		if (comment == null) {
+			comment = new ArrayList<>();
+		}
+		return comment;
+	}
+	
+	public void addComment(String commentToAdd) {
+		if (this.comment == null) {
+			this.comment = new ArrayList<>();
+		}
+		this.comment.add(commentToAdd);
 	}
 
 }

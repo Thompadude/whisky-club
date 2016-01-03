@@ -8,22 +8,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import guestbook.GuestbookHandler;
 import whiskies.Whisky;
 import whiskies.WhiskyHandler;
 
 /**
- * Servlet implementation class ListHandler
+ * Servlet implementation class CommentHandler
  */
-@WebServlet("/ListHandler")
-public class ListHandler extends HttpServlet {
+@WebServlet("/CommentHandler")
+public class CommentHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private WhiskyHandler whiskyHandler;
+	private WhiskyHandler whiskyHandler;		
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListHandler() {
+    public CommentHandler() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,26 +37,23 @@ public class ListHandler extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Gets the database of whiskies.
-				
+		response.setContentType("text/html");
 		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies();
 		
-		// TODO add comment about what this do
-		String userWhiskyChoice = request.getParameter("whisky");
-		
-		// For testing purposes.
-		System.out.println(userWhiskyChoice);
-		
-		HttpSession session = request.getSession();
-		
-		for (int i = 0; i < whiskies.size(); i++) {
-			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
-				response.sendRedirect("selectedWhisky.jsp");
-				session.setAttribute("chosenWhisky", whiskies.get(i));
-				session.setAttribute("commentsKey", whiskies.get(i).getComment());
-			} else {
-				System.out.println("Something was terribly wrong with what you just did!");
+		String writtenComment = request.getParameter("theName");
+		String currentwhiskyId = request.getParameter("submit");
+
+		if (writtenComment != null && writtenComment != "") {
+			for (int i = 0; i < whiskies.size(); i++) {
+				if (whiskies.get(i).getId().equals(currentwhiskyId)) {
+					System.out.println("Kommentar: " + writtenComment + ", Whisky: " + whiskies.get(i));
+					whiskies.get(i).addComment(writtenComment);
+					System.out.println("Storlek på listan" + whiskies.get(i).getComment().size());
+				}
 			}
+			response.sendRedirect("list.jsp");
+		} else {
+			System.out.println("Ay Caramba!!");
 		}
 	}
 
