@@ -51,13 +51,15 @@ public class CommentServlet extends HttpServlet {
 		
 		WhiskyComments whiskyComment = new WhiskyComments(userName, comment, todaysDate);
 
-		if (comment != null && comment != "") {
+		boolean isFieldsEmpty = true;
+		if ((comment != null && comment != "") && (userName != null && userName != "")){
+			isFieldsEmpty = false;
+		}
+		
+		if (!isFieldsEmpty) {
 			for (int i = 0; i < whiskies.size(); i++) {
-				if (whiskies.get(i).getId().equals(currentwhiskyId)) {
-					
+				if (whiskies.get(i).getId().equals(currentwhiskyId)) {					
 					whiskies.get(i).addComment(whiskyComment);
-					
-					
 				}
 			}
 			response.sendRedirect("list.jsp");
