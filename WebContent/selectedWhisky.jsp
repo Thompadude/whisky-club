@@ -1,6 +1,7 @@
 <!-- TODO add comments about what this jsp do -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ page import="whiskies.*"%>
+<%@ page import="managers.*"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
@@ -52,13 +53,13 @@
 			<th>User</th>
 		</tr>
 	          <%
-	            ArrayList<String> whiskyComments = (ArrayList<String>) session.getAttribute("commentsKey");
+	            ArrayList<WhiskyComments> whiskyComments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
 	          	for (int i = whiskyComments.size()-1; i >= 0; i--) {
 	          %>
 	   		<tr>
-	            <td><%=whiskyComments.get(i)%></td>
-	            <td>Date</td>
-	            <td>User Name</td>
+	            <td><%=whiskyComments.get(i).getComment()%></td>
+	            <td><%=whiskyComments.get(i).getDate()%></td>
+	            <td><%=whiskyComments.get(i).getUserName()%></td>
 			<tr>
 	        </tr>
 	          <%}%>

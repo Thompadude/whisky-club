@@ -2,6 +2,8 @@ package whiskies;
 
 import java.util.ArrayList;
 
+import managers.WhiskyComments;
+
 public class Whisky {
 	private String id;
 	private String name;
@@ -12,28 +14,23 @@ public class Whisky {
 	private String imgUrl;
 	private double alc;
 	private int grade;
-	private ArrayList<String> comment;
+	private ArrayList<WhiskyComments> comments;
 
 	/**
 	 * Whisky super class.
 	 * 
-	 * @param id is a unique String to identify the whisky.
-	 * @param imgUrl is the path to the photo.
-	 * @param alc is the alcoholic percentage.
-	 * @param grade is a user defined grade from a scale of 1 to 5.
+	 * @param id
+	 *            is a unique String to identify the whisky.
+	 * @param imgUrl
+	 *            is the path to the photo.
+	 * @param alc
+	 *            is the alcoholic percentage.
+	 * @param grade
+	 *            is a user defined grade from a scale of 1 to 5.
 	 */
 
-	public Whisky(
-			String id,
-			String name,
-			String region,
-			String country,
-			String type,
-			String info,
-			String imgUrl,
-			double alc,
-			int grade)
-	{
+	public Whisky(String id, String name, String region, String country, String type, String info, String imgUrl,
+			double alc, int grade) {
 		this.id = id;
 		this.name = name;
 		this.region = region;
@@ -44,7 +41,7 @@ public class Whisky {
 		this.alc = alc;
 		this.grade = grade;
 	}
-	
+
 	public Whisky() {
 	}
 
@@ -125,18 +122,18 @@ public class Whisky {
 		this.grade = grade;
 	}
 
-	public ArrayList<String> getComments() {
-		if (comment == null) {
-			comment = new ArrayList<>();
+	public ArrayList<WhiskyComments> getComments() {
+		if (comments == null) {
+			comments = new ArrayList<>();
 		}
-		return comment;
+		return comments;
 	}
-	
-	public void addComment(String commentToAdd) {
-		if (this.comment == null) {
-			this.comment = new ArrayList<>();
+
+	public void addComment(WhiskyComments comment) {
+		if (this.comments == null) {
+			this.comments = new ArrayList<>();
 		}
-		this.comment.add(commentToAdd);
+		this.comments.add(comment);
 	}
 
 }

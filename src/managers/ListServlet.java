@@ -49,15 +49,19 @@ public class ListServlet extends HttpServlet {
 		System.out.println(userWhiskyChoice);
 		
 		HttpSession session = request.getSession();
+
+		boolean whiskyFound = false;
 		
 		for (int i = 0; i < whiskies.size(); i++) {
 			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
 				response.sendRedirect("selectedWhisky.jsp");
 				session.setAttribute("chosenWhisky", whiskies.get(i));
-				session.setAttribute("commentsKey", whiskies.get(i).getComments());
-			} else {
-				System.out.println("Something was terribly wrong with what you just did!");
+				session.setAttribute("commentObjects", whiskies.get(i).getComments());
+				whiskyFound = true;
 			}
+		}
+		if (!whiskyFound) {
+			System.out.println("Something was terribly wrong with what you just did!");
 		}
 	}
 

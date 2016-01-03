@@ -1,6 +1,7 @@
 package managers;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -41,15 +42,22 @@ public class CommentServlet extends HttpServlet {
 		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies();
 		
 		String userName = request.getParameter("userName");
-		String writtenComment = request.getParameter("comment");
+		String comment = request.getParameter("comment");
+		
+		LocalDate localDate = LocalDate.now();
+		String todaysDate = localDate.toString();
+		
 		String currentwhiskyId = request.getParameter("whiskyId");
+		
+		WhiskyComments whiskyComment = new WhiskyComments(userName, comment, todaysDate);
 
-		if (writtenComment != null && writtenComment != "") {
+		if (comment != null && comment != "") {
 			for (int i = 0; i < whiskies.size(); i++) {
 				if (whiskies.get(i).getId().equals(currentwhiskyId)) {
-					System.out.println("Kommentar: " + writtenComment + ", Whisky: " + whiskies.get(i));
-					whiskies.get(i).addComment(writtenComment);
-					System.out.println("Storlek på listan" + whiskies.get(i).getComments().size());
+					
+					whiskies.get(i).addComment(whiskyComment);
+					
+					
 				}
 			}
 			response.sendRedirect("list.jsp");
