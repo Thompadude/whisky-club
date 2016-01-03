@@ -40,7 +40,8 @@ public class CommentServlet extends HttpServlet {
 		response.setContentType("text/html");
 		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies();
 		
-		String writtenComment = request.getParameter("theName");
+		String userName = request.getParameter("userName");
+		String writtenComment = request.getParameter("comment");
 		String currentwhiskyId = request.getParameter("whiskyId");
 
 		if (writtenComment != null && writtenComment != "") {
