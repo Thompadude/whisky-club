@@ -17,7 +17,7 @@ import whiskies.Whisky;
 /**
  * Servlet implementation class CommentHandler
  */
-@WebServlet("/CommentHandler")
+@WebServlet("/CommentServlet")
 public class CommentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private WhiskyDatabase whiskyHandler;
@@ -41,7 +41,8 @@ public class CommentServlet extends HttpServlet {
 		response.setContentType("text/html");
 		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies();
 		
-		String writtenComment = request.getParameter("theName");
+		String userName = request.getParameter("userName");
+		String writtenComment = request.getParameter("comment");
 		String currentwhiskyId = request.getParameter("whiskyId");
 
 		if (writtenComment != null && writtenComment != "") {

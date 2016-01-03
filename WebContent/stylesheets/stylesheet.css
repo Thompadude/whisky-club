@@ -7,8 +7,15 @@ body {
 
 .content {
 	color: white;
+	margin-top: 1%;
 	margin-left: 12.5%;
 	margin-right: 12.5%;
+}
+
+@media (max-width: 480px) {
+	.content {
+		margin-left: 1%;
+	}
 }
 
 html {
@@ -84,20 +91,6 @@ a, a:hover, a:visited, a:active, a:link {
 	visibility: hidden;
 }
 
-/* Style for presenting a whiskey */
-
-.aboutwhiskycontent {
-	color: rgb(224,244,244);
-	margin-top: 2em;
-}
-
-/* Removes margin if using a smaller device. */
-@media (max-width: 480px) {
-	.aboutwhiskycontent {
-		margin-left: 0;
-	}
-}
-
 /* Comment section styles */
 
 .formfield {
@@ -115,4 +108,12 @@ a, a:hover, a:visited, a:active, a:link {
 .formbutton:hover {
     background-color: black;
     color: white;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: grey;
+}
+
+.table td, .table th {
+	border-top: none !important;
 }
