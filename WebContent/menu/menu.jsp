@@ -17,6 +17,7 @@
 				<a href="${pageContext.request.contextPath}/list.jsp" class="btn btn-default menubtn">Whiskies</a>
 				<a href="${pageContext.request.contextPath}/guestbook/guestbookform.jsp" class="btn btn-default menubtn">Guestbook</a>
 				<a href="${pageContext.request.contextPath}/about.jsp" class="btn btn-default menubtn">About</a>
+				<a href="${pageContext.request.contextPath}/login.html" class="btn btn-default menubtn">Log out</a>
 			</div>
 	</div>
 	<div id="iconOpenMenu">
