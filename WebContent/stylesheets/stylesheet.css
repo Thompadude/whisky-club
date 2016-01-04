@@ -91,7 +91,7 @@ a, a:hover, a:visited, a:active, a:link {
 	visibility: hidden;
 }
 
-/* Comment section styles */
+/* Comment, guestbook and login section styles */
 
 .formfield {
 	color: black;
@@ -120,4 +120,32 @@ a, a:hover, a:visited, a:active, a:link {
 
 #tableSelectedWhisky {
 	width: 50%;
+}
+
+#loginwrapper {
+	background-image: url("../images/login-background.jpg");
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	
+}
+
+#loginjumobtron {
+	margin-left: 3%;
+	background: rgba(0, 0, 0, 0);
+}
+
+.loginfield {
+	width: 10em;
+	color:grey
+}
+
+.loginfield input {
+	border-radius: .25em;
+}
+
+.loginfield input:focus {
+	background-color: lightgrey;
+	color: black;
 }

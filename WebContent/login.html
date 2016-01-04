@@ -8,18 +8,17 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
 </head>
 <body>
-<form action="LoginServlet" method="post">
-	<p>
-		<label style="color:grey">User Name: <input type="text" name="usrName" value="boss"></label>
-	</p>
-	<p>
-		<label style="color:grey">Password: <input type="password" name="password" value="boss"></label>
-	</p>
-	<p>
-		<input type="reset"> <input type="submit" value="submit">
-	</p>
-	<p style="color:white">Användarnamn och lösenord är ""boss"</p>
-	<p style="color:white">Denna sida måste göras mycket snyggare :-) När vi kör tester sen kan vi bara ändra välkomstsida i web.xml så slipper vi se denna sida hela tiden.</p>
-</form>
+<div id="loginwrapper">
+	<div class="jumbotron" id="loginjumobtron">
+		<form action="LoginServlet" method="post">
+			<p><label class="loginfield"><input type="text" name="usrName" placeholder="User Name" value="boss"></label></p>
+			<p><label class="loginfield"><input type="password" name="password" placeholder="Password" value="boss"></label></p>
+			<p>
+				<input class="formbutton" type="reset">
+				<input class="formbutton" type="submit" value="Submit">
+			</p>
+		</form>
+	</div>
+</div>
 </body>
 </html>
