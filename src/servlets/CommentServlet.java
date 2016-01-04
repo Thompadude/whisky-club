@@ -74,11 +74,14 @@ public class CommentServlet extends HttpServlet {
 					//Save changes
 					SaveToFile saveToFile = new SaveToFile();
 					saveToFile.saveWhiskiesToFile(whiskies, filePath);
+					response.sendRedirect("selectedWhisky.jsp");
+					request.getSession().setAttribute("chosenWhisky", whiskies.get(i));
+					request.getSession().setAttribute("commentObjects", whiskies.get(i).getComments());
 				}
 			}
-			response.sendRedirect("list.jsp");
 		} else {
 			request.setAttribute("error", "Something went wrong!");
+			response.sendRedirect("list.jsp");
 		}
 	}
 

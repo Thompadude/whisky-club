@@ -58,7 +58,9 @@ public class FavoriteServlet extends HttpServlet {
 				whiskies.get(i).setFavorite(favorite);
 				SaveToFile saveToFile = new SaveToFile();
 				saveToFile.saveWhiskiesToFile(whiskies, filePath);
-				response.sendRedirect("list.jsp");
+				response.sendRedirect("selectedWhisky.jsp");
+				request.getSession().setAttribute("chosenWhisky", whiskies.get(i));
+				request.getSession().setAttribute("commentObjects", whiskies.get(i).getComments());
 			}
 		}
 		
