@@ -45,6 +45,12 @@ public class ListServlet extends HttpServlet {
 				
 		// Get user whisky choice from list.jsp
 		String userWhiskyChoice = request.getParameter("whisky");
+		
+		/*
+		 * Get which comment user wants to remove.
+		 * If-statement to check if user wanted to remove comment,
+		 * or used servlet as redirection.
+		 */
 		String commentNrAsString = request.getParameter("deleteWhiskyCommentItemNr");
 		int commentNrAsInt;
 		if (commentNrAsString != null) {
@@ -53,20 +59,27 @@ public class ListServlet extends HttpServlet {
 			commentNrAsInt = 999999;
 		}
 		
+		
+		
 		HttpSession session = request.getSession();
 
 		// boolean to check if whisky is found.
 		boolean whiskyFound = false;	
+		
 		for (int i = 0; i < whiskies.size(); i++) {
 			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
-				System.out.println("test");
+				
+				// Removes selected whisky comment if that choice has been made.
 				if(commentNrAsInt != 999999) {
 					whiskies.get(i).getComments().remove(commentNrAsInt);
 				}
+				
+				// Redirect user to selected whisky.
 				response.sendRedirect("selectedWhisky.jsp");
 				session.setAttribute("chosenWhisky", whiskies.get(i));
 				session.setAttribute("commentObjects", whiskies.get(i).getComments());
 				whiskyFound = true;
+				
 				//Save changes
 				SaveToFile saveToFile = new SaveToFile();
 				saveToFile.saveWhiskiesToFile(whiskies, filePath);

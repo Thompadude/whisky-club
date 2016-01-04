@@ -77,7 +77,8 @@
 	            <td width="20%"><%=whiskyComments.get(i).getDate()%>&nbsp;&nbsp;&nbsp;&nbsp;-</td>
 	            <td width="60%"><%=whiskyComments.get(i).getComment()%></td>
 	            <td width="20%"><%=whiskyComments.get(i).getUserName()%></td>
-	            <td><a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>"><img class="icon" src="http://www.entypo.com/images/circle-with-cross.svg"></a></td>
+	            <td><a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>">
+	            		<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg"></a></td>
 			<tr>
 	        </tr>
 	          <%}%>
