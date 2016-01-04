@@ -31,6 +31,7 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-4">
+			<!-- Get the whisky properties using Expression Language -->
 			<p>Region: ${chosenWhisky.getRegion()}</p>
 			<p>Country: ${chosenWhisky.getCountry()}</p>
 			<p>Type: ${chosenWhisky.getType()}</p>
@@ -44,6 +45,7 @@
 		<label><input class="formfield" id="cmnt" type="text" name="comment" placeholder="Comment"></label>
 		<input type="reset" class="formbutton">
 		<input type="submit" class="formbutton" value="Submit">
+		<!-- Using a hidden input to hide a value. -->
 		<input type="hidden" name="whiskyId" value="${chosenWhisky.getId()}">
 	</form>
 		<table class="table table-hover">
@@ -52,6 +54,7 @@
 			<th>Date</th>
 			<th>User</th>
 		</tr>
+		<!-- Mixing java code with html to print a whiskies comments. -->
 	          <%
 	            ArrayList<WhiskyComments> whiskyComments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
 	          	for (int i = whiskyComments.size()-1; i >= 0; i--) {
