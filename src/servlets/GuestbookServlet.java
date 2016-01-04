@@ -49,7 +49,7 @@ public class GuestbookServlet extends HttpServlet {
 		// Get filepath for all guestbook entries.
 		String filePath = getServletContext().getRealPath("/guestbookData.dat");
 		
-		ArrayList<GuestbookEntries> allEntries = guestbookDatabase.getEntries(filePath);		
+		ArrayList<GuestbookEntries> allEntries = guestbookDatabase.loadGuestbookEntries(filePath);		
 		
 		// Adds the entry to the guestbook.		
 		guestbookDatabase.addEntry(guestbookEntry);

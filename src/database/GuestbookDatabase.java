@@ -10,8 +10,7 @@ public class GuestbookDatabase {
 
 	private ArrayList<GuestbookEntries> entries;
 
-	public ArrayList<GuestbookEntries> getEntries(String filePath) {
-		loadGuestbookEntries(filePath);
+	public ArrayList<GuestbookEntries> getEntries() {
 		if (entries == null) {
 			entries = new ArrayList<GuestbookEntries>();
 		}
@@ -28,6 +27,9 @@ public class GuestbookDatabase {
 	public ArrayList<GuestbookEntries> loadGuestbookEntries(String filePath) {
 		ReadFromFile readFromFile = new ReadFromFile();
 		entries = readFromFile.readGuestbookEntries(entries, filePath);
+		if (entries == null) {
+			entries = new ArrayList<GuestbookEntries>();
+		}
 		return entries;
 	}
 

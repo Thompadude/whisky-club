@@ -39,7 +39,7 @@ public class FavoriteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
-		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies(filePath);
+		ArrayList<Whisky> whiskies = whiskyHandler.loadWhiskies(filePath);
 		
 		String setWhiskyFavorite = request.getParameter("setWhiskyFavorite");
 		String chosenWhiskyID = request.getParameter("chosenWhiskyId");

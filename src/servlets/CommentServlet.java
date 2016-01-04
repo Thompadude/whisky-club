@@ -48,7 +48,7 @@ public class CommentServlet extends HttpServlet {
 		response.setContentType("text/html");
 		
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");	
-		ArrayList<Whisky> whiskies = whiskyDatabase.getWhiskies(filePath);
+		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePath);
 		
 		// Get user user name and comment. Create today's date.
 		String userName = request.getParameter("userName");

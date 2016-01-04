@@ -24,8 +24,7 @@ public class WhiskyDatabase {
 	 * Loads a file with whiskies. If no file is found,
 	 * adds all hardcoded whiskies.
 	 */
-	public ArrayList<Whisky> getWhiskies(String filePath) {
-		loadWhisky(filePath);
+	public ArrayList<Whisky> getWhiskies() {
 		if (whiskies == null) {
 			whiskies = new ArrayList<>();
 			addAllWhiskies();
@@ -33,7 +32,7 @@ public class WhiskyDatabase {
 		return whiskies;
 	}
 	
-	public ArrayList<Whisky> loadWhisky(String filePath) {
+	public ArrayList<Whisky> loadWhiskies(String filePath) {
 		ReadFromFile readFromFile = new ReadFromFile();
 		whiskies = readFromFile.readWhisky(whiskies, filePath);
 		return whiskies;

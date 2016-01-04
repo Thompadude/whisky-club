@@ -41,7 +41,7 @@ public class ListServlet extends HttpServlet {
 		
 		// Gets the database of whiskies.
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
-		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies(filePath);
+		ArrayList<Whisky> whiskies = whiskyHandler.loadWhiskies(filePath);
 				
 		// Get user whisky choice from list.jsp
 		String userWhiskyChoice = request.getParameter("whisky");
