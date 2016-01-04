@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import database.Data;
 import database.WhiskyDatabase;
@@ -16,18 +15,18 @@ import saveAndLoad.SaveToFile;
 import whiskies.Whisky;
 
 /**
- * Servlet implementation class ListHandler
+ * Servlet implementation class FavoriteServlet
  */
-@WebServlet("/ListServlet")
-public class ListServlet extends HttpServlet {
+@WebServlet("/FavoriteServlet")
+public class FavoriteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private WhiskyDatabase whiskyHandler;
-    
+	 private WhiskyDatabase whiskyHandler;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListServlet() {
+    public FavoriteServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
     
     public void init() throws ServletException{    	
@@ -39,35 +38,37 @@ public class ListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Gets the database of whiskies.
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies(filePath);
-				
-		// Get user whisky choice from list.jsp
-		String userWhiskyChoice = request.getParameter("whisky");
 		
-		HttpSession session = request.getSession();
-
-		// boolean to check if whisky is found.
-		boolean whiskyFound = false;	
-		for (int i = 0; i < whiskies.size(); i++) {
-			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
-				response.sendRedirect("selectedWhisky.jsp");
-				session.setAttribute("chosenWhisky", whiskies.get(i));
-				session.setAttribute("commentObjects", whiskies.get(i).getComments());
-				whiskyFound = true;
+		String setWhiskyFavorite = request.getParameter("setWhiskyFavorite");
+		String chosenWhiskyID = request.getParameter("chosenWhiskyId");
+		boolean favorite;
+		if (setWhiskyFavorite.equals("true")) {
+			favorite = true;
+		} else {
+			favorite = false;
+		}
+		
+		for(int i = 0; i < whiskies.size(); i++ ) {
+			if(chosenWhiskyID.equals(whiskies.get(i).getId())) {
+				whiskies.get(i).setFavorite(favorite);
+				SaveToFile saveToFile = new SaveToFile();
+				saveToFile.saveWhiskiesToFile(whiskies, filePath);
+				response.sendRedirect("list.jsp");
 			}
 		}
-		// Error message for developers.
-		if (!whiskyFound) {
-			System.out.println("Error! No whisky found. No hardcoded whiskies?");
-		}
+		
+		
+		//whisky.get(i).setFavorite(favorite);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

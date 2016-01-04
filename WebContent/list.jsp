@@ -21,6 +21,7 @@
 		<a href="#top" id="backToTheTop"><span
 			class="glyphicon glyphicon-triangle-top"></span></a>
 		<ul class="nav nav-tabs">
+			<li><a href="${pageContext.request.contextPath}/favorites.jsp"><img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg"></a></li>
 			<li><a href="#abc">ABC</a></li>
 			<li><a href="#def">DEF</a></li>
 			<li><a href="#ghi">GHI</a></li>

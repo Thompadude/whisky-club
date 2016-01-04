@@ -13,6 +13,7 @@ public class Whisky implements java.io.Serializable {
 	private double alc;
 	private int grade;
 	private ArrayList<WhiskyComments> comments;
+	private boolean isFavorite;
 
 	/**
 	 * Whisky super class.
@@ -38,6 +39,7 @@ public class Whisky implements java.io.Serializable {
 		this.imgUrl = imgUrl;
 		this.alc = alc;
 		this.grade = grade;
+		this.isFavorite = false;
 	}
 
 	public Whisky() {
@@ -132,6 +134,14 @@ public class Whisky implements java.io.Serializable {
 			this.comments = new ArrayList<>();
 		}
 		this.comments.add(comment);
+	}
+
+	public boolean isFavorite() {
+		return isFavorite;
+	}
+
+	public void setFavorite(boolean isFavorite) {
+		this.isFavorite = isFavorite;
 	}
 
 }

@@ -17,6 +17,13 @@
 <%@ include file="menu/menu.jsp"%>
 <%@ include file="/background.jsp"%>
 <div class="content">
+	<%
+	Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
+	if(chosenWhisky.isFavorite()){%>
+	<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}"><img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star.svg">Remove from favorites</a>
+	<%}else{%>
+	<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}"><img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">Add to favorites</a>
+	<%}%>
 	<div class="row">
 		<div class="col-lg-1">
 			<a href="images/${chosenWhisky.getImgUrl()}">
