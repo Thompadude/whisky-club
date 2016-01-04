@@ -8,12 +8,14 @@
 <title>Guest Book</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/Guestbook" method="get">
-	<input class="formfield" type="text" name="entry" placeholder="Entry">
-	<input class="formbutton" type="submit" value="Submit">
-	<input class="formbutton" type="reset">
+<form action="${pageContext.request.contextPath}/Guestbook" method="get" name="validate">
+	<input class="formfield" id="uName" type="text" name="Name" placeholder="Name">
+	<input class="formfield" id="cmnt" type="text" name="cmnt" placeholder="Entry">
+	<input type="reset" class="formbutton">
+	<input type="submit" class="formbutton" value="Submit">
 </form>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/validateSelectedWhiskyForm.js"></script>
 </body>
 </html>

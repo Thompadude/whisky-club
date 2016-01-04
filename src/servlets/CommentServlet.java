@@ -1,4 +1,4 @@
-package managers;
+package servlets;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -14,6 +14,7 @@ import database.Data;
 import database.WhiskyDatabase;
 import saveAndLoad.SaveToFile;
 import whiskies.Whisky;
+import whiskies.WhiskyComments;
 
 /**
  * Servlet implementation class CommentHandler

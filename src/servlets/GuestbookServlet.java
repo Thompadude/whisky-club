@@ -1,29 +1,36 @@
-package guestbook;
+package servlets;
 
+import java.util.ArrayList;
 import java.io.IOException;
+import java.time.LocalDate;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import database.Data;
+import database.GuestbookDatabase;
+import management.GuestbookEntries;
+
 /**
  * Servlet implementation class GuestBook
  */
 @WebServlet("/Guestbook")
-public class Guestbook extends HttpServlet {
+public class GuestbookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private GuestbookHandler guestbookHandler;
+	private GuestbookDatabase guestbookDatabase;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Guestbook() {
+    public GuestbookServlet() {
         super();
     }
     
     public void init() throws ServletException{    	
-    	this.guestbookHandler = new GuestbookHandler();
+    	guestbookDatabase = Data.getGuestbookDatabase();
     }
 
 	/**
@@ -31,14 +38,19 @@ public class Guestbook extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Retrieve new guestbook entry from guestbook.jsp
-		String guestbookEntry = request.getParameter("entry");
+		String entry = request.getParameter("cmnt");
+		String name = request.getParameter("Name");
+		LocalDate localDate = LocalDate.now();
+		String todaysDate = localDate.toString();
 		
-		// Adds the entry to the guestbook.
-		this.guestbookHandler.addEntry(guestbookEntry);
+		GuestbookEntries guestbookEntry = new GuestbookEntries(name, entry, todaysDate);
+		
+		// Adds the entry to the guestbook.		
+		guestbookDatabase.addEntry(guestbookEntry);
 		
 		// setAttribute for use in .jsp
-		request.setAttribute("guestbook", this.guestbookHandler);
-		
+		request.getSession().setAttribute("guestbook", guestbookDatabase.getEntries());
+				
 		// Send user to guestbook page to view all the entries.
 		response.sendRedirect("guestbook/guestbook.jsp");
 	}

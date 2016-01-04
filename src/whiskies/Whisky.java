@@ -2,8 +2,6 @@ package whiskies;
 
 import java.util.ArrayList;
 
-import managers.WhiskyComments;
-
 public class Whisky implements java.io.Serializable {
 	private String id;
 	private String name;

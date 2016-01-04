@@ -1,7 +1,6 @@
-<!-- TODO add comments about what this jsp do -->
+<!-- Handles presentation of selected whisky. -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ page import="whiskies.*"%>
-<%@ page import="managers.*"%>
 <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>

@@ -1,8 +1,6 @@
-<!-- TODO add comment what this jsp do -->
+<!-- List all whiskies. -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="managers.*"%>
-<%@ page import="whiskies.*"%>
 <!DOCTYPE html>
 <html>
 <head>

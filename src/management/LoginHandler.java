@@ -1,4 +1,4 @@
-package managers;
+package management;
 
 public class LoginHandler {
 
