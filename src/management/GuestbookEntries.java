@@ -1,6 +1,6 @@
 package management;
 
-public class GuestbookEntries {
+public class GuestbookEntries implements java.io.Serializable {
 
 	private String name;
 	private String entry;
