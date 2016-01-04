@@ -45,11 +45,10 @@ public class CommentServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		String absolutePath = getServletContext().getRealPath("/");
-		String fileName = "tryAbsoluteFooPath.dat";
-		String filePath = absolutePath+fileName;
 		
-		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhisky(filePath);
+		String filePath = getServletContext().getRealPath("/whiskyData.dat");
+		
+		ArrayList<Whisky> whiskies = whiskyDatabase.getWhiskies(filePath);
 		
 		String userName = request.getParameter("userName");
 		String comment = request.getParameter("comment");
@@ -75,7 +74,7 @@ public class CommentServlet extends HttpServlet {
 					saveToFile.saveToFile(whiskies, filePath);
 				}
 			}
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("list.jsp");
 		} else {
 			request.setAttribute("error", "Something went wrong!");
 		}

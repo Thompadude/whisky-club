@@ -20,22 +20,15 @@ public class WhiskyDatabase {
 
 	private ArrayList<Whisky> whiskies;
 
-	public WhiskyDatabase() {
-		
-		/*
-		Spara detta om load filen inte fungerar!
-		this.whiskies.add(new Talisker());
-		this.whiskies.add(new LaphroaigQuarterCask());
-		this.whiskies.add(new Aberlour());
-		this.whiskies.add(new Dalwhinnie());
-		this.whiskies.add(new Glennfiddich());
-		this.whiskies.add(new Oban());
-		*/
-	}
-
-	public ArrayList<Whisky> getWhiskies() {
+	/**
+	 * Loads a file with whiskies. If no file is found,
+	 * adds all hardcoded whiskies.
+	 */
+	public ArrayList<Whisky> getWhiskies(String filePath) {
+		loadWhisky(filePath);
 		if (whiskies == null) {
 			whiskies = new ArrayList<>();
+			addAllWhiskies();
 		}
 		return whiskies;
 	}
@@ -44,5 +37,17 @@ public class WhiskyDatabase {
 		ReadFromFile readFromFile = new ReadFromFile();
 		whiskies = readFromFile.readWhisky(whiskies, filePath);
 		return whiskies;
+	}
+	
+	/**
+	 * Adds hardcoded whiskies.
+	 */
+	public void addAllWhiskies() {
+		this.whiskies.add(new Talisker());
+		this.whiskies.add(new LaphroaigQuarterCask());
+		this.whiskies.add(new Aberlour());
+		this.whiskies.add(new Dalwhinnie());
+		this.whiskies.add(new Glennfiddich());
+		this.whiskies.add(new Oban());
 	}
 }
