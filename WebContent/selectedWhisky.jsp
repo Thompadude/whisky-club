@@ -48,16 +48,19 @@
 	</div>
 	<form action="CommentServlet" method="post" name="validate">
 		<label><input class="formfield" id="uName" type="text" name="userName" placeholder="Name"></label>
-		<label><input class="formfield" id="cmnt" type="text" name="comment" placeholder="Comment"></label>
+		<br>
+		<label><textarea class="formfield" rows="3" cols="50" name="comment" placeholder="Comment"></textarea></label>
+		<br>
 		<input type="reset" class="formbutton">
 		<input type="submit" class="formbutton" value="Submit">
 		<!-- Using a hidden input to hide a value. -->
 		<input type="hidden" name="whiskyId" value="${chosenWhisky.getId()}">
 	</form>
-		<table class="table table-hover">
+	
+		<table class="table table-hover" id="tableSelectedWhisky">
 		<tr>
-			<th>Comment</th>
 			<th>Date</th>
+			<th>Comment</th>
 			<th>User</th>
 		</tr>
 		<!-- Mixing java code with html to print a whiskies comments. -->
@@ -66,9 +69,9 @@
 	          	for (int i = whiskyComments.size()-1; i >= 0; i--) {
 	          %>
 	   		<tr>
-	            <td><%=whiskyComments.get(i).getComment()%></td>
-	            <td><%=whiskyComments.get(i).getDate()%></td>
-	            <td><%=whiskyComments.get(i).getUserName()%></td>
+	            <td width="20%"><%=whiskyComments.get(i).getDate()%>&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+	            <td width="60%"><%=whiskyComments.get(i).getComment()%></td>
+	            <td width="20%"><%=whiskyComments.get(i).getUserName()%></td>
 			<tr>
 	        </tr>
 	          <%}%>

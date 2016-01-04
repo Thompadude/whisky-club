@@ -117,3 +117,7 @@ a, a:hover, a:visited, a:active, a:link {
 .table td, .table th {
 	border-top: none !important;
 }
+
+#tableSelectedWhisky {
+	width: 50%;
+}
