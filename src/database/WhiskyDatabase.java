@@ -35,6 +35,12 @@ public class WhiskyDatabase {
 	public ArrayList<Whisky> loadWhiskies(String filePath) {
 		ReadFromFile readFromFile = new ReadFromFile();
 		whiskies = readFromFile.readWhisky(whiskies, filePath);
+		if (whiskies == null) {
+			whiskies = new ArrayList<>();
+			addAllWhiskies();
+			SaveToFile saveToFile = new SaveToFile();
+			saveToFile.saveWhiskiesToFile(whiskies, filePath);
+		}
 		return whiskies;
 	}
 	

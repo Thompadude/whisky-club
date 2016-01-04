@@ -1,3 +1,4 @@
+<%@page import="database.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="whiskies.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -23,10 +24,30 @@
 			<li><a href="${pageContext.request.contextPath}/list.jsp"><img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg"></a></li>
 		</ul>
 		<%
-			ArrayList<Whisky> favoriteWhiskies = new ArrayList<>();
+			ArrayList<Whisky> allWhiskies = (ArrayList<Whisky>) session.getAttribute("allWhiskies");
+			if(allWhiskies == null) {
+				allWhiskies = new ArrayList<>();
+				System.out.println("den var tom!!");
+			}
+		
+			//String filePath = getServletContext().getRealPath("/whiskyData.dat");
+			//ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().loadWhiskies(filePath);
 		%>
-		<a href="ListServlet?whisky=${chosenWhisky.getId()}"></a>
-		Här är favorites
+		
+		<ul class="listPictures">
+		<%
+			for(int i = 0; i < allWhiskies.size(); i++) {
+				if(allWhiskies.get(i).isFavorite()) {	
+			%>
+			<li>
+				<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>"><img class="img-responsive"
+					src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+					alt="<%=allWhiskies.get(i).getName()%>">
+			</a>
+				<p><%=allWhiskies.get(i).getName()%></p>
+			</li>				
+			<%}}%>
+		</ul>
 		
 	</div>
 </body>

@@ -20,6 +20,7 @@ public class SaveToFile {
         	fileOut = new FileOutputStream(filePath);
             objOut = new ObjectOutputStream(fileOut);
             objOut.writeObject(whisky);
+            System.out.println("File saved at: " + filePath);
         } catch (Exception ex) {
             System.out.println("Couldn't save to file!");
         }
@@ -31,6 +32,7 @@ public class SaveToFile {
         	fileOut = new FileOutputStream(filePath);
             objOut = new ObjectOutputStream(fileOut);
             objOut.writeObject(entries);
+            System.out.println("File saved at: " + filePath);
         } catch (Exception ex) {
             System.out.println("Couldn't save to file!");
         }

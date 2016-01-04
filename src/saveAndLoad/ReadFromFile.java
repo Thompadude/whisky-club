@@ -20,7 +20,7 @@ public class ReadFromFile {
 
             whisky = (ArrayList<Whisky>) objIn.readObject();
         } catch (Exception e) {
-            System.out.println("Error! Couldn't load file.");
+            System.out.println("Couldn't find any file.");
         }
         return whisky;
     }
@@ -32,7 +32,7 @@ public class ReadFromFile {
 
             entries = (ArrayList<GuestbookEntries>) objIn.readObject();
         } catch (Exception e) {
-            System.out.println("Error! Couldn't load file.");
+            System.out.println("Couldn't find any file.");
         }
         return entries;
     }

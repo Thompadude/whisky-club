@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import database.Data;
 import database.WhiskyDatabase;
@@ -40,6 +41,8 @@ public class FavoriteServlet extends HttpServlet {
 		
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> whiskies = whiskyHandler.loadWhiskies(filePath);
+		
+		request.getSession().setAttribute("allWhiskies", whiskies);
 		
 		String setWhiskyFavorite = request.getParameter("setWhiskyFavorite");
 		String chosenWhiskyID = request.getParameter("chosenWhiskyId");
