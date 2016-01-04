@@ -46,13 +46,12 @@ public class CommentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		
-		String filePath = getServletContext().getRealPath("/whiskyData.dat");
-		
+		String filePath = getServletContext().getRealPath("/whiskyData.dat");	
 		ArrayList<Whisky> whiskies = whiskyDatabase.getWhiskies(filePath);
 		
+		// Get user user name and comment. Create today's date.
 		String userName = request.getParameter("userName");
-		String comment = request.getParameter("comment");
-		
+		String comment = request.getParameter("comment");		
 		LocalDate localDate = LocalDate.now();
 		String todaysDate = localDate.toString();
 		
@@ -60,11 +59,13 @@ public class CommentServlet extends HttpServlet {
 		
 		WhiskyComments whiskyComment = new WhiskyComments(userName, comment, todaysDate);
 
+		// Check if user has filled in all fields.
 		boolean isFieldsEmpty = true;
 		if ((comment != null && comment != "") && (userName != null && userName != "")){
 			isFieldsEmpty = false;
 		}
 		
+		// If all fields are filled - add them to currently selected whisky.
 		if (!isFieldsEmpty) {
 			for (int i = 0; i < whiskies.size(); i++) {
 				if (whiskies.get(i).getId().equals(currentwhiskyId)) {					

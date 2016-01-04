@@ -28,7 +28,6 @@ public class ListServlet extends HttpServlet {
      */
     public ListServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
     public void init() throws ServletException{    	
@@ -41,22 +40,15 @@ public class ListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Gets the database of whiskies.
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
-
 		ArrayList<Whisky> whiskies = whiskyHandler.getWhiskies(filePath);
 				
-		//whiskies = whiskyHandler.loadWhisky(filePath);
-		//whiskyHandler.saveWhisky(whiskies, filePath);
-		
-		// TODO add comment about what this do
+		// Get user whisky choice from list.jsp
 		String userWhiskyChoice = request.getParameter("whisky");
-		
-		// For testing purposes.
-		System.out.println(userWhiskyChoice);
 		
 		HttpSession session = request.getSession();
 
-		boolean whiskyFound = false;
-		
+		// boolean to check if whisky is found.
+		boolean whiskyFound = false;	
 		for (int i = 0; i < whiskies.size(); i++) {
 			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
 				response.sendRedirect("selectedWhisky.jsp");
@@ -65,8 +57,9 @@ public class ListServlet extends HttpServlet {
 				whiskyFound = true;
 			}
 		}
+		// Error message for developers.
 		if (!whiskyFound) {
-			System.out.println("Something was terribly wrong with what you just did!");
+			System.out.println("Error! No whisky found. No hardcoded whiskies?");
 		}
 	}
 
@@ -74,7 +67,6 @@ public class ListServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

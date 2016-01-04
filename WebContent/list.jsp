@@ -35,7 +35,7 @@
 		<h3 id="abc">ABC</h3>
 		<ul class="listPictures">
 			<li>
-				<!-- TODO add comment what this do --> <a
+				<!-- Check if whisky aberlour exist in ListServlet --> <a
 				href="ListServlet?whisky=aberlour"> <img class="img-responsive"
 					src="${pageContext.request.contextPath}/images/aberlour.jpg"
 					alt="Aberlour">

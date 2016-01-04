@@ -18,7 +18,7 @@ public class ReadFromFile {
 
             whisky = (ArrayList<Whisky>) objIn.readObject();
         } catch (Exception e) {
-            System.out.println("Couldn't load any file.");
+            System.out.println("Error! Couldn't load file.");
         }
         return whisky;
     }
