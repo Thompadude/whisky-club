@@ -20,9 +20,13 @@
 	<%
 	Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 	if(chosenWhisky.isFavorite()){%>
-	<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}"><img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star.svg">Remove from favorites</a>
+	<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}">
+		<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star.svg">
+			Remove from favorites</a>
 	<%}else{%>
-	<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}"><img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">Add to favorites</a>
+	<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}">
+		<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">
+			Add to favorites</a>
 	<%}%>
 	<div class="row">
 		<div class="col-lg-1">
@@ -62,6 +66,7 @@
 			<th>Date</th>
 			<th>Comment</th>
 			<th>User</th>
+			<th>Delete</th>
 		</tr>
 		<!-- Mixing java code with html to print a whiskies comments. -->
 	          <%
@@ -72,6 +77,7 @@
 	            <td width="20%"><%=whiskyComments.get(i).getDate()%>&nbsp;&nbsp;&nbsp;&nbsp;-</td>
 	            <td width="60%"><%=whiskyComments.get(i).getComment()%></td>
 	            <td width="20%"><%=whiskyComments.get(i).getUserName()%></td>
+	            <td><a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>"><img class="icon" src="http://www.entypo.com/images/circle-with-cross.svg"></a></td>
 			<tr>
 	        </tr>
 	          <%}%>

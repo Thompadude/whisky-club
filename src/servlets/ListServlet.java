@@ -45,6 +45,13 @@ public class ListServlet extends HttpServlet {
 				
 		// Get user whisky choice from list.jsp
 		String userWhiskyChoice = request.getParameter("whisky");
+		String commentNrAsString = request.getParameter("deleteWhiskyCommentItemNr");
+		int commentNrAsInt;
+		if (commentNrAsString != null) {
+			commentNrAsInt = Integer.parseInt(commentNrAsString);			
+		} else {
+			commentNrAsInt = 999999;
+		}
 		
 		HttpSession session = request.getSession();
 
@@ -52,10 +59,17 @@ public class ListServlet extends HttpServlet {
 		boolean whiskyFound = false;	
 		for (int i = 0; i < whiskies.size(); i++) {
 			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
+				System.out.println("test");
+				if(commentNrAsInt != 999999) {
+					whiskies.get(i).getComments().remove(commentNrAsInt);
+				}
 				response.sendRedirect("selectedWhisky.jsp");
 				session.setAttribute("chosenWhisky", whiskies.get(i));
 				session.setAttribute("commentObjects", whiskies.get(i).getComments());
 				whiskyFound = true;
+				//Save changes
+				SaveToFile saveToFile = new SaveToFile();
+				saveToFile.saveWhiskiesToFile(whiskies, filePath);
 			}
 		}
 		// Error message for developers.
