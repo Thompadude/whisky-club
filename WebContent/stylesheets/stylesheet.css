@@ -134,6 +134,7 @@ a, a:hover, a:visited, a:active, a:link {
 #loginjumobtron {
 	margin-left: 3%;
 	background: rgba(0, 0, 0, 0);
+	display: none;
 }
 
 .loginfield {
