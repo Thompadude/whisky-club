@@ -38,10 +38,14 @@ public class ListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		
 		// Gets the database of whiskies.
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> whiskies = whiskyHandler.loadWhiskies(filePath);
+		
+		// Gives the session the ArrayList of all the loaded whiskies.
+		session.setAttribute("allWhiskies", whiskies);
 				
 		// Get user whisky choice from list.jsp
 		String userWhiskyChoice = request.getParameter("whisky");
@@ -61,7 +65,6 @@ public class ListServlet extends HttpServlet {
 		
 		
 		
-		HttpSession session = request.getSession();
 
 		// boolean to check if whisky is found.
 		boolean whiskyFound = false;	

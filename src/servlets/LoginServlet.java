@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import database.Data;
+import database.WhiskyDatabase;
 import management.LoginHandler;
+import whiskies.Whisky;
 
 /**
  * Servlet implementation class Main
@@ -16,13 +20,17 @@ import management.LoginHandler;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private WhiskyDatabase whiskyDatabase;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public LoginServlet() {
 		super();
 	}
+	
+	public void init() throws ServletException{    	
+    	whiskyDatabase = Data.getWhiskyHandler();
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -30,6 +38,11 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		
+		String filePath = getServletContext().getRealPath("/whiskyData.dat");
+		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePath);
+		
+		request.getSession().setAttribute("allWhiskies", whiskies);
 
 		// Get a user name and a password from login.jsp
 		String usrName = request.getParameter("usrName");
