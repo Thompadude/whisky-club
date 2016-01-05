@@ -43,11 +43,15 @@
 					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
 					if ((firstLetterInName >= 'a') && (firstLetterInName <= 'c')) {
 			%>
-			<li><a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>"><img
+			<li>
+			<div class="whiskywrapper">
+			<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>"><img
 					class="img-responsive"
 					src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
 					alt="<%=allWhiskies.get(i).getName()%>"> </a>
-				<p><%=allWhiskies.get(i).getName()%></p></li>
+				<h2 class="whiskytitle"><%=allWhiskies.get(i).getName()%></h2>
+				</div>
+				</li>
 			<%
 				}
 				}

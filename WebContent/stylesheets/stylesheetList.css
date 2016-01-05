@@ -61,11 +61,15 @@
 	clear: left;
 }
 
-/* Adds an effect on all images in the list when hoovering */
-.img-responsive {
-	opacity: 0.8;
+/* Adds an effect on all images in the list when hovering */
+
+.whiskywrapper {
+	position: relative;
 }
 
-.img-responsive:hover {
-	opacity: 1;
+.whiskytitle {
+	display: none;
+	position: absolute;
+	color: black;
+	top: 250px;
 }
