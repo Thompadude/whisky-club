@@ -7,22 +7,22 @@
  * While the menu is open an overlay fades the rest of the screen,
  * thus putting the focus on the menu.
  */
+$(document).ready( 
 
-var menuAnimation = function() {
+function() {
 	$("#iconOpenMenu").click(function() {
 		$("#menu").animate({
 			left : '0px'
 		}, 200);
 		$("#iconOpenMenu").toggle(false, 1000);
 		$("#menu").toggle(true, 1000);
-		$(".overlay").css("visibility", "visible");
+		$(".overlay").fadeIn('slow');
 	})
 	$("#iconCloseMenu").click(function() {
 		$("#menu").animate({
 			left : '-225px'
 		}, 200);
 		$("#iconOpenMenu").toggle(50);
-		$(".overlay").css("visibility", "hidden");
+		$(".overlay").fadeOut('slow');
 	})
-};
-$(document).ready(menuAnimation);
+});
