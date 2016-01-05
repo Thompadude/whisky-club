@@ -63,13 +63,32 @@
 
 /* Adds an effect on all images in the list when hovering */
 
-.whiskywrapper {
-	position: relative;
+.whiskywrapper img {
+	border-radius: 2em;
 }
 
-.whiskytitle {
+.whiskywrapper {
+	position: relative;
+	font-variant: small-caps;
+	font-family: Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 1.25em;
+  	color: white;
+  	letter-spacing: 1.25px;
+	text-align: center;
+}
+
+.whiskytitle, .whiskygrade {
 	display: none;
 	position: absolute;
-	color: black;
-	top: 250px;
+    left: 0;
+  	right: 0;
+}
+
+.whiskytitle {	
+	top: 150px;
+}
+
+.whiskygrade {
+	top: 100px;
 }

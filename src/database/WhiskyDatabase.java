@@ -37,10 +37,10 @@ public class WhiskyDatabase {
 		whiskies = readFromFile.readWhisky(whiskies, filePath);
 		if (whiskies == null) {
 			whiskies = new ArrayList<>();
+			addAllWhiskies();
 			SaveToFile saveToFile = new SaveToFile();
 			saveToFile.saveWhiskiesToFile(whiskies, filePath);
 		}
-		addAllWhiskies();
 		return whiskies;
 	}
 	
@@ -48,30 +48,11 @@ public class WhiskyDatabase {
 	 * Adds hardcoded whiskies.
 	 */
 	public void addAllWhiskies() {
-		Talisker talisker = new Talisker();
-		LaphroaigQuarterCask laphroaigQuarterCask = new LaphroaigQuarterCask();
-		Aberlour aberlour = new Aberlour();
-		Dalwhinnie dalwhinnie = new Dalwhinnie();
-		Glennfiddich glennfiddich = new Glennfiddich();
-		Oban oban = new Oban();
-
-		if(!whiskies.contains(talisker)) {
-			this.whiskies.add(talisker);			
-		}
-		if(!whiskies.contains(laphroaigQuarterCask)) {
-			this.whiskies.add(laphroaigQuarterCask);			
-		}
-		if(!whiskies.contains(aberlour)) {
-			this.whiskies.add(aberlour);			
-		}
-		if(!whiskies.contains(dalwhinnie)) {
-			this.whiskies.add(dalwhinnie);			
-		}
-		if(!whiskies.contains(glennfiddich)) {
-			this.whiskies.add(glennfiddich);			
-		}
-		if(!whiskies.contains(oban)) {
-			this.whiskies.add(oban);			
-		}
+		this.whiskies.add(new Talisker());
+		this.whiskies.add(new LaphroaigQuarterCask());
+		this.whiskies.add(new Aberlour());
+		this.whiskies.add(new Dalwhinnie());
+		this.whiskies.add(new Glennfiddich());
+		this.whiskies.add(new Oban());
 	}
 }

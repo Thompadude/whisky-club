@@ -20,7 +20,6 @@ import whiskies.Whisky;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private WhiskyDatabase whiskyDatabase;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -28,10 +27,6 @@ public class LoginServlet extends HttpServlet {
 		super();
 	}
 	
-	public void init() throws ServletException{    	
-    	whiskyDatabase = Data.getWhiskyHandler();
-    }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -39,11 +34,6 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		
-		String filePath = getServletContext().getRealPath("/whiskyData.dat");
-		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePath);
-		
-		request.getSession().setAttribute("allWhiskies", whiskies);
-
 		// Get a user name and a password from login.jsp
 		String usrName = request.getParameter("usrName");
 		String password = request.getParameter("password");
