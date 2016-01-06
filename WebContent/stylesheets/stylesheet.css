@@ -102,6 +102,7 @@ a, a:hover, a:visited, a:active, a:link {
 
 .formfield {
 	color: black;
+	width: 400px;
 }
 
 .formbutton {
@@ -156,4 +157,26 @@ a, a:hover, a:visited, a:active, a:link {
 .loginfield input:focus {
 	background-color: lightgrey;
 	color: black;
+}
+
+
+/* SelectedWhisky css */
+
+#selectedWhiskyPictureDiv img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#picMiddle {
+	height: 600px;
+	width: 350px;
+}
+
+#leftColumn {
+	text-align: center;
+}
+
+.center {
+	text-align: center;
 }
