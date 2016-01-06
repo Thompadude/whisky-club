@@ -73,7 +73,6 @@
 	font-family: Tahoma, sans-serif;
 	font-weight: bold;
 	font-size: 1.25em;
-  	color: white;
   	letter-spacing: 1.25px;
 	text-align: center;
 }
@@ -87,6 +86,7 @@
 
 .whiskytitle {	
 	top: 150px;
+	color: white;
 }
 
 .whiskygrade {

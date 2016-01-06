@@ -22,11 +22,13 @@
 	if(chosenWhisky.isFavorite()){%>
 	<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}">
 		<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star.svg">
-			Remove from favorites</a>
+		Remove from favorites
+	</a>
 	<%}else{%>
 	<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}">
 		<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">
-			Add to favorites</a>
+		Add to favorites
+	</a>
 	<%}%>
 	<div class="row">
 		<div class="col-lg-1">
@@ -60,8 +62,7 @@
 		<!-- Using a hidden input to hide a value. -->
 		<input type="hidden" name="whiskyId" value="${chosenWhisky.getId()}">
 	</form>
-	
-		<table class="table table-hover" id="tableSelectedWhisky">
+	<table class="table table-hover" id="tableSelectedWhisky">
 		<tr>
 			<th>Date</th>
 			<th>Comment</th>
@@ -69,20 +70,20 @@
 			<th>Delete</th>
 		</tr>
 		<!-- Mixing java code with html to print a whiskies comments. -->
-	          <%
-	            ArrayList<WhiskyComments> whiskyComments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
-	          	for (int i = whiskyComments.size()-1; i >= 0; i--) {
-	          %>
-	   		<tr>
-	            <td width="20%"><%=whiskyComments.get(i).getDate()%>&nbsp;&nbsp;&nbsp;&nbsp;-</td>
-	            <td width="60%"><%=whiskyComments.get(i).getComment()%></td>
-	            <td width="20%"><%=whiskyComments.get(i).getUserName()%></td>
-	            <td><a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>">
-	            		<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg"></a></td>
-			<tr>
-	        </tr>
-	          <%}%>
-	    </table>
+			<%
+			ArrayList<WhiskyComments> whiskyComments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
+			for (int i = whiskyComments.size()-1; i >= 0; i--) {
+			%>
+	   	<tr>
+			<td width="20%"><%=whiskyComments.get(i).getDate()%>&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+			<td width="60%"><%=whiskyComments.get(i).getComment()%></td>
+			<td width="20%"><%=whiskyComments.get(i).getUserName()%></td>
+			<td><a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>">
+			<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg"></a></td>
+		<tr>
+		</tr>
+		<%}%>
+	</table>
 	<a href="${pageContext.request.contextPath}/list.jsp"><img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg"></a>
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

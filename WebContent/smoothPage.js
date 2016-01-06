@@ -6,13 +6,13 @@ $('a[href*=#]').on('click', function(event){
 // Fade the whisky on hover.
 $('.whiskywrapper').hover(
 	function() {
-		$(this).find('.whiskytitle').fadeIn('slow');
-		$(this).find('.whiskygrade').fadeIn('slow');
-		$(this).find('.img-responsive').fadeTo('slow', 0.5);
+		$(this).find('.whiskytitle').stop(true, true).fadeIn('slow');
+		$(this).find('.whiskygrade').stop(true, true).fadeIn('slow');
+		$(this).find('.img-responsive').stop(true, true).fadeTo('slow', 0.5);
 	},
 	function() {
-		$(this).find('.whiskytitle').fadeOut('slow');
-		$(this).find('.whiskygrade').fadeOut('slow');
-		$(this).find('.img-responsive').fadeTo('slow', 1);
+		$(this).find('.whiskytitle').stop(true, true).fadeOut('slow');
+		$(this).find('.whiskygrade').stop(true, true).fadeOut('slow');
+		$(this).find('.img-responsive').stop(true, true).fadeTo('slow', 1);
 	}	
 );

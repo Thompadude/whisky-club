@@ -40,8 +40,8 @@
 					<img class="img-responsive"
 					src="${pageContext.request.contextPath}/images/aberlour.jpg"
 					alt="Aberlour">
+					<p class="whiskytitle">Aberlour 10 year</p>
 				</a>
-				<p class="whiskytitle">Aberlour 10 year</p>
 			</div>
 		</li>
 	</ul>
@@ -51,11 +51,11 @@
 		<li>
 			<div class="whiskywrapper">
 				<a href="ListServlet?whisky=dalwhinnie">
-				<img class="img-responsive"
-				src="${pageContext.request.contextPath}/images/dalwhinnie.jpg"
-				alt="Dalwhinnie">
+					<img class="img-responsive"
+					src="${pageContext.request.contextPath}/images/dalwhinnie.jpg"
+					alt="Dalwhinnie">
+					<p class="whiskytitle">Dalwhinnie 15 year</p>
 				</a>
-				<p class="whiskytitle">Dalwhinnie 15 year</p>
 			</div>
 		</li>
 	</ul>
@@ -68,8 +68,8 @@
 					<img class="img-responsive"
 					src="${pageContext.request.contextPath}/images/glennfiddich.jpg"
 					alt="Glennfiddich">
+					<p class="whiskytitle">Glennfiddich 14 year</p>
 				</a>
-			<p class="whiskytitle">Glennfiddich 14 year</p>
 			</div>
 		</li>
 	</ul>
@@ -82,8 +82,8 @@
 					<img class="img-responsive"
 					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
 					alt="Talisker">
+					<p class="whiskytitle">Laphroaig</p>
 				</a>
-				<p class="whiskytitle">Laphroaig</p>
 			</div>
 		</li>
 	</ul>
@@ -93,10 +93,10 @@
 		<li>
 			<div class="whiskywrapper">
 				<a href="ListServlet?whisky=oban">
-				<img class="img-responsive"
-				src="${pageContext.request.contextPath}/images/oban.jpg" alt="Oban">
+					<img class="img-responsive"
+					src="${pageContext.request.contextPath}/images/oban.jpg" alt="Oban">
+					<p class="whiskytitle">Oban 14 year</p>
 				</a>
-				<p class="whiskytitle">Oban 14 year</p>
 			</div>
 		</li>
 	</ul>
@@ -109,8 +109,8 @@
 					<img class="img-responsive"
 					src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
 					alt="Coming Soon">
+					<p class="whiskytitle">Coming Soon</p>
 				</a>
-				<p class="whiskytitle">Coming Soon</p>
 			</div>
 		</li>
 	</ul>
@@ -120,11 +120,11 @@
 		<li>
 			<div class="whiskywrapper">
 				<a href="ListServlet?whisky=talisker">
-				<img class="img-responsive"
-				src="${pageContext.request.contextPath}/images/talisker.jpg"
-				alt="Talisker">
+					<img class="img-responsive"
+					src="${pageContext.request.contextPath}/images/talisker.jpg"
+					alt="Talisker">
+					<p class="whiskytitle">Talisker</p>
 				</a>
-				<p class="whiskytitle">Talisker</p>
 			</div>
 		</li>
 	</ul>
@@ -134,11 +134,11 @@
 		<li>
 			<div class="whiskywrapper">
 				<a href="">
-				<img class="img-responsive"
-				src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
-				alt="Coming Soon">
+					<img class="img-responsive"
+					src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
+					alt="Coming Soon">
+					<p class="whiskytitle">Coming Soon</p>
 				</a>
-				<p class="whiskytitle">Coming Soon</p>
 			</div>
 		</li>
 	</ul>
