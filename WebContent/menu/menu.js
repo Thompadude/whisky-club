@@ -35,6 +35,10 @@ function() {
 	$("#iconCloseMenu").click(function() {
 		$closeMenu();
 	})
+	
+	$(".overlay").click(function() {
+		$closeMenu();
+	})
  	
 	$('.menulink').click (function () {
 		var $index = $(this);
