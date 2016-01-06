@@ -9,21 +9,25 @@
  * 
  * If link on menu is clicked, wait 250ms so user can see the menu close.
  */
-
-var $closeMenu = function() {
-	$("#menu").animate({
-		left : '-225px'
-		}, 200);
-	$("#iconOpenMenu").toggle(50);
-	$(".overlay").fadeOut('slow'); }
-
 var $openMenu = function() {
+	// Moves the menu to the right.
 	$("#menu").animate({
 		left : '0px'
 	}, 200);
+	// Hides the open menu-icon.
 	$("#iconOpenMenu").toggle(false, 1000);
-	$("#menu").toggle(true, 1000);
+	// Fades in an overlay covering the rest of the screen.
 	$(".overlay").fadeIn('slow'); }
+
+var $closeMenu = function() {
+	// Moves the menu to the left.
+	$("#menu").animate({
+		left : '-225px'
+		}, 200);
+	// Shows the open-menu icon.
+	$("#iconOpenMenu").toggle(50);
+	// The screen overlay fades out.
+	$(".overlay").fadeOut('slow'); }
 
 $(document).ready( 		
 		
@@ -41,10 +45,13 @@ function() {
 	})
  	
 	$('.menulink').click (function () {
+		// Get the href attribute from the link for later use.
 		var $index = $(this);
+		// Prevent the link from being followed.
 		event.preventDefault();
-		$closeMenu();
 		
+		$closeMenu();
+		// Wait for 250ms before following the link, letting the menu close.
 		setTimeout(function() {
 			document.location = $index.attr('href');
 			}, 250);
