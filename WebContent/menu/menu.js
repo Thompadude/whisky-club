@@ -6,7 +6,10 @@
  * 
  * While the menu is open an overlay fades the rest of the screen,
  * thus putting the focus on the menu.
+ * 
+ * If link on menu is clicked, wait 250ms so user can see the menu close.
  */
+
 var $closeMenu = function() {
 	$("#menu").animate({
 		left : '-225px'
@@ -28,23 +31,18 @@ function() {
 	$("#iconOpenMenu").click(function() {
 		$openMenu();
 	})
+	
 	$("#iconCloseMenu").click(function() {
 		$closeMenu();
 	})
-	
-/*
- * 
- * UTVECKLA DENNA KOD 
  	
-	$('#home').click (function () {
-		setTimeout(function (event) {
-			$closeMenu();
-			event.preventDefault();
-			var goTo = this.getAttribute("href");
-			setTimeout(function(){
-				window.location = goTo;}
-				,3000);
-		})
+	$('.menulink').click (function () {
+		var $index = $(this);
+		event.preventDefault();
+		$closeMenu();
+		
+		setTimeout(function() {
+			document.location = $index.attr('href');
+			}, 250);
 	})
- */
 });
