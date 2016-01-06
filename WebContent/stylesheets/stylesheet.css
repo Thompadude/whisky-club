@@ -175,15 +175,15 @@ a, a:hover, a:visited, a:active, a:link {
 /* SelectedWhisky */
 
 #selectedWhiskyMainRow {
-/*	border: 10px double rgb(141,141,141);
+	border: 10px double rgb(141,141,141);
 	border-bottom-color: black;
-	border-top-color: black; */
+	border-top-color: black;
 }
 
 #selectedWhiskyMiddleDiv {
-/*	border: 10px double rgb(141,141,141);
+	border: 10px double rgb(141,141,141);
 	border-bottom-color: black;
-	border-top-color: black; */
+	border-top-color: black;
 }
 
 /* Id for right window in Selected Whisky */

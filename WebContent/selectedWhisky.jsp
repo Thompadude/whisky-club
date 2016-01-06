@@ -30,7 +30,7 @@
 
 
 <div class="content">
-
+<!-- "MAIN" WINDOWS -->
 	<div class="row" id="selectedWhiskyMainRow">
 <!-- LEFT WINDOW -->	
 		<div class="col-lg-4 textAlignCenter">
@@ -84,13 +84,13 @@
 						<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}
 								&setWhiskyGrade=${chosenWhisky.getGrade()}">
 								Remove from favorites
-								<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star.svg">
+								<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart.svg">
 						</a>
 					<%}else{%>
 						<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}
 								&setWhiskyGrade=${chosenWhisky.getGrade()}">
 								Add to favorites
-								<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">
+								<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart-outlined.svg">
 						</a>
 					<%}%>
 				</div>
@@ -100,7 +100,7 @@
 			<br><br><br><br><br><br><br><br><br><br><br><br>
 			
 			
-			<h4 class="textAlignCenter">Write a comment</h4>
+			<h4>Write a comment</h4>
 			<!-- Comment form -->
 			<form action="CommentServlet" method="post" name="validate">
 				<label><input class="formfield" id="uName" type="text" name="userName" placeholder="Name"></label>
@@ -115,10 +115,10 @@
 
 		</div>
 <!-- END RIGHT WINDOW -->
-
 	</div>
-	
-	<div class="textAlignCenter">
+<!-- END OF "MAIN" WINDOWS -->
+
+<!-- COMMENT TABLE -->
 	<table class="table table-hover" id="selectedWhiskyTable">
 		<tr>
 			<th>Date</th>
@@ -140,8 +140,7 @@
 		</tr>
 		<%}%>
 	</table>
-	</div>
-		
+<!-- END OF COMMENT TABLE -->
 </div>
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

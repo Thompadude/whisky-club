@@ -18,7 +18,7 @@
 	<ul class="nav nav-tabs">
 		<li>
 			<a href="${pageContext.request.contextPath}/favorites.jsp">
-				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">
+				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart-outlined.svg">
 			</a>
 		</li>
 		<li>
@@ -31,13 +31,14 @@
 		ArrayList<Whisky> allWhiskies = (ArrayList<Whisky>) session.getAttribute("allWhiskies");
 		if(allWhiskies == null) {
 			allWhiskies = new ArrayList<>();
-			System.out.println("den var tom!!");
 		}
 		%>
 	<ul class="listPictures">
 		<%
+		boolean favIsEmpty = true;
 		for(int i = 0; i < allWhiskies.size(); i++) {
-			if(allWhiskies.get(i).isFavorite()) {	
+			if(allWhiskies.get(i).isFavorite()) {
+				favIsEmpty = false;
 		%>
 		<li>
 			<div class="whiskywrapper">
@@ -49,7 +50,11 @@
 				<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 			</div>
 		</li>				
-		<%}}%>
+		<%}
+		}
+		if(favIsEmpty) {%>
+			<p>Your list is empty!</p>
+		<%}%>
 	</ul>
 </div>
 </body>
