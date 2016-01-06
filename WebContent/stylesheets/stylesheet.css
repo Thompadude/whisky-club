@@ -36,6 +36,18 @@ a, a:hover, a:visited, a:active, a:link {
 	color: white;
 }
 
+.textAlignRight {
+	text-align: right;
+}
+
+.textAlignLeft {
+	text-align: left;
+}
+
+.textAlignCenter {
+	text-align: center;
+}
+
 /* Style for top background image. */
 
 #top_background {
@@ -127,7 +139,7 @@ a, a:hover, a:visited, a:active, a:link {
 	border-top: none !important;
 }
 
-#tableSelectedWhisky {
+#selectedWhiskyTable {
 	width: 50%;
 }
 
@@ -160,7 +172,24 @@ a, a:hover, a:visited, a:active, a:link {
 }
 
 
-/* SelectedWhisky css */
+/* SelectedWhisky */
+
+#selectedWhiskyMainRow {
+/*	border: 10px double rgb(141,141,141);
+	border-bottom-color: black;
+	border-top-color: black; */
+}
+
+#selectedWhiskyMiddleDiv {
+/*	border: 10px double rgb(141,141,141);
+	border-bottom-color: black;
+	border-top-color: black; */
+}
+
+/* Id for right window in Selected Whisky */
+#selectedWhiskyRightDiv {
+
+}
 
 #selectedWhiskyPictureDiv img {
 	display: block;
@@ -170,13 +199,11 @@ a, a:hover, a:visited, a:active, a:link {
 
 #picMiddle {
 	height: 600px;
-	width: 350px;
+	width: 450px;
 }
 
-#leftColumn {
-	text-align: center;
-}
-
-.center {
-	text-align: center;
+.selectedWhiskyH1 {
+	font-size: 3em;
+	color: rgb(180,180,100);
+	font-family: Lucida Bright, Georgia, Serif;
 }

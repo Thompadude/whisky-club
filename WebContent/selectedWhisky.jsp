@@ -31,32 +31,76 @@
 
 <div class="content">
 
-	<div class="row">
-	
-
-		<div class="col-lg-4">
+	<div class="row" id="selectedWhiskyMainRow">
+<!-- LEFT WINDOW -->	
+		<div class="col-lg-4 textAlignCenter">
 			
-			<div id="leftColumn">
+			<!-- Go back to list.jsp. Left-arrow icon -->
+			<div class="textAlignLeft">
+				<a href="${pageContext.request.contextPath}/list.jsp">
+				<img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg"></a>
+			</div>
+			
+			<div>
 				<!-- Get the whisky properties using Expression Language -->
-				<h1>${chosenWhisky.getName()}</h1>
+				<h1 class="selectedWhiskyH1">${chosenWhisky.getName()}</h1>
 				<p>${chosenWhisky.getRegion()}, ${chosenWhisky.getCountry()}</p>
 				<p>${chosenWhisky.getType()}</p>
 				<p>${chosenWhisky.getAlc()}%</p>
 				<p>${chosenWhisky.getInfo()}</p>
-			</div>			
+			</div>
 		</div>
 		
-		<div class="col-lg-4" id="selectedWhiskyPictureDiv">
+<!-- END LEFT WINDOW -->
+
+<!-- MIDDLE WINDOW -->
+		<div class="col-lg-4" id="selectedWhiskyMiddleDiv">
 				
 				<!-- Show whisky picture -->
 				<a href="images/${chosenWhisky.getImgUrl()}">
 					<img class="img-responsive" id="picMiddle" src="images/${chosenWhisky.getImgUrl()}"></a>
 		</div>
+<!-- END MIDDLE WINDOW -->
+	
+<!-- RIGHT WINDOW -->		
+		<div class="col-lg-4" id="selectedWhiskyRightDiv">
 		
-		<div class="col-lg-4">
+			<div class="row">
+				
+				<div class="col-lg-6">
+					<h4>Rate this whisky</h4>
+					<div>
+						<!-- Show the grade stars -->
+						<% for (int i = 1; i <= 5; i++) {%>
+						<a href="FavoriteServlet?setWhiskyGrade=<%=i%>&chosenWhiskyId=${chosenWhisky.getId()}
+								&setWhiskyFavorite=${chosenWhisky.isFavorite()}">
+								<img class="icon" id="star<%=i%>" src="http://www.entypo.com/images/star-outlined.svg"></a>
+						<%}%>&nbsp;&nbsp;(${chosenWhisky.getGrade()}/5)					
+					</div>
+				</div>
+				<div class="col-lg-6 textAlignRight">
+					<!-- Show the favorite button & text. Change icon/text whether it's a favorite or not. -->
+					<%if(chosenWhisky.isFavorite()){%>
+						<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}
+								&setWhiskyGrade=${chosenWhisky.getGrade()}">
+								Remove from favorites
+								<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star.svg">
+						</a>
+					<%}else{%>
+						<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}
+								&setWhiskyGrade=${chosenWhisky.getGrade()}">
+								Add to favorites
+								<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">
+						</a>
+					<%}%>
+				</div>
+			</div>
 			
-			<h4 class="center">Write a comment</h4>
 			
+			<br><br><br><br><br><br><br><br><br><br><br><br>
+			
+			
+			<h4 class="textAlignCenter">Write a comment</h4>
 			<!-- Comment form -->
 			<form action="CommentServlet" method="post" name="validate">
 				<label><input class="formfield" id="uName" type="text" name="userName" placeholder="Name"></label>
@@ -64,71 +108,40 @@
 				<label><textarea class="formfield" rows="10" cols="21" name="comment" placeholder="Comment"></textarea></label>
 				<br>
 				<input type="reset" class="formbutton" value="Clear">
-				<input type="submit" class="formbutton" value="Post Comment">
+				<input type="submit" class="formbutton" value="Submit">
 				<!-- Using a hidden input to hide a value. -->
 				<input type="hidden" name="whiskyId" value="${chosenWhisky.getId()}">
 			</form>
-		
-			<br><br><br>
-			<h4>Rating</h4>
-			
-			<div>
-			<!-- Show the grade stars -->
-			<% for (int i = 1; i <= 5; i++) {%>
-			<a href="FavoriteServlet?setWhiskyGrade=<%=i%>&chosenWhiskyId=${chosenWhisky.getId()}
-					&setWhiskyFavorite=${chosenWhisky.isFavorite()}">
-					<img class="icon" id="star<%=i%>" src="http://www.entypo.com/images/star-outlined.svg"></a>
-			<%}%>					
-			</div>
 
 		</div>
-		
-		
-	</div>
+<!-- END RIGHT WINDOW -->
 
-	<br><br><br>
-	<table class="table table-hover" id="tableSelectedWhisky">
+	</div>
+	
+	<div class="textAlignCenter">
+	<table class="table table-hover" id="selectedWhiskyTable">
 		<tr>
 			<th>Date</th>
 			<th>Comment</th>
 			<th>Name</th>
 			<th>Delete</th>
 		</tr>
-		<!-- Mixing java code with html to print a whiskies comments. -->
+			<!-- Mixing java code with html to print whiskies comments. -->
 			<%
 			ArrayList<WhiskyComments> whiskyComments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
 			for (int i = whiskyComments.size()-1; i >= 0; i--) {
 			%>
 	   	<tr>
-			<td width="20%"><%=whiskyComments.get(i).getDate()%>&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+			<td width="20%"><%=whiskyComments.get(i).getDate()%><span id="lineTable">&nbsp;&nbsp;&nbsp;&nbsp;-</span></td>
 			<td width="60%"><%=whiskyComments.get(i).getComment()%></td>
 			<td width="20%"><%=whiskyComments.get(i).getUserName()%></td>
 			<td><a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>">
-			<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg"></a></td>
-		<tr>
+				<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg"></a></td>
 		</tr>
 		<%}%>
 	</table>
-	
+	</div>
 		
-	<!-- Go back to list.jsp. Left-arrow icon -->
-	<a href="${pageContext.request.contextPath}/list.jsp"><img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg"></a>
-	
-	
-	<!-- Show the favorite button & text. Change icon/text whether it's a favorite or not. -->
-	<%
-	if(chosenWhisky.isFavorite()){%>
-	<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
-		<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star.svg">
-		Remove from favorites
-	</a>
-	<%}else{%>
-	<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
-		<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">
-		Add to favorites
-	</a>
-	<%}%>
-	
 </div>
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
