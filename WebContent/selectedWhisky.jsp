@@ -20,12 +20,12 @@
 	<%
 	Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 	if(chosenWhisky.isFavorite()){%>
-	<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}">
+	<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
 		<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star.svg">
 		Remove from favorites
 	</a>
 	<%}else{%>
-	<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}">
+	<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
 		<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/star-outlined.svg">
 		Add to favorites
 	</a>
@@ -48,7 +48,15 @@
 			<p>Country: ${chosenWhisky.getCountry()}</p>
 			<p>Type: ${chosenWhisky.getType()}</p>
 			<p>Alcohol: ${chosenWhisky.getAlc()}</p>
-			<p>Grade: ${chosenWhisky.getGrade()}</p>
+			<p>Grade:
+			<% for (int i = 1; i <= 5; i++) {%>
+			
+			<a href="FavoriteServlet?setWhiskyGrade=<%=i%>&chosenWhiskyId=${chosenWhisky.getId()}
+				&setWhiskyFavorite=${chosenWhisky.isFavorite()}">
+				<img class="icon" id="star<%=i%>" src="http://www.entypo.com/images/star-outlined.svg"></a>
+				<%}%>
+			</p>
+			<p>Grade är: ${chosenWhisky.getGrade()}</p>
 		</div>
 	<div class="log-lg-8"></div>
 	</div>

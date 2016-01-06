@@ -92,3 +92,11 @@
 .whiskygrade {
 	top: 100px;
 }
+
+#star1:hover {
+	content: url("http://www.entypo.com/images/star.svg");
+}
+
+#star2:hover + #star1 {
+	content: url("http://www.entypo.com/images/star.svg");
+}

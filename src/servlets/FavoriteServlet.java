@@ -46,6 +46,13 @@ public class FavoriteServlet extends HttpServlet {
 		
 		String setWhiskyFavorite = request.getParameter("setWhiskyFavorite");
 		String chosenWhiskyID = request.getParameter("chosenWhiskyId");
+		String setGradeAsString = request.getParameter("setWhiskyGrade");
+		if (setGradeAsString == null) {
+			setGradeAsString = "0";
+		}
+		int gradeAsInt = Integer.parseInt(setGradeAsString);
+		
+		
 		boolean favorite;
 		if (setWhiskyFavorite.equals("true")) {
 			favorite = true;
@@ -55,7 +62,8 @@ public class FavoriteServlet extends HttpServlet {
 		
 		for(int i = 0; i < whiskies.size(); i++ ) {
 			if(chosenWhiskyID.equals(whiskies.get(i).getId())) {
-				whiskies.get(i).setFavorite(favorite);
+				whiskies.get(i).setGrade(gradeAsInt);
+				whiskies.get(i).setFavorite(favorite);								
 				SaveToFile saveToFile = new SaveToFile();
 				saveToFile.saveWhiskiesToFile(whiskies, filePath);
 				response.sendRedirect("selectedWhisky.jsp");
