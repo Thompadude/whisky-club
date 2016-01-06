@@ -72,11 +72,18 @@ a, a:hover, a:visited, a:active, a:link {
 }
 
 .menubtn {
+	text-align: left;
 	background-color: rgb(64,64,64);
 	border: none;
 	font-family: tahoma, sans-serif;
 	font-weight: bold;
 	color: lightgrey;
+}
+
+
+.menubtn:nth-child(4), .menubtn:nth-child(5) {
+	position: relative;
+	top: 250px;
 }
 
 .overlay {
