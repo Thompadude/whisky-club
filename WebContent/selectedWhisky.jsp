@@ -56,7 +56,8 @@
 				<img class="icon" id="star<%=i%>" src="http://www.entypo.com/images/star-outlined.svg"></a>
 				<%}%>
 			</p>
-			<p>Grade är: ${chosenWhisky.getGrade()}</p>
+			
+			<input type="hidden" id="grade" value="<%=chosenWhisky.getGrade()%>"></input>
 		</div>
 	<div class="log-lg-8"></div>
 	</div>

@@ -52,7 +52,6 @@ public class FavoriteServlet extends HttpServlet {
 		}
 		int gradeAsInt = Integer.parseInt(setGradeAsString);
 		
-		
 		boolean favorite;
 		if (setWhiskyFavorite.equals("true")) {
 			favorite = true;
