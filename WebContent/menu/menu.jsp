@@ -15,6 +15,7 @@
 			<div class="btn-group-vertical menubtn">
 				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-default menubtn menulink">Home</a>
 				<a href="${pageContext.request.contextPath}/list.jsp" class="btn btn-default menubtn menulink">Whiskies</a>
+				<a href="${pageContext.request.contextPath}/favorites.jsp" class="btn btn-default menubtn menulink">Favorites</a>
 				<a href="${pageContext.request.contextPath}/guestbook/guestbookform.jsp" class="btn btn-default menubtn menulink">Guestbook</a>
 				<a href="${pageContext.request.contextPath}/about.jsp" class="btn btn-default menubtn menulink">About</a>
 				<a href="${pageContext.request.contextPath}/login.html" class="btn btn-default menubtn menulink">Log out</a>
