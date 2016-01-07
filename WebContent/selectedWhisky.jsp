@@ -96,32 +96,34 @@
 
 <!-- END OF "MAIN" WINDOWS -->
 
-<!-- COMMENT TABLE -->
-	<table class="table" id="selectedWhiskyTable">
-		<tr>
-			<th class="smalldata">Date</th>
-			<th>Comment</th>
-			<th>Author</th>
-			<th class="smalldata">Delete</th>
-		</tr>
-			<!-- Mixing java code with html to print whiskies comments. -->
+<div class="container-fluid commentfield">
 			<%
-			ArrayList<WhiskyComments> whiskyComments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
-			for (int i = whiskyComments.size()-1; i >= 0; i--) {
+			ArrayList<WhiskyComments> comments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
+			for (int i = comments.size()-1; i >= 0; i--){
 			%>
-	   	<tr>
-			<td class="smalldata"><%=whiskyComments.get(i).getDate()%></td>
-			<td><%=whiskyComments.get(i).getComment()%></td>
-			<td class="mediumdata"><%=whiskyComments.get(i).getUserName()%></td>
-			<td class="smalldata"><a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>">
-				<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg"></a></td>
-		</tr>
-		<%}%>
-	</table>
-
+		<div class="row" style="border: 0px solid white">
+			<div class="col-lg-11">
+			<p><%=comments.get(i).getUserName()%>
+			<br>
+			<%=comments.get(i).getDate()%></p>
+			<h4><%=comments.get(i).getComment()%></h4>
+			</div>
+			<div class="col-lg-1" style="margin-top:5px">
+				<a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>">
+					<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg">
+				</a>
+			</div>
+			<div class="col-lg-4" id="commentwhitespace">
+			</div>
+		</div>		
+			<%
+			}
+			%>
+</div>
 	
 		
 	<!-- Go back to list.jsp. Left-arrow icon -->
+	<div class="clear">
 	<a href="${pageContext.request.contextPath}/list.jsp"><img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg"></a>
 	
 	
