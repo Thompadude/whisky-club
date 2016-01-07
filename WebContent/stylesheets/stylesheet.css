@@ -134,6 +134,9 @@ form {
     .formfield {
          min-width: 480px;
     }
+    .commentfield {
+    	min-width: 600px;
+    }
 }
 
 @media (min-width :1200px) {
@@ -163,7 +166,6 @@ form {
 .commentfield
 {
 	margin-top: 2%;
-	max-width: 600px;
 	float: left;
 	color: black;
 }
