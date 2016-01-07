@@ -249,6 +249,7 @@ form {
 }
 
 #picMiddle {
+	margin-top: 3em; 
 	border-radius: 1em;
 	width: 450px;
 }
