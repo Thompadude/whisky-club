@@ -2,6 +2,8 @@ package servlets;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -54,8 +56,9 @@ public class CommentServlet extends HttpServlet {
 		// Get user user name and comment. Create today's date.
 		String userName = request.getParameter("userName");
 		String comment = request.getParameter("comment");		
-		LocalDate localDate = LocalDate.now();
-		String todaysDate = localDate.toString();
+		LocalDateTime localDateTime = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM YYYY HH:mm");
+		String todaysDate = localDateTime.format(formatter).toString();
 		
 		String currentwhiskyId = request.getParameter("whiskyId");
 		
