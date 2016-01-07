@@ -198,7 +198,7 @@ a, a:hover, a:visited, a:active, a:link {
 }
 
 #picMiddle {
-	height: 600px;
+	border-radius: 1em;
 	width: 450px;
 }
 
