@@ -46,6 +46,7 @@ public class CommentServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		request.setCharacterEncoding("UTF-8");
 		
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");	
 		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePath);
