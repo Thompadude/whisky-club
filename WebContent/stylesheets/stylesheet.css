@@ -1,5 +1,9 @@
 /* General styles */
 
+.hiddenbutton {
+	visibility: hidden;
+}
+
 body {
 	background-color: black;
 	height: 100%;
@@ -258,4 +262,23 @@ form {
 	font-size: 3em;
 	color: rgb(180,180,100);
 	font-family: Lucida Bright, Georgia, Serif;
+}
+
+/* Styles for index page. */
+
+.indexdiv {
+	position: relative;
+}
+
+.indexdiv img {
+	opacity: .6;
+}
+
+.indexdiv p {
+	color: white;
+	font-size: 3em;
+	position: absolute;
+	top: 200px;
+	left: 20px;
+	right: 0;
 }
