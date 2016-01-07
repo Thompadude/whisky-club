@@ -53,7 +53,12 @@
 		<%}
 		}
 		if(favIsEmpty) {%>
-			<p>Your list is empty!</p>
+			<div class="container">
+				<div class="jumbotron">
+					<h2>You don't have any favorites yet.
+					<p>Go to all whiskies <a href="${pageContext.request.contextPath}/list.jsp">here</a></p></h2>
+		</div>
+	</div>
 		<%}%>
 	</ul>
 </div>
