@@ -28,7 +28,7 @@
 				</label>
 				<br>
 				<input type="reset" class="formbutton" value="Clear">
-				<button type="button" id="submit">Submit</button>
+				<button type="button" class="formbutton" id="submit">Submit</button>
 			</form>
 		</div>
 	</div>
