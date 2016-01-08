@@ -91,14 +91,14 @@
 		ArrayList<WhiskyComments> comments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
 		for (int i = comments.size()-1; i >= 0; i--){
 		%>
-		<div class="row" style="border: 0px solid white">
+		<div class="row">
 			<div class="col-lg-11">
 				<p><%=comments.get(i).getUserName()%>
 				<br>
 				<%=comments.get(i).getDate()%></p>
 				<h4><%=comments.get(i).getComment()%></h4>
 			</div>
-			<div class="col-lg-1" style="margin-top:5px">
+			<div class="col-lg-1">
 				<a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>">
 					<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg">
 				</a>

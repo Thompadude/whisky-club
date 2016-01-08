@@ -1,7 +1,9 @@
 package servlets;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -18,7 +20,7 @@ import saveAndLoad.SaveToFile;
 /**
  * Servlet implementation class GuestBook
  */
-@WebServlet("/Guestbook")
+@WebServlet("/GuestbookServlet")
 public class GuestbookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private GuestbookDatabase guestbookDatabase;
@@ -38,31 +40,44 @@ public class GuestbookServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Retrieve new guestbook entry from guestbook.jsp
-		String entry = request.getParameter("cmnt");
-		String name = request.getParameter("Name");
-		LocalDate localDate = LocalDate.now();
-		String todaysDate = localDate.toString();
-		
-		GuestbookEntries guestbookEntry = new GuestbookEntries(name, entry, todaysDate);
+		response.setContentType("text/html");
+		request.setCharacterEncoding("UTF-8");
 		
 		// Get filepath for all guestbook entries.
 		String filePath = getServletContext().getRealPath("/guestbookData.dat");
 		
-		ArrayList<GuestbookEntries> allEntries = guestbookDatabase.loadGuestbookEntries(filePath);		
+		ArrayList<GuestbookEntries> allEntries = guestbookDatabase.loadGuestbookEntries(filePath);
+
+		PrintWriter out = response.getWriter();
 		
-		// Adds the entry to the guestbook.		
-		guestbookDatabase.addEntry(guestbookEntry);
+		String name = request.getParameter("ajaxName");
+		String entry = request.getParameter("ajaxEntry");
+		LocalDateTime localDateTime = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM YYYY HH:mm");
+		String todaysDate = localDateTime.format(formatter).toString();
+
+		if (name == null || entry == null) {
+			for(int i = guestbookDatabase.getEntries().size()-1; i >= 0; i--) {
+				out.println("<div class=\"row\"><div class=\"col-lg-11\"><p>" + guestbookDatabase.getEntries().get(i).getName() + "<br>");
+				out.println(guestbookDatabase.getEntries().get(i).getDate() + "</p>");
+				out.println("<h4>" + guestbookDatabase.getEntries().get(i).getEntry() + "</h4></div>"
+							+ "<div class=\"col-lg-1\"></div></div>");
+			}
+		} else {
+		GuestbookEntries newEntry = new GuestbookEntries(name, entry, todaysDate);
 		
-		// setAttribute for use in .jsp
-		//request.getSession().setAttribute("guestbook", guestbookDatabase.getEntries(filePath));
-		request.getSession().setAttribute("guestbook", allEntries);
+		guestbookDatabase.addEntry(newEntry);
+		
+		for(int i = guestbookDatabase.getEntries().size()-1; i >= 0; i--) {
+			out.println("<div class=\"row\" id=\"" + (guestbookDatabase.getEntries().size()-i) + "\"><div class=\"col-lg-11\"><p>" + guestbookDatabase.getEntries().get(i).getName() + "<br>");
+			out.println(guestbookDatabase.getEntries().get(i).getDate() + "</p>");
+			out.println("<h4>" + guestbookDatabase.getEntries().get(i).getEntry() + "</h4></div>"
+						+ "<div class=\"col-lg-1\"></div></div>");
+		}
 		
 		SaveToFile saveToFile = new SaveToFile();
 		saveToFile.saveGuestbookToFile(allEntries, filePath);
-				
-		// Send user to guestbook page to view all the entries.
-		response.sendRedirect("guestbook/guestbookform.jsp");
+		}
 	}
 
 	/**

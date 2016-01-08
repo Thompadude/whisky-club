@@ -14,29 +14,14 @@
 <title>Guest Book</title>
 </head>
 <body>
-		<table class="table table-hover">
-			<tr>
-				<th>Entry</th>
-				<th>Date</th>
-				<th>Name</th>
-			</tr>
-			<%
-				ArrayList<GuestbookEntries> entries = (ArrayList<GuestbookEntries>) session.getAttribute("guestbook");
-				if (entries != null) {
-					for (int i = entries.size() - 1; i >= 0; i--) {
-			%>
-			<tr>
-				<td><%=entries.get(i).getEntry()%></td>
-				<td><%=entries.get(i).getDate()%></td>
-				<td><%=entries.get(i).getName()%></td>
-			<tr>
-			</tr>
-			<%
-				}
-				}
-			%>
-		</table>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<div>
+	
+	
+	
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
