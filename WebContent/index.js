@@ -5,6 +5,6 @@ $(document).ready(function(){
 	},
 	function(){
 		$(this).find('img').stop(true, true).fadeTo('slow', .6)
-		$(this).find('p').stop(true, true).animate({fontSize: '200%'}, 'slow')
+		$(this).find('p').stop(true, true).animate({fontSize: '300%'}, 'slow')
 	});
 });
