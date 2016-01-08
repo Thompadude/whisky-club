@@ -198,6 +198,14 @@ form {
 	width: 100%;
 }
 
+#loginwelcomemsg {
+	display: none;
+	position: fixed;
+	top: 300px;
+	left: 3%;
+	color: white;
+}
+
 #loginwrapper {
 	background-image: url("../images/login-background.jpg");
 	position: fixed;
