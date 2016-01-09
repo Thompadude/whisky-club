@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,17 +13,17 @@
 <body>
 <div id="loginwrapper">
 	<div class="jumbotron" id="loginjumobtron">
-		<form action="LoginServlet" method="post">
-			<p><label class="loginfield"><input type="text" name="usrName" placeholder="User Name" value="boss"></label></p>
-			<p><label class="loginfield"><input type="password" name="password" placeholder="Password" value="boss"></label></p>
+		<form method="post">
+			<p><label class="loginfield"><input type="text" id="usrName" placeholder="User Name" value="boss"></label></p>
+			<p><label class="loginfield"><input type="password" id="password" placeholder="Password" value="boss"></label></p>
 			<p>
 				<input class="formbutton" type="reset">
-				<input class="formbutton" id="loginsubmitbutton" type="submit" value="Submit">
-				<%boolean loginCheck = (Boolean) session.getAttribute("isSuccessfulLogin");%>
-				<input type="hidden" id="validate" value="<%=loginCheck%>">
+				<button type="button" class="formbutton" id="submit">Submit</button>
 		</form>
 	</div>
 	<h2 id="loginwelcomemsg"></h2>
 </div>
+	<h2 id="loginAuth"></h2>
 </body>
+<script src="login.js"></script>
 </html>

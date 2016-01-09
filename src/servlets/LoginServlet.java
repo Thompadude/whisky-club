@@ -1,8 +1,10 @@
 package servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,24 +36,26 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		request.setCharacterEncoding("UTF-8");
+		
 		HttpSession session = request.getSession();
+		PrintWriter out = response.getWriter();
 		
 		// Get a user name and a password from login.jsp
-		String usrName = request.getParameter("usrName");
-		String password = request.getParameter("password");
+		String usrName = request.getParameter("ajaxUsrName");
+		String password = request.getParameter("ajaxPassword");
 
 		// Checks if login is valid.
 		LoginHandler loginHandler = new LoginHandler();
-		boolean isSuccessfulLogin = false;
-		isSuccessfulLogin = loginHandler.authenticate(usrName, password);
-
+		boolean isSuccessfulLogin = loginHandler.authenticate(usrName, password);
+		System.out.println(isSuccessfulLogin);
 		// If login is OK, redirect to main page, if not - nothing happens.
 		if (isSuccessfulLogin) {
-			session.setAttribute("isSuccessfulLogin", isSuccessfulLogin);
-			response.sendRedirect("index.jsp");
+			out.print("Login Successful!");
+			//response.sendRedirect("index.jsp");
 		} else {
-			session.setAttribute("isSuccessfulLogin", isSuccessfulLogin);
-			response.sendRedirect("login.jsp");
+			out.print("Login Failed!");
+			//response.sendRedirect("login.jsp");
 		}
 	}
 

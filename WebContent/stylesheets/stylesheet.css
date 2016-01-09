@@ -200,6 +200,13 @@ form {
 	color: white;
 }
 
+#loginAuth {
+	position: fixed;
+	top: 350px;
+	left: 3%;
+	color: white;
+}
+
 #loginwrapper {
 	background-image: url("../images/login-background.jpg");
 	position: fixed;
