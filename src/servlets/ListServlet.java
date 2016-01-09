@@ -2,14 +2,12 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import database.Data;
 import database.WhiskyDatabase;
 import saveAndLoad.SaveToFile;
@@ -20,6 +18,7 @@ import whiskies.Whisky;
  */
 @WebServlet("/ListServlet")
 public class ListServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
     private WhiskyDatabase whiskyHandler;
     
@@ -31,24 +30,27 @@ public class ListServlet extends HttpServlet {
     }
     
     public void init() throws ServletException{    	
+    	// Gets the database of the whiskies.
     	whiskyHandler = Data.getWhiskyHandler();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		// Gets the database of whiskies.
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		// Load the previous whiskies from the file.
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> whiskies = whiskyHandler.loadWhiskies(filePath);
 		
-		// Get user whisky choice from list.jsp
+		/*
+		 * Get the user's whisky choice by requesting the parameter from the href.
+		 * For example: <a href="ListServlet?whisky=dalwhinnie">
+		 */
 		String userWhiskyChoice = request.getParameter("whisky");
 		
 		/*
-		 * Get which comment user wants to remove.
-		 * If-statement to check if user wanted to remove comment,
+		 * Get which of the comments the user want to remove.
+		 * If-statement to check if the user wanted to remove comment,
 		 * or used servlet as redirection.
 		 */
 		String commentNrAsString = request.getParameter("deleteWhiskyCommentItemNr");
@@ -59,27 +61,26 @@ public class ListServlet extends HttpServlet {
 			commentNrAsInt = 999999;
 		}
 		
-		
-		
-		HttpSession session = request.getSession();
-		// boolean to check if whisky is found.
+		// boolean to check if the whisky is found. Primarily used to help the developer.
 		boolean whiskyFound = false;	
 		
+		// Search in the database for the whisky the user has clicked on.
 		for (int i = 0; i < whiskies.size(); i++) {
 			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
 				
-				// Removes selected whisky comment if that choice has been made.
+				// If the user has made the choice to delete a comment, removes it.
 				if(commentNrAsInt != 999999) {
 					whiskies.get(i).getComments().remove(commentNrAsInt);
 				}
 				
-				// Redirect user to selected whisky.
+				// Redirect the user to the selected whisky.
 				response.sendRedirect("selectedWhisky.jsp");
+				HttpSession session = request.getSession();
 				session.setAttribute("chosenWhisky", whiskies.get(i));
 				session.setAttribute("commentObjects", whiskies.get(i).getComments());
 				whiskyFound = true;
 				
-				//Save changes
+				// Saves any changes to the file.
 				SaveToFile saveToFile = new SaveToFile();
 				saveToFile.saveWhiskiesToFile(whiskies, filePath);
 			}
