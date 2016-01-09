@@ -207,6 +207,13 @@ form {
 	color: white;
 }
 
+#errormsg {
+	position: fixed;
+	top: 100px;
+	left: 3%;
+	color: red;
+}
+
 #loginwrapper {
 	background-image: url("../images/login-background.jpg");
 	position: fixed;

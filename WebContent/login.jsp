@@ -14,6 +14,7 @@
 <div id="loginwrapper">
 	<div class="jumbotron" id="loginjumobtron">
 		<form method="post">
+			<div id="errormsg"></div>
 			<p><label class="loginfield"><input type="text" id="usrName" placeholder="User Name" value="boss"></label></p>
 			<p><label class="loginfield"><input type="password" id="password" placeholder="Password" value="boss"></label></p>
 			<p>

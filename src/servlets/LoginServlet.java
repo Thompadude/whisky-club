@@ -48,7 +48,6 @@ public class LoginServlet extends HttpServlet {
 		// Checks if login is valid.
 		LoginHandler loginHandler = new LoginHandler();
 		boolean isSuccessfulLogin = loginHandler.authenticate(usrName, password);
-		System.out.println(isSuccessfulLogin);
 		// If login is OK, redirect to main page, if not - nothing happens.
 		if (isSuccessfulLogin) {
 			// The success print is important in login.js. The string is the key for redirection.
