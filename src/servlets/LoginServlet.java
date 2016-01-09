@@ -51,11 +51,10 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(isSuccessfulLogin);
 		// If login is OK, redirect to main page, if not - nothing happens.
 		if (isSuccessfulLogin) {
+			// The success print is important in login.js. The string is the key for redirection.
 			out.print("Login Successful!");
-			//response.sendRedirect("index.jsp");
 		} else {
 			out.print("Login Failed!");
-			//response.sendRedirect("login.jsp");
 		}
 	}
 

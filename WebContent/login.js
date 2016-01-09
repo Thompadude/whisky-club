@@ -1,72 +1,48 @@
-$(document).ready(function() {	
+$(document).ready(function() {
 	$('#loginjumobtron').fadeIn('slow');
-	var ajaxUsrName, ajaxPassword, userName, message;
-	var timeOut;
-	
-
+	var ajaxUsrName, ajaxPassword, userName;
 	
 	$('#submit').click(function() {
-		
 		writeAuth();
+		// runs the ajax method with 2 seconds delay.
 		setTimeout(function(){runAjax()}, 2000);
 	});
 	
+	// Prints message of the username
 	function writeAuth() {
 		// Caches a reference to the form before preventing default behavior.
 		$('#loginjumobtron').fadeOut(2000);
-		setTimeout(function(){
-		}, 3000
-		);
+		setTimeout(function(){}, 3000);
+		
 		userName = $('#usrName').val();
 		
 		$('#loginwelcomemsg').fadeIn('slow');
 		$('#loginwelcomemsg').html("Authenticating " + userName + "...");
 	}
 	
+	// Runs the username and password through the LoginServlet to check authentication.
 	function runAjax() {
 		formName = $('#usrName').val();
 		formPassword = $('#password').val();
+		
 		$.ajax({
 			type: 'POST',
 			url: 'LoginServlet',
 			data: {ajaxUsrName : formName, ajaxPassword : formPassword},
 			success: function(servletResponse) {
 				$('#loginAuth').html(servletResponse);
+				// runs method to check where to redirect.
 				setTimeout(function(){checkAuth(servletResponse)}, 1000);
 				}
 			});
 	}
 	
+	// checks if the response from the server was a success or a failure.
 	function checkAuth(servletResponse) {
 		if(servletResponse === "Login Successful!") {
 			document.location.replace("index.jsp");
 		} else {
-			location.replace("login.jsp");
+			document.location.replace("login.jsp");
 		}
 	}
-	
-	/*
-	$('form').submit(function(event){
-		// Caches a reference to the form before preventing default behavior.
-        form = this;
-		event.preventDefault();
-		$('#loginjumobtron').fadeOut(2000);
-		setTimeout(function(){
-			form.submit();
-		}, 3000
-		);
-		var userName = $('input[name=usrName]').val();
-		
-		$('#loginwelcomemsg').fadeIn('slow');
-		$('#loginwelcomemsg').html("Authenticating " + userName + "...");
-		/*
-		if (validation === "true"){
-			$('#loginwelcomemsg').fadeIn('slow');
-			$('#loginwelcomemsg').html("Hello, " + userName + "!<br>Authenticating...")
-		} else {
-			$('#loginwelcomemsg').fadeIn('slow');			
-			$('#loginwelcomemsg').html("Hello noooooooooo!!!")
-		}
-	})
- */
 });
