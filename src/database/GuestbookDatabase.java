@@ -5,7 +5,7 @@ import management.GuestbookEntries;
 import saveAndLoad.ReadFromFile;
 
 /**
- * Serves as a database for all guestbook entries.
+ * Serves as the database for all the guestbook entries.
  */
 public class GuestbookDatabase {
 
@@ -26,9 +26,9 @@ public class GuestbookDatabase {
 	}
 
 	/**
-	 * Loads previous guestbook entries from a file.
+	 * Loads the previous guestbook entries from a file.
 	 * 
-	 * @param	filePath the file path to where to file is stored.
+	 * @param	filePath the file path to where the file is stored.
 	 * @return	the guestbook entries stored in the file.
 	 */
 	public ArrayList<GuestbookEntries> loadGuestbookEntries(String filePath) {

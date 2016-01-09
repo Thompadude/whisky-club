@@ -1,7 +1,7 @@
 package database;
 
 /**
- * An assemblage of all data objects. The methods in this class is static
+ * An assemblage of all the data objects. The methods in this class is static
  * to ensure to always refer to the same data.
  */
 public class Data {

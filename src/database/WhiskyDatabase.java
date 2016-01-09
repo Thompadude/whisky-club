@@ -13,7 +13,7 @@ import whiskies.Talisker;
 import whiskies.Whisky;
 
 /**
- * Serves as a database for all whiskies.
+ * Serves as the database for all whiskies.
  */
 public class WhiskyDatabase {
 
@@ -28,11 +28,11 @@ public class WhiskyDatabase {
 	}
 
 	/**
-	 * Loads all whiskies from a file. If no whiskies are found in the
+	 * Loads all the whiskies from a file. If no whiskies are found in the
 	 * file, creates new whiskies.
 	 * 
 	 * @see		addAllWhiskies()
-	 * @param	filePath the file path to where to file is stored.
+	 * @param	filePath the file path to where the file is stored.
 	 * @return	the whisky objects stored in the file.
 	 */
 	public ArrayList<Whisky> loadWhiskies(String filePath) {
@@ -50,7 +50,7 @@ public class WhiskyDatabase {
 	}
 
 	/**
-	 * Add all hardcoded whiskes to this array list.
+	 * Add all the hardcoded whiskes to this array list.
 	 */
 	public void addAllWhiskies() {
 		this.whiskies.add(new Talisker());
