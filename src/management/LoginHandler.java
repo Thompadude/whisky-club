@@ -1,11 +1,18 @@
 package management;
 
+/**
+ * Authenticates the information the client sends to the login servlet.
+ */
 public class LoginHandler {
 
 	/**
-	 * @param usrName is the name the user tries to login with.
-	 * @param password is the password the user tries to login with.
-	 * @return true if user enter valid login information.
+	 * Handles information sent from the client and returns
+	 * true or false depending on if that information is correct
+	 * or not.
+	 * 
+	 * @param	usrName user name entered.
+	 * @param	password password entered.
+	 * @return	true if user name and password is correct, else false.
 	 */
 	public boolean authenticate(String usrName, String password) {
 		if (usrName.equals("boss") && password.equals("boss")) {
