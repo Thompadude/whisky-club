@@ -6,6 +6,13 @@ public class WhiskyComments implements java.io.Serializable {
 	private String comment;
 	private String date;
 
+	/**
+	 * Constructs a new comment.
+	 * 
+	 * @param userName the user's name.
+	 * @param comment the comment the user wants to post.
+	 * @param date the date the comment is connected to.
+	 */
 	public WhiskyComments(String userName, String comment, String date) {
 		this.userName = userName;
 		this.comment = comment;

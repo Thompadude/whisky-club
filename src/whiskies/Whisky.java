@@ -3,6 +3,7 @@ package whiskies;
 import java.util.ArrayList;
 
 public class Whisky implements java.io.Serializable {
+	
 	private String id;
 	private String name;
 	private String region;
@@ -16,20 +17,31 @@ public class Whisky implements java.io.Serializable {
 	private boolean isFavorite;
 
 	/**
-	 * Whisky super class.
+	 * Constructs a new whisky.
+	 * Also serves as a super class for hardcoded whiskies.
 	 * 
-	 * @param id
-	 *            is a unique String to identify the whisky.
-	 * @param imgUrl
-	 *            is the path to the photo.
-	 * @param alc
-	 *            is the alcoholic percentage.
-	 * @param grade
-	 *            is a user defined grade from a scale of 1 to 5.
+	 * @param id the identification number.
+	 * @param name the name/title.
+	 * @param region the region of origin.
+	 * @param country the country of origin.
+	 * @param type the type of whisky.
+	 * @param info misc. information about the whisky.
+	 * @param imgUrl the file path to the image.
+	 * @param alc the alcohol by volume.
+	 * @param grade the rating.
 	 */
-
-	public Whisky(String id, String name, String region, String country, String type, String info, String imgUrl,
-			double alc, int grade) {
+	public Whisky(
+			String id,
+			String name,
+			String region,
+			String country,
+			String type,
+			String info,
+			String imgUrl,
+			double alc,
+			int grade
+				)
+	{
 		this.id = id;
 		this.name = name;
 		this.region = region;
