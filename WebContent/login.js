@@ -1,5 +1,5 @@
-$(document).ready(function() {
-		
+$(document).ready(function() {	
+	var val = $('#validate').val();
 	$('#loginjumobtron').fadeIn('slow');
 		
 	$('form').submit(function(event){
@@ -11,8 +11,19 @@ $(document).ready(function() {
 			form.submit();
 		}, 3000
 		);
-		var userName = $('input[name=usrName').val();
-		$('#loginwelcomemsg').append("Hello, " + userName + "!<br>Authenticating...")
+		var userName = $('input[name=usrName]').val();
+		
 		$('#loginwelcomemsg').fadeIn('slow');
+		$('#loginwelcomemsg').html("Hello, " + userName + "!<br>Authenticating...");
+		
+		/*
+		if (val === "true"){
+			$('#loginwelcomemsg').fadeIn('slow');
+			$('#loginwelcomemsg').html("Hello, " + userName + "!<br>Authenticating...")
+		} else {
+			$('#loginwelcomemsg').fadeIn('slow');			
+			$('#loginwelcomemsg').html("Hello noooooooooo!!!")
+		}
+		*/
 	})
 });

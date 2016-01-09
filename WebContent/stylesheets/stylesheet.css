@@ -41,18 +41,6 @@ a, a:hover, a:visited, a:active, a:link {
 	color: white;
 }
 
-.textAlignRight {
-	text-align: right;
-}
-
-.textAlignLeft {
-	text-align: left;
-}
-
-.textAlignCenter {
-	text-align: center;
-}
-
 /* Style for top background image. */
 
 #top_background {

@@ -1,8 +1,8 @@
-<!-- Login Page. Sends information to LoginHandler.java -->
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
@@ -18,7 +18,8 @@
 			<p>
 				<input class="formbutton" type="reset">
 				<input class="formbutton" id="loginsubmitbutton" type="submit" value="Submit">
-			</p>
+				<%boolean loginCheck = (Boolean) session.getAttribute("isSuccessfulLogin");%>
+				<input type="hidden" id="validate" value="<%=loginCheck%>">
 		</form>
 	</div>
 	<h2 id="loginwelcomemsg"></h2>

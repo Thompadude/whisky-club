@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import database.Data;
 import database.WhiskyDatabase;
@@ -33,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		HttpSession session = request.getSession();
 		
 		// Get a user name and a password from login.jsp
 		String usrName = request.getParameter("usrName");
@@ -40,13 +42,16 @@ public class LoginServlet extends HttpServlet {
 
 		// Checks if login is valid.
 		LoginHandler loginHandler = new LoginHandler();
-		boolean isSuccessfulLogin = loginHandler.authenticate(usrName, password);
+		boolean isSuccessfulLogin = false;
+		isSuccessfulLogin = loginHandler.authenticate(usrName, password);
 
 		// If login is OK, redirect to main page, if not - nothing happens.
 		if (isSuccessfulLogin) {
+			session.setAttribute("isSuccessfulLogin", isSuccessfulLogin);
 			response.sendRedirect("index.jsp");
 		} else {
-			response.sendRedirect("login.html");
+			session.setAttribute("isSuccessfulLogin", isSuccessfulLogin);
+			response.sendRedirect("login.jsp");
 		}
 	}
 
