@@ -1,4 +1,10 @@
 /* General styles */
+.title {
+	position: absolute;
+	font-size: 70px;
+	top: 120px;
+	left: 245px;
+}
 
 .hiddenbutton {
 	visibility: hidden;

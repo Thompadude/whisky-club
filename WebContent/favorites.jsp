@@ -15,6 +15,7 @@
 <%@ include file="menu/menu.jsp"%>
 <%@ include file="background.jsp"%>
 <div class="content">
+	<div class="title">Favorites</div>
 	<ul class="nav nav-tabs">
 		<li>
 			<a href="${pageContext.request.contextPath}/favorites.jsp">
@@ -53,11 +54,9 @@
 		<%}
 		}
 		if(favIsEmpty) {%>
-			<div class="container">
-				<div class="jumbotron">
-					<h2>You don't have any favorites yet.
-					<p>Go to all whiskies <a href="${pageContext.request.contextPath}/list.jsp">here</a></p></h2>
-		</div>
+			<div>
+				<h2>You don't have any favorites yet.
+				<p>Go to all whiskies <a href="${pageContext.request.contextPath}/list.jsp">here</a></p></h2>
 	</div>
 		<%}%>
 	</ul>

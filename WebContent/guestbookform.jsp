@@ -14,11 +14,11 @@
 <%@ include file="../menu/menu.jsp"%>
 <%@ include file="../background.jsp"%>
 <div class="content container-fluid">
+<div class="title">Guestbook</div>
 	<div class="row">
 		<div class="col-lg-12">
 		<!-- Comment form -->
 			<form method="post">
-				<h4>Write a guestbook comment</h4>
 				<label>
 					<input class="formfield" type="text" name="name" placeholder="Name" id="formName">
 				</label>
