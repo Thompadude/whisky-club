@@ -31,7 +31,7 @@ public class WhiskyDatabase {
 	 * Loads all whiskies from a file. If no whiskies are found in the
 	 * file, creates new whiskies.
 	 * 
-	 * @see addAllWhiskies()
+	 * @see		addAllWhiskies()
 	 * @param	filePath the file path to where to file is stored.
 	 * @return	the whisky objects stored in the file.
 	 */
