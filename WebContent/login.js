@@ -42,7 +42,7 @@ $(document).ready(function() {
 			url: 'LoginServlet',
 			data: {ajaxUsrName : formName, ajaxPassword : formPassword},
 			success: function(servletResponse) {
-				$('#loginAuth').html(servletResponse);
+				$('#loginAuth').hide().fadeIn('slow').html(servletResponse);
 				// runs method to check where to redirect.
 				setTimeout(function(){checkAuth(servletResponse)}, 1000);
 			}
