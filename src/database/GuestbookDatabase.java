@@ -28,7 +28,7 @@ public class GuestbookDatabase {
 	/**
 	 * Loads previous guestbook entries from a file.
 	 * 
-	 * @param	filePath the file path where to file is stored.
+	 * @param	filePath the file path to where to file is stored.
 	 * @return	the guestbook entries stored in the file.
 	 */
 	public ArrayList<GuestbookEntries> loadGuestbookEntries(String filePath) {

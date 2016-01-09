@@ -13,17 +13,12 @@ import whiskies.Talisker;
 import whiskies.Whisky;
 
 /**
- * Class serves as a database for all whiskies.
+ * Serves as a database for all whiskies.
  */
-
 public class WhiskyDatabase {
 
 	private ArrayList<Whisky> whiskies;
 
-	/**
-	 * Loads a file with whiskies. If no file is found,
-	 * adds all hardcoded whiskies.
-	 */
 	public ArrayList<Whisky> getWhiskies() {
 		if (whiskies == null) {
 			whiskies = new ArrayList<>();
@@ -31,21 +26,31 @@ public class WhiskyDatabase {
 		}
 		return whiskies;
 	}
-	
+
+	/**
+	 * Loads all whiskies from a file. If no whiskies are found in the
+	 * file, creates new whiskies.
+	 * 
+	 * @see addAllWhiskies()
+	 * @param	filePath the file path to where to file is stored.
+	 * @return	the whisky objects stored in the file.
+	 */
 	public ArrayList<Whisky> loadWhiskies(String filePath) {
 		ReadFromFile readFromFile = new ReadFromFile();
 		whiskies = readFromFile.readWhisky(whiskies, filePath);
+		
 		if (whiskies == null) {
 			whiskies = new ArrayList<>();
 			addAllWhiskies();
 			SaveToFile saveToFile = new SaveToFile();
 			saveToFile.saveWhiskiesToFile(whiskies, filePath);
 		}
+		
 		return whiskies;
 	}
-	
+
 	/**
-	 * Adds hardcoded whiskies.
+	 * Add all hardcoded whiskes to this array list.
 	 */
 	public void addAllWhiskies() {
 		this.whiskies.add(new Talisker());
@@ -55,4 +60,5 @@ public class WhiskyDatabase {
 		this.whiskies.add(new Glennfiddich());
 		this.whiskies.add(new Oban());
 	}
+
 }
