@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 		String usrName = request.getParameter("ajaxUsrName");
 		String password = request.getParameter("ajaxPassword");
 
-		// Check if login information is valid.
+		// Check if the login information is valid.
 		LoginHandler loginHandler = new LoginHandler();
 		boolean isSuccessfulLogin = loginHandler.authenticate(usrName, password);
 
@@ -53,7 +53,6 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
