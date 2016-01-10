@@ -18,8 +18,7 @@
 <%@ include file="menu/menu.jsp"%>
 
 <%
-	WhiskyDatabase whiskyDatabase = Data.getWhiskyHandler();
-	ArrayList<Whisky> allWhiskies = whiskyDatabase.getWhiskies();
+	ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies();
 %>
 
 <div class="content">

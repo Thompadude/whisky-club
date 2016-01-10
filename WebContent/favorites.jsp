@@ -27,10 +27,7 @@
 		</li>
 	</ul>
 		<%
-		ArrayList<Whisky> allWhiskies = (ArrayList<Whisky>) session.getAttribute("allWhiskies");
-		if(allWhiskies == null) {
-			allWhiskies = new ArrayList<>();
-		}
+		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies();
 		%>
 	<ul class="listPictures">
 		<%
