@@ -72,5 +72,11 @@ public class WhiskyDatabase {
 		this.whiskies.add(new HighlandPark());
 		this.whiskies.add(new Jura());
 	}
+	
+	public ArrayList<Whisky> resetWhiskes() {
+		this.whiskies = new ArrayList<>();
+		addAllWhiskies();
+		return whiskies;
+	}
 
 }

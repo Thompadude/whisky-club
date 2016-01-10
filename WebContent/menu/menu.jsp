@@ -19,6 +19,7 @@
 				<a href="${pageContext.request.contextPath}/guestbookform.jsp" class="btn btn-default menubtn menulink">Guestbook</a>
 				<a href="${pageContext.request.contextPath}/about.jsp" class="btn btn-default menubtn menulink">About</a>
 				<a href="${pageContext.request.contextPath}/login.jsp" class="btn btn-default menubtn menulink">Log out</a>
+				<a href="${pageContext.request.contextPath}/whiskymanager.jsp" class="btn btn-default menubtn menulink">Whisky settings</a>
 			</div>
 	</div>
 	<div id="iconOpenMenu">

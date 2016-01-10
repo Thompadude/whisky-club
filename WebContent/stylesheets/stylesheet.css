@@ -11,7 +11,9 @@
 }
 
 body {
-	background-color: black;
+	background-image: url("../images/blackBackground.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 100%;
 }
 
@@ -49,6 +51,7 @@ a, a:hover, a:visited, a:active, a:link {
 }
 
 #topdiv {
+	opacity: 0.5;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -288,6 +291,7 @@ form {
 
 .indexdiv img {
 	opacity: .6;
+	border-radius: 2em;
 }
 
 .indexdiv p {
