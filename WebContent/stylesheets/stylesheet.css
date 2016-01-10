@@ -40,6 +40,7 @@ a, a:hover, a:visited, a:active, a:link {
 
 #iconOpenMenu {
 	position: fixed;
+	top: -2px;
 	z-index: 100;
 }
 
@@ -51,15 +52,15 @@ a, a:hover, a:visited, a:active, a:link {
 #menu {
 	z-index: 100;
 	position: fixed;
+	top: -2px;
 	left: -250px;
 	height: 100%;
-	background-color: rgb(64,64,64);
-	box-shadow: 1px 0 20px 1px rgba(150,150,150,0.68) ;
+	background-color: black;
 }
 
 .menubtn {
 	text-align: left;
-	background-color: rgb(64,64,64);
+	background-color: black;
 	border: none;
 	font-family: tahoma, sans-serif;
 	font-weight: bold;
