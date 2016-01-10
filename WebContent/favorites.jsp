@@ -14,22 +14,34 @@
 <body>
 <%@ include file="menu/menu.jsp"%>
 <div class="content">
-	<ul class="nav nav-tabs">
-		<li>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<span>Navigation</span>
+      			</button>
+    		</div>
+    		<div class="collapse navbar-collapse" id="myNavbar">
+      			<ul class="nav navbar-nav">
+	        		<li>
 			<a href="${pageContext.request.contextPath}/favorites.jsp">
-				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart-outlined.svg">
+				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart.svg">
 			</a>
 		</li>
 		<li>
 			<a href="${pageContext.request.contextPath}/list.jsp">
-				<img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg">
+				<img class="icon" alt="Back" title="Back" src="http://www.entypo.com/images/arrow-bold-left.svg">
 			</a>
 		</li>
-	</ul>
+      			</ul>
+    		</div>
+  		</div>
+	</nav>
 		<%
 		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies();
 		%>
 	<ul class="listPictures">
+		<h1 class="listheader">Favorites</h1>
 		<%
 		boolean favIsEmpty = true;
 		for(int i = 0; i < allWhiskies.size(); i++) {
@@ -49,7 +61,7 @@
 		<%}
 		}
 		if(favIsEmpty) {%>
-			<div>
+			<div class="listheader">
 				<h2>You don't have any favorites yet.
 				<p>Go to all whiskies <a href="${pageContext.request.contextPath}/list.jsp">here</a></p></h2>
 	</div>

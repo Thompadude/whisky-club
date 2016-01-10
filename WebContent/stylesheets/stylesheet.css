@@ -12,7 +12,6 @@ body {
 
 .content {
 	color: white;
-	margin-top: 1%;
 	margin-left: 12.5%;
 	margin-right: 12.5%;
 }
@@ -40,7 +39,6 @@ a, a:hover, a:visited, a:active, a:link {
 
 #iconOpenMenu {
 	position: fixed;
-	top: -2px;
 	z-index: 100;
 }
 

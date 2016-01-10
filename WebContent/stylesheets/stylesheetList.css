@@ -1,41 +1,16 @@
-#backToTheTop {
-	bottom: 30px;
-	margin-left: -220px;
-	position: fixed;
-	color: #ffffff;
-}
-
-.glyphicon-triangle-top {
-	color: #ffffff;
-	font-size: 50px;
-}
-
-.glyphicon-triangle-top:hover {
-	color: #666666;
-	font-size: 50px;
-}
-
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
+.listheader {
+	padding-top: 70px;
 }
 
 /* List Navbar */
-.nav {
-	border-color: #FFFFFF;
+.navbar {
+	margin-left: 12.5% !important;
+	margin-right: 12.5% !important;
+	border-bottom: 1px solid white !important;
+	background-color: black !important;
+	z-index: 99 !important;
 }
 
-.nav-tabs li a {
-	border: 1px solid white;
-	color: white;
-}
-
-.nav-tabs li a:hover, .nav-tabs a:focus {
-	color: black;
-}
 
 /* List Pictures formats */
 .listPictures {
