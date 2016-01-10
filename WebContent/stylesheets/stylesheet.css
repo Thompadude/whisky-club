@@ -3,6 +3,10 @@
 	visibility: hidden;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 body {
 	background-image: url("../images/blackBackground.jpg");
 	background-repeat: no-repeat;

@@ -12,6 +12,16 @@
 	z-index: 99 !important;
 }
 
+@media (max-width: 767px) {
+    .navbar-fixed-top {
+        position: relative !important;
+        top: auto !important;
+    }
+    .navbar-collapse {
+        max-height: none !important;
+    }
+}
+
 .specialnav {
 	margin-left: 0% !important;
 	margin-right: 0% !important;
