@@ -1,5 +1,9 @@
 <!-- List all whiskies. -->
+<%@page import="database.Data"%>
+<%@page import="database.WhiskyDatabase"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page import="whiskies.*"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +17,12 @@
 <span id="top"></span>
 <%@ include file="menu/menu.jsp"%>
 <%@ include file="background.jsp"%>
+
+<%
+	WhiskyDatabase whiskyDatabase = Data.getWhiskyHandler();
+	ArrayList<Whisky> allWhiskies = whiskyDatabase.getWhiskies();
+%>
+
 <div class="content">
 	<div class="title">All Whiskies</div>
 	<a href="#top" id="backToTheTop">
@@ -30,121 +40,192 @@
 		<li><a href="#mno">MNO</a></li>
 		<li><a href="#pqrs">PQRS</a></li>
 		<li><a href="#tuvw">TUVW</a></li>
-		<li><a href="#xyz">XYZ<span>&#35;</span></a></li>
+		<li><a href="#xyz">XYZ</a></li>
 	</ul>
-	<h3 id="abc">ABC</h3>
-	<ul class="listPictures">
-		<li>
-			<div class="whiskywrapper">
-				<!-- Check if whisky aberlour exist in ListServlet -->
-				<a href="ListServlet?whisky=aberlour">
-					<img class="img-responsive"
-					src="${pageContext.request.contextPath}/images/aberlour.jpg"
-					alt="Aberlour">
-					<p class="whiskytitle">Aberlour 10 year</p>
-				</a>
-			</div>
-		</li>
-	</ul>
-	<div class="clear"></div>
-	<h3 id="def">DEF</h3>
-	<ul class="listPictures">
-		<li>
-			<div class="whiskywrapper">
-				<a href="ListServlet?whisky=dalwhinnie">
-					<img class="img-responsive"
-					src="${pageContext.request.contextPath}/images/dalwhinnie.jpg"
-					alt="Dalwhinnie">
-					<p class="whiskytitle">Dalwhinnie 15 year</p>
-				</a>
-			</div>
-		</li>
-	</ul>
-	<div class="clear"></div>
-	<h3 id="ghi">GHI</h3>
-	<ul class="listPictures">
-		<li>
-			<div class="whiskywrapper">			
-				<a href="ListServlet?whisky=glennfiddich">
-					<img class="img-responsive"
-					src="${pageContext.request.contextPath}/images/glennfiddich.jpg"
-					alt="Glennfiddich">
-					<p class="whiskytitle">Glennfiddich 14 year</p>
-				</a>
-			</div>
-		</li>
-	</ul>
-	<div class="clear"></div>
-	<h3 id="jkl">JKL</h3>
-	<ul class="listPictures">
-		<li>
-			<div class="whiskywrapper">			
-				<a href="ListServlet?whisky=laphroaig">
-					<img class="img-responsive"
-					src="${pageContext.request.contextPath}/images/laphroaigquartercask.jpg"
-					alt="Talisker">
-					<p class="whiskytitle">Laphroaig</p>
-				</a>
-			</div>
-		</li>
-	</ul>
+		<h3 id="abc">ABC</h3>
+		<ul class="listPictures">
+			<%
+				for (int i = 0; i < allWhiskies.size(); i++) {
+					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
+					if ((firstLetterInName >= 'a') && (firstLetterInName <= 'c')) {
+			%>
+					<li>
+						<div class="whiskywrapper">
+							<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+							<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+							</a>
+						</div>
+					</li>
+			<%
+				}
+				}
+			%>
+		</ul>
+		<div class="clear"></div>
+		<h3 id="def">DEF</h3>
+		<ul class="listPictures">
+			<%
+				for (int i = 0; i < allWhiskies.size(); i++) {
+					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
+					if ((firstLetterInName >= 'd') && (firstLetterInName <= 'f')) {
+			%>
+					<li>
+						<div class="whiskywrapper">
+							<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+							<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+							</a>
+						</div>
+					</li>
+			<%
+				}
+				}
+			%>
+		</ul>
+		<div class="clear"></div>
+		<h3 id="ghi">GHI</h3>
+		<ul class="listPictures">
+			<%
+				for (int i = 0; i < allWhiskies.size(); i++) {
+					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
+					if ((firstLetterInName >= 'g') && (firstLetterInName <= 'i')) {
+			%>
+					<li>
+						<div class="whiskywrapper">
+							<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+							<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+							</a>
+						</div>
+					</li>
+			<%
+				}
+				}
+			%>
+		</ul>
+		<div class="clear"></div>
+		<h3 id="jkl">JKL</h3>
+		<ul class="listPictures">
+			<%
+				for (int i = 0; i < allWhiskies.size(); i++) {
+					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
+					if ((firstLetterInName >= 'j') && (firstLetterInName <= 'l')) {
+			%>
+					<li>
+						<div class="whiskywrapper">
+							<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+							<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+							</a>
+						</div>
+					</li>
+			<%
+				}
+				}
+			%>
+		</ul>
 		<div class="clear"></div>
 		<h3 id="mno">MNO</h3>
-	<ul class="listPictures">
-		<li>
-			<div class="whiskywrapper">
-				<a href="ListServlet?whisky=oban">
-					<img class="img-responsive"
-					src="${pageContext.request.contextPath}/images/oban.jpg" alt="Oban">
-					<p class="whiskytitle">Oban 14 year</p>
-				</a>
-			</div>
-		</li>
-	</ul>
-	<div class="clear"></div>
-	<h3 id="pqrs">PQRS</h3>
-	<ul class="listPictures">
-		<li>
-			<div class="whiskywrapper">
-				<a href="">
-					<img class="img-responsive"
-					src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
-					alt="Coming Soon">
-					<p class="whiskytitle">Coming Soon</p>
-				</a>
-			</div>
-		</li>
-	</ul>
-	<div class="clear"></div>
-	<h3 id="tuvw">TUVW</h3>
-	<ul class="listPictures">
-		<li>
-			<div class="whiskywrapper">
-				<a href="ListServlet?whisky=talisker">
-					<img class="img-responsive"
-					src="${pageContext.request.contextPath}/images/talisker.jpg"
-					alt="Talisker">
-					<p class="whiskytitle">Talisker</p>
-				</a>
-			</div>
-		</li>
-	</ul>
-	<div class="clear"></div>
-	<h3 id="xyz">XYZ<span>&#35;</span></h3>
-	<ul class="listPictures">
-		<li>
-			<div class="whiskywrapper">
-				<a href="">
-					<img class="img-responsive"
-					src="${pageContext.request.contextPath}/images/imageComingSoon.jpg"
-					alt="Coming Soon">
-					<p class="whiskytitle">Coming Soon</p>
-				</a>
-			</div>
-		</li>
-	</ul>
-	<div class="clear"></div>
-</div>
+		<ul class="listPictures">
+			<%
+				for (int i = 0; i < allWhiskies.size(); i++) {
+					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
+					if ((firstLetterInName >= 'm') && (firstLetterInName <= 'o')) {
+			%>
+					<li>
+						<div class="whiskywrapper">
+							<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+							<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+							</a>
+						</div>
+					</li>
+			<%
+				}
+				}
+			%>
+		</ul>
+		<div class="clear"></div>
+		<h3 id="pqrs">PQRS</h3>
+		<ul class="listPictures">
+			<%
+				for (int i = 0; i < allWhiskies.size(); i++) {
+					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
+					if ((firstLetterInName >= 'p') && (firstLetterInName <= 's')) {
+			%>
+					<li>
+						<div class="whiskywrapper">
+							<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+							<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+							</a>
+						</div>
+					</li>
+			<%
+				}
+				}
+			%>
+		</ul>
+		<div class="clear"></div>
+		<h3 id="tuvw">TUVW</h3>
+		<ul class="listPictures">
+			<%
+				for (int i = 0; i < allWhiskies.size(); i++) {
+					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
+					if ((firstLetterInName >= 't') && (firstLetterInName <= 'w')) {
+			%>
+					<li>
+						<div class="whiskywrapper">
+							<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+							<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+							</a>
+						</div>
+					</li>
+			<%
+				}
+				}
+			%>
+		</ul>
+		<div class="clear"></div>
+		<h3 id="def">XYZ</h3>
+		<ul class="listPictures">
+			<%
+				for (int i = 0; i < allWhiskies.size(); i++) {
+					char firstLetterInName = allWhiskies.get(i).getId().charAt(0);
+					if ((firstLetterInName >= 'x') && (firstLetterInName <= 'z')) {
+			%>
+					<li>
+						<div class="whiskywrapper">
+							<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+							<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+							</a>
+						</div>
+					</li>
+			<%
+				}
+				}
+			%>
+		</ul>
+	</div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
