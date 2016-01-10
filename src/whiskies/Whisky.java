@@ -20,7 +20,7 @@ public class Whisky implements java.io.Serializable {
 	 * Constructs a new whisky.
 	 * Also serves as a super class for hardcoded whiskies.
 	 * 
-	 * @param id the identification number.
+	 * @param id the identification String.
 	 * @param name the name/title.
 	 * @param region the region of origin.
 	 * @param country the country of origin.
