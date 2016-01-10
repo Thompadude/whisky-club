@@ -13,8 +13,8 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
-<div class="content">
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="content container-fluid">
+	<nav class="navbar navbar-inverse specialnav">
   		<div class="container-fluid">
     		<div class="navbar-header">
       			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

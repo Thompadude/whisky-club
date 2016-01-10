@@ -20,6 +20,29 @@
 <!-- Using a hidden input to get grade value. -->
 <input type="hidden" id="grade" value="<%=chosenWhisky.getGrade()%>"></input>
 <div class="content container-fluid">
+	<nav class="navbar navbar-inverse specialnav">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<span>Navigation</span>
+      			</button>
+    		</div>
+    		<div class="collapse navbar-collapse" id="myNavbar">
+      			<ul class="nav navbar-nav">
+	        		<li>
+			<a href="${pageContext.request.contextPath}/favorites.jsp">
+				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart.svg">
+			</a>
+		</li>
+		<li>
+			<a href="${pageContext.request.contextPath}/list.jsp">
+				<img class="icon" alt="Back" title="Back" src="http://www.entypo.com/images/arrow-bold-left.svg">
+			</a>
+		</li>
+      			</ul>
+    		</div>
+  		</div>
+	</nav>
 	<div class="row">
 		<div class="col-lg-4" id="selectedWhiskyPictureDiv">		
 				<!-- Show whisky picture -->
@@ -107,12 +130,6 @@
 		}
 		%>
 	</div>
-	<!-- Go back to list.jsp. Left-arrow icon -->
-	<div class="clear">
-	<a href="${pageContext.request.contextPath}/list.jsp">
-	<img class="icon" src="http://www.entypo.com/images/arrow-bold-left.svg">
-	</a>
-</div>
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

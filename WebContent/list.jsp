@@ -15,11 +15,11 @@
 	<title>Whiskey in the Jar</title>
 </head>
 <body>
+<%@ include file="menu/menu.jsp"%>
 <%
 	ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies();
 %>
-<%@ include file="menu/menu.jsp"%>
-<div class="content">
+<div class="content container-fluid">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
   		<div class="container-fluid">
     		<div class="navbar-header">

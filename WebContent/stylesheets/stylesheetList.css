@@ -3,12 +3,18 @@
 }
 
 /* List Navbar */
+
 .navbar {
 	margin-left: 12.5% !important;
 	margin-right: 12.5% !important;
 	border-bottom: 1px solid white !important;
 	background-color: black !important;
 	z-index: 99 !important;
+}
+
+.specialnav {
+	margin-left: 0% !important;
+	margin-right: 0% !important;
 }
 
 
