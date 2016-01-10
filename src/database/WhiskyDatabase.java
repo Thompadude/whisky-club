@@ -5,10 +5,16 @@ import java.util.ArrayList;
 import saveAndLoad.ReadFromFile;
 import saveAndLoad.SaveToFile;
 import whiskies.Aberlour;
+import whiskies.Amrut;
+import whiskies.Balvenie;
 import whiskies.Dalwhinnie;
 import whiskies.Glennfiddich;
+import whiskies.HighlandPark;
+import whiskies.Jura;
 import whiskies.LaphroaigQuarterCask;
 import whiskies.Oban;
+import whiskies.RoyalLochnagar;
+import whiskies.Springbank;
 import whiskies.Talisker;
 import whiskies.Whisky;
 
@@ -59,6 +65,12 @@ public class WhiskyDatabase {
 		this.whiskies.add(new Dalwhinnie());
 		this.whiskies.add(new Glennfiddich());
 		this.whiskies.add(new Oban());
+		this.whiskies.add(new Amrut());
+		this.whiskies.add(new Springbank());
+		this.whiskies.add(new RoyalLochnagar());
+		this.whiskies.add(new Balvenie());
+		this.whiskies.add(new HighlandPark());
+		this.whiskies.add(new Jura());
 	}
 
 }
