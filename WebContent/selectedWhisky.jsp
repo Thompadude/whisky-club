@@ -15,7 +15,6 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
-<%@ include file="/background.jsp"%>
 <!-- Get selected whisky -->
 <% Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky"); %>
 <!-- Using a hidden input to get grade value. -->

@@ -12,7 +12,6 @@
 <body>
 <span id="top"></span>
 <%@ include file="menu/menu.jsp"%>
-<%@ include file="background.jsp"%>
 <div class="content">
 	<div class="title">All Whiskies</div>
 	<a href="#top" id="backToTheTop">
