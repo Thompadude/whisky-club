@@ -20,7 +20,7 @@
 	ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies();
 %>
 <div class="content container-fluid">
-	<nav class="navbar navbar-inverse  navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
   		<div class="container-fluid">
     		<div class="navbar-header">
       			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -32,7 +32,9 @@
 	        		<li>
 	        			<a href="${pageContext.request.contextPath}/favorites.jsp">
 	        			<img class="icon" alt="Favorites" title="Favorites"
-	        			src="http://www.entypo.com/images/heart-outlined.svg">
+	        			src="http://www.entypo.com/images/heart-outlined.svg"
+	        			onmouseover="this.src='http://www.entypo.com/images/heart.svg'"
+	        			onmouseout="this.src='http://www.entypo.com/images/heart-outlined.svg'">
 	        			</a>
 	        		</li>
 					<li><a href="#abc">ABC</a></li>

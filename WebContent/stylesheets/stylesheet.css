@@ -4,7 +4,7 @@
 }
 
 ::-webkit-scrollbar { 
-    display: none; 
+    display: none;
 }
 
 body {
@@ -47,8 +47,13 @@ a, a:hover, a:visited, a:active, a:link {
 }
 
 .icon {
-	width: 2em;
-	height: 2em;
+	width: 2.5em;
+	height: 2.5em;
+}
+
+.menuSmallIcon {
+	width: 1.5em;
+	height: 1.5em;
 }
 
 #menu {
@@ -71,15 +76,15 @@ a, a:hover, a:visited, a:active, a:link {
 }
 
 
-.menubtn:nth-child(5), .menubtn:nth-child(6) {
+.menubtn:nth-child(6), .menubtn:nth-child(7) {
 	position: relative;
 	top: 250px;
 }
 
 .overlay {
 	position: fixed;
-	z-index: 1;
-	background-color: rgba(0,0,0,0.5);
+	z-index: 10;
+	background-color: rgba(0,0,0,0.6);
 	bottom: 0;
 	right: 0;
 	left: 0;

@@ -9,7 +9,7 @@
 	margin-right: 12.5% !important;
 	border-bottom: 1px solid white !important;
 	background-color: black !important;
-	z-index: 99 !important;
+	z-index: 9 !important;
 }
 
 @media (max-width: 767px) {

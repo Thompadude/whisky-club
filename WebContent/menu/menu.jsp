@@ -13,13 +13,21 @@
 			<img class="icon" src="http://www.entypo.com/images/cross.svg" alt="cross">
 		</div>
 			<div class="btn-group-vertical menubtn">
-				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-default menubtn menulink">Home</a>
-				<a href="${pageContext.request.contextPath}/list.jsp" class="btn btn-default menubtn menulink">Whiskies</a>
-				<a href="${pageContext.request.contextPath}/favorites.jsp" class="btn btn-default menubtn menulink">Favorites</a>
-				<a href="${pageContext.request.contextPath}/guestbookform.jsp" class="btn btn-default menubtn menulink">Guestbook</a>
-				<a href="${pageContext.request.contextPath}/about.jsp" class="btn btn-default menubtn menulink">About</a>
-				<a href="${pageContext.request.contextPath}/login.jsp" class="btn btn-default menubtn menulink">Log out</a>
-				<a href="${pageContext.request.contextPath}/whiskymanager.jsp" class="btn btn-default menubtn menulink">Whisky settings</a>
+				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-default menubtn menulink">
+					 <img class="menuSmallIcon" src="http://www.entypo.com/images/home.svg">&nbsp;&nbsp;Home
+				</a>
+				<a href="${pageContext.request.contextPath}/list.jsp" class="btn btn-default menubtn menulink">
+					<img class="menuSmallIcon" src="http://www.entypo.com/images/list.svg">&nbsp;&nbsp;Whiskies</a>
+				<a href="${pageContext.request.contextPath}/favorites.jsp" class="btn btn-default menubtn menulink">
+					<img class="menuSmallIcon" src="http://www.entypo.com/images/heart.svg">&nbsp;&nbsp;Favorites</a>
+				<a href="${pageContext.request.contextPath}/guestbookform.jsp" class="btn btn-default menubtn menulink">
+					<img class="menuSmallIcon" src="http://www.entypo.com/images/open-book.svg">&nbsp;&nbsp;Guestbook</a>
+				<a href="${pageContext.request.contextPath}/whiskymanager.jsp" class="btn btn-default menubtn menulink">
+					<img class="menuSmallIcon" src="http://www.entypo.com/images/cog.svg">&nbsp;&nbsp;Settings</a>
+				<a href="${pageContext.request.contextPath}/about.jsp" class="btn btn-default menubtn menulink">
+					<img class="menuSmallIcon" src="http://www.entypo.com/images/info-with-circle.svg">&nbsp;&nbsp;About</a>
+				<a href="${pageContext.request.contextPath}/login.jsp" class="btn btn-default menubtn menulink">
+					<img class="menuSmallIcon" src="http://www.entypo.com/images/log-out.svg">&nbsp;&nbsp;Log out</a>
 			</div>
 	</div>
 	<div id="iconOpenMenu">
