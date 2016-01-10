@@ -9,7 +9,6 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
-<%@ include file="/background.jsp"%>
 	<div class="content container-fluid">
 		<div class="row">
 		<div class="col-lg-2">

@@ -13,9 +13,7 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
-<%@ include file="background.jsp"%>
 <div class="content">
-	<div class="title">Favorites</div>
 	<ul class="nav nav-tabs">
 		<li>
 			<a href="${pageContext.request.contextPath}/favorites.jsp">

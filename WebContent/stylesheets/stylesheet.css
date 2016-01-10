@@ -1,11 +1,4 @@
 /* General styles */
-.title {
-	position: absolute;
-	font-size: 70px;
-	top: 120px;
-	left: 245px;
-}
-
 .hiddenbutton {
 	visibility: hidden;
 }
@@ -41,21 +34,6 @@ a, a:hover, a:visited, a:active, a:link {
 	margin-top: 2em;
 	background-color: black;
 	color: white;
-}
-
-/* Style for top background image. */
-
-#top_background {
-	width: 100%;
-	height: 100%;
-}
-
-#topdiv {
-	opacity: 0.5;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	width: 75%;
 }
 
 /* Style for the menu. */
@@ -114,36 +92,6 @@ form {
 .formfield {
 	color: black;
 	border-radius: .5em;
-}
-
-@media (max-width: 480px) {
-	.content {
-		margin-left: 3.5%;
-		margin-right: 3.5%;
-		text-align: center;
-	}
-	.formfield {
-         min-width: 200px;
-    }
-	.commentfield
-	{
-		text-align: left;
-	}
-}
-
-@media (min-width :640px) {
-    .formfield {
-         min-width: 480px;
-    }
-    .commentfield {
-    	min-width: 600px;
-    }
-}
-
-@media (min-width :1200px) {
-    .formfield {
-         min-width: 600px;
-    }
 }
 
 .formbutton {
@@ -301,4 +249,35 @@ form {
 	top: 200px;
 	left: 20px;
 	right: 0;
+}
+
+/* Media Settings */
+@media (max-width: 480px) {
+	.content {
+		margin-left: 3.5%;
+		margin-right: 3.5%;
+		text-align: center;
+	}
+	.formfield {
+         min-width: 200px;
+    }
+	.commentfield
+	{
+		text-align: left;
+	}
+}
+
+@media (min-width :640px) {
+    .formfield {
+         min-width: 480px;
+    }
+    .commentfield {
+    	min-width: 600px;
+    }
+}
+
+@media (min-width :1200px) {
+    .formfield {
+         min-width: 600px;
+    }
 }

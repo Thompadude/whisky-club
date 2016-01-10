@@ -12,9 +12,8 @@
 </head>
 <body>
 <%@ include file="../menu/menu.jsp"%>
-<%@ include file="../background.jsp"%>
 <div class="content container-fluid">
-<div class="title">Guestbook</div>
+<h1>Guestbook</h1>
 	<div class="row">
 		<div class="col-lg-12">
 		<!-- Comment form -->

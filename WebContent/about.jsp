@@ -10,11 +10,7 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
-<%@ include file="background.jsp"%>
 <div class="content">
-	<h1 class="title">
-	About Us
-	</h1>
 	<br>
 	<h2>
 	This web page is part of a school project.<br>

@@ -16,7 +16,6 @@
 <body>
 <span id="top"></span>
 <%@ include file="menu/menu.jsp"%>
-<%@ include file="background.jsp"%>
 
 <%
 	WhiskyDatabase whiskyDatabase = Data.getWhiskyHandler();
@@ -24,7 +23,6 @@
 %>
 
 <div class="content">
-	<div class="title">All Whiskies</div>
 	<a href="#top" id="backToTheTop">
 		<span class="glyphicon glyphicon-triangle-top"></span>
 	</a>

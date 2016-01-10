@@ -10,7 +10,6 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
-<%@ include file="background.jsp"%>
 <div class="content">
 	<p><a href="WhiskyManageServlet?reset=reset">
 		Click here to clear all whiskies (erase all savings and add the hardcoded again).
