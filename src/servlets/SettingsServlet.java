@@ -50,10 +50,9 @@ public class SettingsServlet extends HttpServlet {
 		String filePathWhiskies = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePathWhiskies);
 		
-		String resetAllWhiskies = "";
-		resetAllWhiskies = request.getParameter("resetWhiskies");
+		String resetAllWhiskies = request.getParameter("resetWhiskies");
 		
-		if(resetAllWhiskies.equals("reset")) {
+		if(resetAllWhiskies != null && resetAllWhiskies.equals("reset")) {
 			whiskies = whiskyDatabase.resetWhiskes();
 			
 			// Saves any changes to the file.
@@ -72,10 +71,9 @@ public class SettingsServlet extends HttpServlet {
 		String filePathGuestbook = getServletContext().getRealPath("/guestbookData.dat");
 		ArrayList<GuestbookEntries> allEntries = guestbookDatabase.loadGuestbookEntries(filePathGuestbook);
 		
-		String resetAllGuestbookEntries = "";
-		resetAllGuestbookEntries = request.getParameter("resetGuestbook");
+		String resetAllGuestbookEntries = request.getParameter("resetGuestbook");
 		
-		if(resetAllGuestbookEntries.equals("reset")) {
+		if(resetAllGuestbookEntries != null && resetAllGuestbookEntries.equals("reset")) {
 			allEntries = new ArrayList<>();
 			
 			// Save any changes to the file.
