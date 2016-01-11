@@ -5,65 +5,92 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheetList.css">
 <title>Add New Whisky</title>
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
-<div class="content">
+<div class="content container-fluid">
+		<nav class="navbar navbar-inverse specialnav">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<span>Navigation</span>
+      			</button>
+    		</div>
+    		<div class="collapse navbar-collapse" id="myNavbar">
+      			<ul class="nav navbar-nav">
+	        		<li>
+	        			<a href="${pageContext.request.contextPath}/index.jsp">
+					 	<img class="icon" alt="Home" title="Home" src="http://www.entypo.com/images/home.svg"
+					 	onmouseover="src='http://www.entypo.com/images/arrow-with-circle-up.svg'"
+					 	onmouseout="src='http://www.entypo.com/images/home.svg'"></a>
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="${pageContext.request.contextPath}/list.jsp">
+						<img class="icon" alt="Whiskies" title="Whiskies"
+							src="http://www.entypo.com/images/document.svg"
+							onmouseover="src='http://www.entypo.com/images/documents.svg'"
+							onmouseout="src='http://www.entypo.com/images/document.svg'">
+						</a>
+	        		</li>
+	        		
+	        		<li>
+						<a href="${pageContext.request.contextPath}/favorites.jsp">
+						<img class="icon" alt="Favorites" title="Favorites" 
+							src="http://www.entypo.com/images/heart-outlined.svg"
+							onmouseover="src='http://www.entypo.com/images/heart.svg'"
+							onmouseout="src='http://www.entypo.com/images/heart-outlined.svg'">
+						</a>
+					</li>
+					
+					<li>
+						<a href="${pageContext.request.contextPath}/guestbookform.jsp">
+						<img class="icon" alt="Guestbook" title="Guestbook"
+							src="http://www.entypo.com/images/book.svg"
+							onmouseover="src='http://www.entypo.com/images/open-book.svg'"
+							onmouseout="src='http://www.entypo.com/images/book.svg'">
+						</a>
+					</li>
+      			</ul>
+    		</div>
+  		</div>
+	</nav>
+	<h1>Add Whisky</h1>
 	<div class="container-fluid">
 		<form class="form-horizontal" role="form" method="POST">
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="name">Name: </label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="name" placeholder="Enter whisky name">
+			<div class="col-md-4">
+				<label class="control-label" for="name">Name:</label>
+				<input type="text" class="form-control" id="name" placeholder="Enter name">
+				<label class="control-label" for="region">Region:</label>
+				<input type="text" class="form-control" id="region" placeholder="Enter region">
+				<label class="control-label" for="country">Country:</label>
+				<input type="text" class="form-control" id="country" placeholder="Enter country">
+				<label class="control-label">Type: </label>
+				<div class="radio">
+				<label><input type="radio" name="type" id="singlemalt" value="Single Malt">&nbsp;Single Malt</label>
 				</div>
+				<div class="radio">
+				<label><input type="radio" name="type" id="blended" value="Blended">&nbsp;Blended</label>
+				</div>
+				<label class="control-label" for="alc">Alcohol Volume:</label>
+				<input type="text" class="form-control" id="alc" placeholder="Enter a number whithout % (i.e 45.5)">
+				<br>
+				<input type="reset" class="formbutton" value="Clear">
+				<button type="button" class="formbutton" id="submit">Submit</button>
+				<br><br><br><br>
+				<div id="result"></div>
 			</div>
-			<div class="form-group">
-			<label class="control-label col-sm-2" for="region">Region: </label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="region" placeholder="Enter region of origin">
-				</div>
+			<div class="col-md-4">
+						<label class="control-label" for="info">Info:</label>
+						<textarea rows="10" class="form-control" id="info" placeholder="Enter info"></textarea>
+						<br>
+						<label class="control-label" style="padding-top: 10.5px;" for="imgurl">Image URL:</label>
+						<input type="text" class="form-control" id="imgurl" value="http://www.">
 			</div>
-			<div class="form-group">
-			<label class="control-label col-sm-2" for="country">Country: </label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="country" placeholder="Enter country of origin">
-				</div>
-			</div>			
-			<div class="form-group">
-			<label class="control-label col-sm-2">Type: </label>
-				<div class="radio col-sm-10">
-					<label><input type="radio" name="type" id="singlemalt" value="Single Malt">Single Malt</label>
-					<label><input type="radio" name="type" id="blended" value="Blended">Blended</label>
-				</div>
-			</div>			
-			<div class="form-group">
-			<label class="control-label col-sm-2" for="info">Information: </label>
-				<div class="col-sm-10">
-					<textarea rows="5" class="form-control" id="info" placeholder="Enter info"></textarea>
-				</div>
-			</div>			
-			<div class="form-group">
-			<label class="control-label col-sm-2" for="imgurl">URL to image: </label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="imgurl" value="http://www.">
-				</div>
-			</div>			
-			<div class="form-group">
-			<label class="control-label col-sm-2" for="alc">Alcohol Volume: </label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="alc" placeholder="Enter alcoholic volume in numbers without % (i.e. 45.5)">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-2"></div>
-				<div class="col-sm-10">
-					<button type="reset" class="btn btn-default">Reset</button>
-					<button id="submit" type="button" class="btn btn-default">Submit</button>
-				</div>
-			</div>
+			<div class="col-md-4"></div>
 		</form>
-		<div id="result"></div>
 	</div>
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
