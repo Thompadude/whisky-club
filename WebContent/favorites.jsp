@@ -14,7 +14,7 @@
 <body>
 <%@ include file="menu/menu.jsp"%>
 <div class="content container-fluid">
-	<nav class="navbar navbar-inverse specialnav">
+		<nav class="navbar navbar-inverse specialnav">
   		<div class="container-fluid">
     		<div class="navbar-header">
       			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -24,15 +24,29 @@
     		<div class="collapse navbar-collapse" id="myNavbar">
       			<ul class="nav navbar-nav">
 	        		<li>
-			<a href="${pageContext.request.contextPath}/favorites.jsp">
-				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart.svg">
-			</a>
-		</li>
-		<li>
-			<a href="${pageContext.request.contextPath}/list.jsp">
-				<img class="icon" alt="Back" title="Back" src="http://www.entypo.com/images/arrow-bold-left.svg">
-			</a>
-		</li>
+	        			<a href="${pageContext.request.contextPath}/index.jsp">
+					 	<img class="icon" alt="Home" title="Home" src="http://www.entypo.com/images/home.svg"
+					 	onmouseover="src='http://www.entypo.com/images/arrow-with-circle-up.svg'"
+					 	onmouseout="src='http://www.entypo.com/images/home.svg'"></a>
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="${pageContext.request.contextPath}/list.jsp">
+						<img class="icon" alt="Whiskies" title="Whiskies"
+							src="http://www.entypo.com/images/document.svg"
+							onmouseover="src='http://www.entypo.com/images/documents.svg'"
+							onmouseout="src='http://www.entypo.com/images/document.svg'">
+						</a>
+	        		</li>
+					
+					<li>
+						<a href="${pageContext.request.contextPath}/guestbookform.jsp">
+						<img class="icon" alt="Guestbook" title="Guestbook"
+							src="http://www.entypo.com/images/book.svg"
+							onmouseover="src='http://www.entypo.com/images/open-book.svg'"
+							onmouseout="src='http://www.entypo.com/images/book.svg'">
+						</a>
+					</li>
       			</ul>
     		</div>
   		</div>
@@ -41,7 +55,7 @@
 		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies();
 		%>
 	<ul class="listPictures">
-		<h1 class="listheader">Favorites</h1>
+		<h1>Favorites</h1>
 		<%
 		boolean favIsEmpty = true;
 		for(int i = 0; i < allWhiskies.size(); i++) {

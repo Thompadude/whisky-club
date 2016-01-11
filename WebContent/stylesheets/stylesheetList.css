@@ -1,5 +1,5 @@
 .listheader {
-	padding-top: 70px;
+	padding-top: 50px;
 }
 
 /* List Navbar */
@@ -8,8 +8,12 @@
 	margin-left: 12.5% !important;
 	margin-right: 12.5% !important;
 	border-bottom: 1px solid white !important;
-	background-color: black !important;
+	background-image: url("../images/blackBackground.jpg") !important;
 	z-index: 9 !important;
+}
+
+.navbar a:focus {
+	color: #999 !important;
 }
 
 @media (max-width: 767px) {

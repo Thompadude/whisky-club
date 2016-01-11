@@ -49,7 +49,9 @@
     		</div>
   		</div>
 	</nav>
-	<h3 class="listheader" id="abc">ABC</h3>
+	<div class="listheader" id="abc"></div>
+	<br>
+	<h3 class="listheader">ABC</h3>
 	<ul class="listPictures">
 		<%
 			for (int i = 0; i < allWhiskies.size(); i++) {
@@ -72,7 +74,9 @@
 		%>
 	</ul>
 	<div class="clear"></div>
-	<h3 class="listheader" id="def">DEF</h3>
+	<div id="def"></div>
+	<br>
+	<h3 class="listheader">DEF</h3>
 	<ul class="listPictures">
 		<%
 			for (int i = 0; i < allWhiskies.size(); i++) {
@@ -95,7 +99,9 @@
 		%>
 	</ul>
 	<div class="clear"></div>
-	<h3 class="listheader" id="ghi">GHI</h3>
+	<div id="ghi"></div>
+	<br>
+	<h3 class="listheader">GHI</h3>
 	<ul class="listPictures">
 		<%
 			for (int i = 0; i < allWhiskies.size(); i++) {
@@ -118,7 +124,9 @@
 		%>
 	</ul>
 	<div class="clear"></div>
-	<h3 class="listheader" id="jkl">JKL</h3>
+	<div id="jkl"></div>
+	<br>
+	<h3 class="listheader">JKL</h3>
 	<ul class="listPictures">
 		<%
 			for (int i = 0; i < allWhiskies.size(); i++) {
@@ -141,7 +149,9 @@
 		%>
 	</ul>
 	<div class="clear"></div>
-	<h3 class="listheader" id="mno">MNO</h3>
+	<div id="mno"></div>
+	<br>
+	<h3 class="listheader">MNO</h3>
 	<ul class="listPictures">
 		<%
 			for (int i = 0; i < allWhiskies.size(); i++) {
@@ -164,7 +174,9 @@
 		%>
 	</ul>
 	<div class="clear"></div>
-	<h3 class="listheader" id="pqrs">PQRS</h3>
+	<div id="pqrs"></div>
+	<br>
+	<h3 class="listheader">PQRS</h3>
 	<ul class="listPictures">
 		<%
 			for (int i = 0; i < allWhiskies.size(); i++) {
@@ -187,7 +199,9 @@
 		%>
 	</ul>
 	<div class="clear"></div>
-	<h3 class="listheader" id="tuvw">TUVW</h3>
+	<div id="tuvw"></div>
+	<br>
+	<h3 class="listheader">TUVW</h3>
 	<ul class="listPictures">
 		<%
 			for (int i = 0; i < allWhiskies.size(); i++) {
@@ -210,7 +224,9 @@
 		%>
 	</ul>
 	<div class="clear"></div>
-	<h3 class="listheader" id="xyz">XYZ</h3>
+	<div id="xyz"></div>
+	<br>
+	<h3 class="listheader">XYZ</h3>
 	<ul class="listPictures">
 		<%
 			for (int i = 0; i < allWhiskies.size(); i++) {

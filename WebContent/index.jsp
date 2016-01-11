@@ -15,13 +15,13 @@
 			<!-- Added to simulate white space. -->
 				<button class="hiddenbutton"></button>
 		</div>
-			<div class="col-lg-4 indexdiv">
+			<div class="col-lg-4 indexdiv spacetop">
 				<a href="${pageContext.request.contextPath}/list.jsp">
 					<img class="img-responsive" src="${pageContext.request.contextPath}/images/indeximg-a.jpg">
 					<p>List All Whiskies</p>
 				</a>
 			</div>
-			<div class="col-lg-4 indexdiv">
+			<div class="col-lg-4 indexdiv spacetop">
 				<a href="${pageContext.request.contextPath}/favorites.jsp">
 					<img class="img-responsive" src="${pageContext.request.contextPath}/images/indeximg-b.jpg">
 					<p>Favorite Whiskies</p>

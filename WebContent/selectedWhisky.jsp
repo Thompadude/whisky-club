@@ -30,15 +30,39 @@
     		<div class="collapse navbar-collapse" id="myNavbar">
       			<ul class="nav navbar-nav">
 	        		<li>
-			<a href="${pageContext.request.contextPath}/favorites.jsp">
-				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart.svg">
-			</a>
-		</li>
-		<li>
-			<a href="${pageContext.request.contextPath}/list.jsp">
-				<img class="icon" alt="Back" title="Back" src="http://www.entypo.com/images/arrow-bold-left.svg">
-			</a>
-		</li>
+	        			<a href="${pageContext.request.contextPath}/index.jsp">
+					 	<img class="icon" alt="Home" title="Home" src="http://www.entypo.com/images/home.svg"
+					 	onmouseover="src='http://www.entypo.com/images/arrow-with-circle-up.svg'"
+					 	onmouseout="src='http://www.entypo.com/images/home.svg'"></a>
+	        		</li>
+	        		
+	        		<li>
+	        			<a href="${pageContext.request.contextPath}/list.jsp">
+						<img class="icon" alt="Whiskies" title="Whiskies"
+							src="http://www.entypo.com/images/document.svg"
+							onmouseover="src='http://www.entypo.com/images/documents.svg'"
+							onmouseout="src='http://www.entypo.com/images/document.svg'">
+						</a>
+	        		</li>
+	        		
+	        		
+	        		<li>
+						<a href="${pageContext.request.contextPath}/favorites.jsp">
+						<img class="icon" alt="Favorites" title="Favorites" 
+							src="http://www.entypo.com/images/heart-outlined.svg"
+							onmouseover="src='http://www.entypo.com/images/heart.svg'"
+							onmouseout="src='http://www.entypo.com/images/heart-outlined.svg'">
+						</a>
+					</li>
+					
+					<li>
+						<a href="${pageContext.request.contextPath}/guestbookform.jsp">
+						<img class="icon" alt="Guestbook" title="Guestbook" 
+							src="http://www.entypo.com/images/book.svg"
+							onmouseover="src='http://www.entypo.com/images/open-book.svg'"
+							onmouseout="src='http://www.entypo.com/images/book.svg'">
+						</a>
+					</li>
       			</ul>
     		</div>
   		</div>
@@ -72,16 +96,22 @@
 			<br><br>
 			<h3>
 				<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
-				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart.svg">
-				Remove from favorites
+				<img class="icon" alt="Favorites" title="Favorites"
+					src="http://www.entypo.com/images/heart.svg"
+					onmouseover="src='http://www.entypo.com/images/heart-outlined.svg'"
+					onmouseout="src='http://www.entypo.com/images/heart.svg'">
+					Remove from favorites
 				</a>
 			</h3>
 			<%}else{%>
 			<br><br>
 			<h3>
 				<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
-				<img class="icon" alt="Favorites" title="Favorites" src="http://www.entypo.com/images/heart-outlined.svg">
-				Add to favorites
+				<img class="icon" alt="Favorites" title="Favorites"
+					src="http://www.entypo.com/images/heart-outlined.svg"
+					onmouseover="src='http://www.entypo.com/images/heart.svg'"
+					onmouseout="src='http://www.entypo.com/images/heart-outlined.svg'">
+					Add to favorites
 				</a>
 				</h3>
 			<%}%>
