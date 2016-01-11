@@ -247,11 +247,8 @@ form {
 
 /* Styles for index page. */
 
-.spacetop {
-	margin-top: 3em;
-}
-
 .indexdiv {
+	margin-top: 3em;
 	position: relative;
 }
 
@@ -282,6 +279,18 @@ form {
 	.commentfield
 	{
 		text-align: left;
+	}
+	.indexdiv p {
+		font-size: 2em;
+		position: absolute;
+		top: 0;
+	}
+}
+
+@media (max-width :639px) {
+	.indexdiv p {
+		font-size: 2em;
+		top: 0;
 	}
 }
 

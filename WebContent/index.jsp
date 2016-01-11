@@ -8,20 +8,20 @@
 <title>Whiskey in the Jar</title>
 </head>
 <body>
-<%@ include file="menu/menu.jsp"%>
+<%@ include file="menu/menu.jsp" %>
 	<div class="content container-fluid">
 		<div class="row">
 		<div class="col-lg-2">
 			<!-- Added to simulate white space. -->
-				<button class="hiddenbutton"></button>
+			<button class="hiddenbutton"></button>
 		</div>
-			<div class="col-lg-4 indexdiv spacetop">
+			<div class="col-lg-4 indexdiv">
 				<a href="${pageContext.request.contextPath}/list.jsp">
 					<img class="img-responsive" src="${pageContext.request.contextPath}/images/indeximg-a.jpg">
 					<p>List All Whiskies</p>
 				</a>
 			</div>
-			<div class="col-lg-4 indexdiv spacetop">
+			<div class="col-lg-4 indexdiv">
 				<a href="${pageContext.request.contextPath}/favorites.jsp">
 					<img class="img-responsive" src="${pageContext.request.contextPath}/images/indeximg-b.jpg">
 					<p>Favorite Whiskies</p>
