@@ -57,10 +57,13 @@
     		</div>
   		</div>
 	</nav>
+	
 	<h1>Add Whisky</h1>
-	<div class="container-fluid">
+	
+	<div id="addwhiskymargin">
 		<form class="form-horizontal" role="form" method="POST">
-			<div class="col-md-4">
+		<div class="row">
+			<div class="col-md-5">
 				<label class="control-label" for="name">Name:</label>
 				<input type="text" class="form-control" id="name" placeholder="Enter name">
 				<label class="control-label" for="region">Region:</label>
@@ -76,20 +79,23 @@
 				</div>
 				<label class="control-label" for="alc">Alcohol Volume:</label>
 				<input type="text" class="form-control" id="alc" placeholder="Enter a number whithout % (i.e 45.5)">
-				<br>
-				<input type="reset" class="formbutton" value="Clear">
-				<button type="button" class="formbutton" id="submit">Submit</button>
-				<br><br><br><br>
 				<div id="result"></div>
+				<br>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-7">
 						<label class="control-label" for="info">Info:</label>
 						<textarea rows="10" class="form-control" id="info" placeholder="Enter info"></textarea>
 						<br>
-						<label class="control-label" style="padding-top: 10.5px;" for="imgurl">Image URL:</label>
+						<label class="control-label" id="imgurladdwhisky" for="imgurl">Image URL:</label>
 						<input type="text" class="form-control" id="imgurl" value="http://www.">
 			</div>
-			<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<input type="reset" class="formbutton" value="Clear">
+					<button type="button" class="formbutton" id="submit">Submit</button>
+				</div>
+			</div>
 		</form>
 	</div>
 </div>
