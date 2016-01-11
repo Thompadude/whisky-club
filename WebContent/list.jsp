@@ -17,7 +17,8 @@
 <body>
 <%@ include file="menu/menu.jsp"%>
 <%
-	ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies();
+	String filePath = getServletContext().getRealPath("/whiskyData.dat");
+	ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies(filePath);
 %>
 <div class="content container-fluid">
 	<nav class="navbar navbar-inverse navbar-fixed-top">

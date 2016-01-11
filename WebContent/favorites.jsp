@@ -52,7 +52,8 @@
   		</div>
 	</nav>
 		<%
-		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies();
+		String filePath = getServletContext().getRealPath("/whiskyData.dat");
+		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies(filePath);
 		%>
 	<ul class="listPictures">
 		<h1>Favorites</h1>

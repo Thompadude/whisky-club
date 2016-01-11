@@ -26,8 +26,9 @@ import whiskies.Whisky;
 public class WhiskyDatabase {
 
 	private ArrayList<Whisky> whiskies;
-
-	public ArrayList<Whisky> getWhiskies() {
+	
+	public ArrayList<Whisky> getWhiskies(String filePath) {
+		loadWhiskies(filePath);
 		if (whiskies == null) {
 			whiskies = new ArrayList<>();
 			addAllWhiskies();

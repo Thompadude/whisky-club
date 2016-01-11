@@ -43,7 +43,7 @@ public class WhiskyManageServlet extends HttpServlet {
 		// Load the previous whiskies from the file.
 		String filePathWhiskies = getServletContext().getRealPath("/whiskyData.dat");
 		
-		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePathWhiskies);
+		ArrayList<Whisky> whiskies = whiskyDatabase.getWhiskies(filePathWhiskies);
 		
 		String name = request.getParameter("name");
 		String region = request.getParameter("region");

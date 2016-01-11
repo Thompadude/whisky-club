@@ -65,11 +65,11 @@
 		<div class="row">
 			<div class="col-md-5">
 				<label class="control-label" for="name">Name:</label>
-				<input type="text" class="form-control" id="name" placeholder="Enter name">
+				<input type="text" class="form-control" id="name" placeholder="i.e Laphroaig 10 year">
 				<label class="control-label" for="region">Region:</label>
-				<input type="text" class="form-control" id="region" placeholder="Enter region">
+				<input type="text" class="form-control" id="region" placeholder="i.e Islay">
 				<label class="control-label" for="country">Country:</label>
-				<input type="text" class="form-control" id="country" placeholder="Enter country">
+				<input type="text" class="form-control" id="country" placeholder="i.e Scotland">
 				<label class="control-label">Type: </label>
 				<div class="radio">
 				<label><input type="radio" name="type" id="singlemalt" value="Single Malt">&nbsp;Single Malt</label>
@@ -78,7 +78,7 @@
 				<label><input type="radio" name="type" id="blended" value="Blended">&nbsp;Blended</label>
 				</div>
 				<label class="control-label" for="alc">Alcohol Volume:</label>
-				<input type="text" class="form-control" id="alc" placeholder="Enter a number whithout % (i.e 45.5)">
+				<input type="text" class="form-control" id="alc" placeholder=" Without % (i.e 45.5)">
 				<div id="result"></div>
 				<br>
 			</div>
