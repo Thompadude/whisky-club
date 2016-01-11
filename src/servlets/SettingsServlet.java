@@ -64,8 +64,6 @@ public class SettingsServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("settings.jsp");
 			request.setAttribute("clearmessage", "Whiskies Cleared!");
 			dispatcher.forward(request, response);
-			
-			response.sendRedirect("index.jsp");
 		}
 		
 		// Get the file path for previous guestbook entries and load them to the array list.

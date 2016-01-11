@@ -52,6 +52,7 @@
 							src="http://www.entypo.com/images/book.svg"
 							onmouseover="src='http://www.entypo.com/images/open-book.svg'"
 							onmouseout="src='http://www.entypo.com/images/book.svg'">
+						</a>
 					</li>
       			</ul>
     		</div>
