@@ -71,6 +71,8 @@
 	<br>
 	<%if (request.getAttribute("clearmessage") != null) { %>
 	<div id="clearmessage"><%=request.getAttribute("clearmessage")%></div>
+	<br>
+	<div id="pathmessage"><%=request.getAttribute("pathmessage")%></div>
 	<%}; %>
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

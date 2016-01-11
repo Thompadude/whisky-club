@@ -63,6 +63,7 @@ public class SettingsServlet extends HttpServlet {
 			// Returns response
 			RequestDispatcher dispatcher = request.getRequestDispatcher("settings.jsp");
 			request.setAttribute("clearmessage", "Whiskies Cleared!");
+			request.setAttribute("pathmessage", "File saved at:<br> " + filePathWhiskies);
 			dispatcher.forward(request, response);
 		}
 		
@@ -82,6 +83,7 @@ public class SettingsServlet extends HttpServlet {
 			// Returns response
 			RequestDispatcher dispatcher = request.getRequestDispatcher("settings.jsp");
 			request.setAttribute("clearmessage", "Guestbook Cleared!");
+			request.setAttribute("pathmessage", "File saved at:<br> " + filePathGuestbook);
 			dispatcher.forward(request, response);
 		}
 	}
