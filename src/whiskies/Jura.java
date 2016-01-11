@@ -13,7 +13,7 @@ public class Jura extends Whisky {
 				+ " of vanilla topped by floral, citrus, chocolate and spice notes forming"
 				+ " a uniquely seductive bouquet."
 
-		, "../images/jura.jpg", 44, 0);
+		, "images/jura.jpg", 44, 0);
 	}
 
 }

@@ -10,7 +10,7 @@ public class Amrut extends Whisky {
 				+ " showcase the distillery. The original Indian single malt and,"
 				+ " dare we say it, maybe the best?"
 
-		, "../images/amrut.jpg", 46, 0);
+		, "images/amrut.jpg", 46, 0);
 	}
 
 }

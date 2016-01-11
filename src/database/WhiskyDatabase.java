@@ -73,8 +73,21 @@ public class WhiskyDatabase {
 		this.whiskies.add(new Balvenie());
 		this.whiskies.add(new HighlandPark());
 		this.whiskies.add(new Jura());		
-		
-		 // Bubble sorting all whiskies to make them appear in alphabetic order.
+		sortAllWhiskies(whiskies);
+	}
+	
+	public ArrayList<Whisky> resetWhiskes() {
+		this.whiskies = new ArrayList<>();
+		addAllWhiskies();
+		return whiskies;
+	}
+	
+	/**
+	 * Bubble sorting all whiskies to make them appear in alphabetic order.
+	 * 
+	 * @param whiskies the list of whiskies to sort.
+	 */
+	public void sortAllWhiskies(ArrayList<Whisky> whiskies){		
 		for (int i = 0; i < whiskies.size(); i++) {
 			for (int j = i+1; j < whiskies.size(); j++) {
 				if (whiskies.get(i).getName().compareTo(whiskies.get(j).getName()) > 0) {
@@ -84,12 +97,6 @@ public class WhiskyDatabase {
 				}
 			}
 		}
-	}
-	
-	public ArrayList<Whisky> resetWhiskes() {
-		this.whiskies = new ArrayList<>();
-		addAllWhiskies();
-		return whiskies;
 	}
 
 }

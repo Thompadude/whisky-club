@@ -14,7 +14,7 @@ public class Springbank extends Whisky {
 				+ "and balance this intense Scotch. The mouthfeel is full, luscious and a tad sweet"
 				+ " with a long finish of smoke, peaty lemon zest and fall leaves."
 
-		, "../images/springbank.jpg", 46, 0);
+		, "images/springbank.jpg", 46, 0);
 	}
 
 }

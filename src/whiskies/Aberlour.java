@@ -9,7 +9,7 @@ public class Aberlour extends Whisky {
 				+ " ideal for beginners, with a fine sherried spiciness."
 				+ " Pound for pound, this is one of the best that Speyside has to offer."
 
-		, "../images/aberlour.jpg", 40, 0);
+		, "images/aberlour.jpg", 40, 0);
 	}
 
 }

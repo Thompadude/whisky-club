@@ -9,7 +9,7 @@ public class Oban extends Whisky {
 				+ " series, Oban 14yo is a superb, full-blooded fruity malt with"
 				+ "a whiff of heather and more than a hint of smoke."
 
-		, "../images/oban.jpg", 43, 0);
+		, "images/oban.jpg", 43, 0);
 	}
 
 }

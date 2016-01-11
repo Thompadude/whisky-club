@@ -62,7 +62,7 @@
 					<div class="whiskywrapper">
 						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
-						src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
 						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 						</a>
@@ -87,7 +87,7 @@
 					<div class="whiskywrapper">
 						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
-						src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
 						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 						</a>
@@ -112,7 +112,7 @@
 					<div class="whiskywrapper">
 						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
-						src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
 						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 						</a>
@@ -137,7 +137,7 @@
 					<div class="whiskywrapper">
 						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
-						src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
 						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 						</a>
@@ -162,7 +162,7 @@
 					<div class="whiskywrapper">
 						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
-						src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
 						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 						</a>
@@ -187,7 +187,7 @@
 					<div class="whiskywrapper">
 						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
-						src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
 						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 						</a>
@@ -212,7 +212,7 @@
 					<div class="whiskywrapper">
 						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
-						src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
 						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 						</a>
@@ -237,7 +237,7 @@
 					<div class="whiskywrapper">
 						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
-						src="${pageContext.request.contextPath}/images/<%=allWhiskies.get(i).getImgUrl()%>"
+						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
 						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
 						</a>

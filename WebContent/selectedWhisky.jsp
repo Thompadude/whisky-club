@@ -70,7 +70,7 @@
 	<div class="row">
 		<div class="col-lg-4" id="selectedWhiskyPictureDiv">		
 				<!-- Show whisky picture -->
-				<img class="img-responsive" id="picMiddle" src="images/${chosenWhisky.getImgUrl()}">
+				<img class="img-responsive" id="picMiddle" src="${chosenWhisky.getImgUrl()}">
 		</div>
 		<div class="col-lg-4">
 			<div id="jumbotron">

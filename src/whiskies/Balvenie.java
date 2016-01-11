@@ -14,7 +14,7 @@ public class Balvenie extends Whisky {
 				+ " as well as marshmallow, caramel and toast. The Oloroso sherry barrel's influence is"
 				+ " expressed via peach, marzipan, clover, a bit of honey and prunes."
 
-		, "../images/balvenie.jpg", 40, 0);
+		, "images/balvenie.jpg", 40, 0);
 	}
 
 }

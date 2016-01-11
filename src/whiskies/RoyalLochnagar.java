@@ -13,7 +13,7 @@ public class RoyalLochnagar extends Whisky {
 				+ " juicy cereal barley, leather, brown sugar and a coffee maltiness. It makes for a perfect"
 				+ " sipper to start off your evening."
 
-		, "../images/royal.jpg", 40, 0);
+		, "images/royal.jpg", 40, 0);
 	}
 
 }

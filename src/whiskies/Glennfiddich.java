@@ -10,7 +10,7 @@ public class Glennfiddich extends Whisky {
 				+ " European oak and six weeks in new American oak before bottling."
 				+ " We like the sound of this."
 
-		, "../images/glennfiddich.jpg", 40, 0);
+		, "images/glennfiddich.jpg", 40, 0);
 	}
 
 }

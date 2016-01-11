@@ -59,10 +59,11 @@
 				<div class="col-sm-2"></div>
 				<div class="col-sm-10">
 					<button type="reset" class="btn btn-default">Reset</button>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button id="submit" type="button" class="btn btn-default">Submit</button>
 				</div>
 			</div>
 		</form>
+		<div id="result"></div>
 	</div>
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

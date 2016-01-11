@@ -10,7 +10,7 @@ public class LaphroaigQuarterCask extends Whisky {
 						+ "months, the size of the cask is quite small, thus does not "
 						+ "require such a long maturation. This remains a truly great achievement from Laphroaig."
 
-		, "../images/laphroaigquartercask.jpg", 48, 0);
+		, "images/laphroaigquartercask.jpg", 48, 0);
 	}
 
 }
