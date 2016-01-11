@@ -31,7 +31,6 @@ public class SettingsServlet extends HttpServlet {
      */
     public SettingsServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
     public void init() throws ServletException{
@@ -51,7 +50,8 @@ public class SettingsServlet extends HttpServlet {
 		String filePathWhiskies = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePathWhiskies);
 		
-		String resetAllWhiskies = request.getParameter("resetWhiskies");
+		String resetAllWhiskies = "";
+		resetAllWhiskies = request.getParameter("resetWhiskies");
 		
 		if(resetAllWhiskies.equals("reset")) {
 			whiskies = whiskyDatabase.resetWhiskes();
@@ -72,7 +72,8 @@ public class SettingsServlet extends HttpServlet {
 		String filePathGuestbook = getServletContext().getRealPath("/guestbookData.dat");
 		ArrayList<GuestbookEntries> allEntries = guestbookDatabase.loadGuestbookEntries(filePathGuestbook);
 		
-		String resetAllGuestbookEntries = request.getParameter("resetGuestbook");
+		String resetAllGuestbookEntries = "";
+		resetAllGuestbookEntries = request.getParameter("resetGuestbook");
 		
 		if(resetAllGuestbookEntries.equals("reset")) {
 			allEntries = new ArrayList<>();
@@ -93,7 +94,6 @@ public class SettingsServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

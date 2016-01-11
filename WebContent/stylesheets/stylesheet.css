@@ -142,11 +142,6 @@ form {
 	overflow: hidden;
 }
 
-[class*="col-"] {
-	margin-bottom: -99999px;
-	padding-bottom: 99999px;
-}
-
 #selectedWhiskyTable {
 	margin-top: 2em;
 	width: 100%;

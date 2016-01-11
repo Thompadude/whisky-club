@@ -60,11 +60,11 @@
 	</nav>
 	<h1>Whisky Settings</h1>
 	<br>
-	<h3><a href="SettingsServlet?resetWhiskies=reset&resetGuestbook=noThanks">
+	<h3><a href="SettingsServlet?resetWhiskies=reset">
 			Click here to reset all whiskies (erase all savings and add the hardcoded again).</a>
 	</h3>
 	<br>
-	<h3><a href="SettingsServlet?resetGuestbook=reset&resetWhiskies=noThanks">
+	<h3><a href="SettingsServlet?resetGuestbook=reset">
 			Click here to clear the guestbook!</a>
 	</h3>
 	<br>
