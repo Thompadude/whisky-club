@@ -1,6 +1,8 @@
 package database;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import saveAndLoad.ReadFromFile;
 import saveAndLoad.SaveToFile;
@@ -70,7 +72,18 @@ public class WhiskyDatabase {
 		this.whiskies.add(new RoyalLochnagar());
 		this.whiskies.add(new Balvenie());
 		this.whiskies.add(new HighlandPark());
-		this.whiskies.add(new Jura());
+		this.whiskies.add(new Jura());		
+		
+		 // Bubble sorting all whiskies to make them appear in alphabetic order.
+		for (int i = 0; i < whiskies.size(); i++) {
+			for (int j = i+1; j < whiskies.size(); j++) {
+				if (whiskies.get(i).getName().compareTo(whiskies.get(j).getName()) > 0) {
+					Whisky tempWhisky = whiskies.get(j);
+					whiskies.set(j, whiskies.get(i));
+					whiskies.set(i, tempWhisky);
+				}
+			}
+		}
 	}
 	
 	public ArrayList<Whisky> resetWhiskes() {

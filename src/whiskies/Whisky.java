@@ -1,6 +1,7 @@
 package whiskies;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Whisky implements java.io.Serializable {
 	

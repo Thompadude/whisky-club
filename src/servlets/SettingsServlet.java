@@ -65,6 +65,7 @@ public class SettingsServlet extends HttpServlet {
 			request.setAttribute("clearmessage", "Whiskies Cleared!");
 			request.setAttribute("pathmessage", "File saved at:<br> " + filePathWhiskies);
 			dispatcher.forward(request, response);
+			
 		}
 		
 		// Get the file path for previous guestbook entries and load them to the array list.
