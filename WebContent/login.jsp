@@ -12,19 +12,18 @@
 </head>
 <body>
 <div id="loginwrapper">
-	<div class="jumbotron" id="loginjumobtron">
+	<div class="jumbotron">
 		<form method="post">
 			<div id="errormsg"></div>
 			<p><label class="loginfield"><input type="text" id="usrName" placeholder="User Name" value="boss"></label></p>
 			<p><label class="loginfield"><input type="password" id="password" placeholder="Password" value="boss"></label></p>
-			<p>
-				<input class="formbutton" type="reset">
-				<button type="button" class="formbutton" id="submit">Submit</button>
+			<input class="formbutton" type="reset">
+			<button type="button" class="formbutton" id="submit">Submit</button>
 		</form>
 	</div>
 	<h2 id="loginwelcomemsg"></h2>
 </div>
-	<h2 id="loginAuth"></h2>
+<h2 id="loginAuth"></h2>
 </body>
 <script src="login.js"></script>
 </html>

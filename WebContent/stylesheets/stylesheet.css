@@ -1,10 +1,12 @@
-/* General styles */
-.hiddenbutton {
-	visibility: hidden;
-}
-
+/* Removes scroll bar. */
 ::-webkit-scrollbar { 
     display: none;
+}
+
+/* General styles. */
+html {
+	min-height: 100%;
+	position: relative;
 }
 
 body {
@@ -14,18 +16,15 @@ body {
 	height: 100%;
 }
 
+.hiddenbutton {
+	visibility: hidden;
+}
+
 .content {
 	color: white;
 	margin-left: 12.5%;
 	margin-right: 12.5%;
 }
-
-
-html {
-	min-height: 100%;
-	position: relative;
-}
-
 
 a, a:hover, a:visited, a:active, a:link {
 	text-decoration: none;
@@ -38,12 +37,13 @@ a, a:hover, a:visited, a:active, a:link {
 	border-radius: 1em; 
 }
 
-/* Used in "About Us"-section. */
-
 .jumbotron {
-	margin-top: 2em;
 	background-color: black;
 	color: white;
+	margin-left: 3%;
+	margin-top: 2em;
+	background: rgba(0, 0, 0, 0);
+	display: none;
 }
 
 /* Style for the menu. */
@@ -195,12 +195,6 @@ form {
 	z-index: -1;
 	width: 100%;
 	height: 100%;
-}
-
-#loginjumobtron {
-	margin-left: 3%;
-	background: rgba(0, 0, 0, 0);
-	display: none;
 }
 
 .loginfield {
