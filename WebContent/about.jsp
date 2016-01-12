@@ -10,6 +10,7 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
+<%@ include file="topmenu.jsp"%>
 <div class="content">
 	<br>
 	<h2>

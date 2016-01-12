@@ -10,52 +10,8 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
+<%@ include file="topmenu.jsp"%>
 <div class="content container-fluid">
-		<nav class="navbar navbar-inverse specialnav">
-  		<div class="container-fluid">
-    		<div class="navbar-header">
-      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        			<span>Navigation</span>
-      			</button>
-    		</div>
-    		<div class="collapse navbar-collapse" id="myNavbar">
-      			<ul class="nav navbar-nav">
-	        		<li>
-	        			<a href="${pageContext.request.contextPath}/index.jsp">
-					 	<img class="icon" alt="Home" title="Home" src="http://www.entypo.com/images/home.svg"
-					 	onmouseover="src='http://www.entypo.com/images/arrow-with-circle-up.svg'"
-					 	onmouseout="src='http://www.entypo.com/images/home.svg'"></a>
-	        		</li>
-	        		
-	        		<li>
-	        			<a href="${pageContext.request.contextPath}/list.jsp">
-						<img class="icon" alt="Whiskies" title="Whiskies"
-							src="http://www.entypo.com/images/document.svg"
-							onmouseover="src='http://www.entypo.com/images/documents.svg'"
-							onmouseout="src='http://www.entypo.com/images/document.svg'">
-						</a>
-	        		</li>
-	        		
-	        		<li>
-						<a href="${pageContext.request.contextPath}/favorites.jsp">
-						<img class="icon" alt="Favorites" title="Favorites" 
-							src="http://www.entypo.com/images/heart-outlined.svg"
-							onmouseover="src='http://www.entypo.com/images/heart.svg'"
-							onmouseout="src='http://www.entypo.com/images/heart-outlined.svg'">
-						</a>
-					</li>
-					<li>
-						<a href="${pageContext.request.contextPath}/guestbookform.jsp">
-						<img class="icon" alt="Guestbook" title="Guestbook"
-							src="http://www.entypo.com/images/book.svg"
-							onmouseover="src='http://www.entypo.com/images/open-book.svg'"
-							onmouseout="src='http://www.entypo.com/images/book.svg'">
-						</a>
-					</li>
-      			</ul>
-    		</div>
-  		</div>
-	</nav>
 	<h1>Add Whisky</h1>
 		<form class="form-horizontal" role="form" method="POST">
 		<div class="row">

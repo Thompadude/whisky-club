@@ -12,10 +12,6 @@
 	z-index: 9 !important;
 }
 
-.navbar a:focus {
-	color: #999 !important;
-}
-
 @media (max-width: 767px) {
     .navbar-fixed-top {
         position: relative !important;
