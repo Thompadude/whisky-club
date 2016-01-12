@@ -12,7 +12,7 @@
 <%@ include file="menu/menu.jsp"%>
 <%@ include file="topmenu.jsp"%>
 <div class="content container-fluid">
-	<h1>Add Whisky</h1>
+	<h1><img class="icon" src="http://www.entypo.com/images/circle-with-plus.svg">&nbsp;&nbsp;Add Whisky</h1>
 		<form class="form-horizontal" role="form" method="POST">
 		<div class="row">
 			<div class="col-md-5">

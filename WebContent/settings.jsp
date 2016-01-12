@@ -12,7 +12,7 @@
 <%@ include file="menu/menu.jsp"%>
 <%@ include file="topmenu.jsp"%>
 <div class="content container-fluid">
-	<h1>Whisky Settings</h1>
+	<h1><img class="icon" src="http://www.entypo.com/images/cog.svg">&nbsp;&nbsp;Settings</h1>
 	<br>
 	<h3><a href="SettingsServlet?resetWhiskies=reset">
 			Click here to reset all whiskies (erase all savings and add the hardcoded again).</a>
