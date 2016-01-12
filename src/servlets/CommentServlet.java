@@ -54,10 +54,8 @@ public class CommentServlet extends HttpServlet {
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");	
 		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePath);
 		
+		// Get the selected whisky from ListServlet setAttribute("chosenwhisky")
 		Whisky tempWhisky = (Whisky)request.getSession().getAttribute("chosenWhisky");
-
-		//Test!!!!
-		System.out.println(tempWhisky.getComments().size());
 		
 		// Get the user name and comment from the user's input.
 		String name = request.getParameter("ajaxSelWhiskyName");
@@ -70,17 +68,19 @@ public class CommentServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 
-		// Get the right whisky by id.
+		// Print all comments at page startup.
 		if (name == null || comment == null) {
-			// Print all comments
+			
 			loadWhiskyCommentsHTML(tempWhisky, out);
+			
 		} else {
 			for(int i=0; i < whiskies.size(); i++) {
 				if(whiskies.get(i).getId().equals(tempWhisky.getId())) {
 				
-					// Create a new WhiskyComments object with the above information.
+					// Create a new WhiskyComments object with the above information and add to the whisky.
 					WhiskyComments whiskyComment = new WhiskyComments(name, comment, todaysDate);
 					whiskies.get(i).addComment(whiskyComment);
+					
 					loadWhiskyCommentsHTML(whiskies.get(i), out);
 				
 					//Save changes to the file.
@@ -93,6 +93,7 @@ public class CommentServlet extends HttpServlet {
 		
 	}
 	
+	// Method to print out all comments to the selected Whisky page.
 	public void loadWhiskyCommentsHTML(Whisky whisky, PrintWriter out) {
 		for(int i = whisky.getComments().size()-1; i >= 0; i--) {
 			out.println("<div class=\"row\"><div class=\"col-lg-11\"><p>"
