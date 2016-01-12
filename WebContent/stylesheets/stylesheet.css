@@ -128,8 +128,7 @@ form {
 	border-top: none !important;
 }
 
-.commentfield
-{
+.commentfield {
 	margin-top: 2%;
 	float: left;
 	color: black;
@@ -147,6 +146,15 @@ form {
 
 .row {
 	overflow: hidden;
+}
+
+.content.container-fluid h1 {
+	font-size: 400%;
+}
+
+.content.container-fluid h1 .icon {
+	width: 1em;
+	height: 1em;
 }
 
 #selectedWhiskyTable {

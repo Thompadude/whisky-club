@@ -15,12 +15,12 @@
 <%@ include file="menu/menu.jsp"%>
 <%@ include file="topmenu.jsp"%>
 <div class="content container-fluid">
+		<h1><img class="icon" src="http://www.entypo.com/images/heart.svg">&nbsp;&nbsp;Favorites</h1>
 		<%
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies(filePath);
 		%>
 	<ul class="listPictures">
-		<h1>Favorites</h1>
 		<%
 		boolean favIsEmpty = true;
 		for(int i = 0; i < allWhiskies.size(); i++) {

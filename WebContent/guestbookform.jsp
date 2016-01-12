@@ -7,13 +7,13 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheetList.css">
-<title>Guest Book</title>
+<title>Guestbook</title>
 </head>
 <body>
 <%@ include file="../menu/menu.jsp"%>
 <%@ include file="topmenu.jsp"%>
 <div class="content container-fluid">
-	<h1>Guestbook</h1>
+	<h1><img class="icon" src="http://www.entypo.com/images/open-book.svg">&nbsp;&nbsp;Guestbook</h1>
 	<div class="row">
 		<div class="col-lg-12">
 		<!-- Comment form -->
