@@ -37,6 +37,10 @@ a, a:hover, a:visited, a:active, a:link {
 	border-radius: 1em; 
 }
 
+.row {
+	overflow: hidden;
+}
+
 .jumbotron {
 	background-color: black;
 	color: white;
@@ -46,21 +50,21 @@ a, a:hover, a:visited, a:active, a:link {
 	display: none;
 }
 
-/* Style for the menu. */
-
-#iconOpenMenu {
-	position: fixed;
-	z-index: 100;
-}
-
+/* Size setting for all icons across the web site */
 .icon {
 	width: 2.5em;
 	height: 2.5em;
 }
 
+/* Styles for the menu. */
 .menuSmallIcon {
 	width: 1.5em;
 	height: 1.5em;
+}
+
+#iconOpenMenu {
+	position: fixed;
+	z-index: 100;
 }
 
 #menu {
@@ -82,7 +86,6 @@ a, a:hover, a:visited, a:active, a:link {
 	color: lightgrey;
 }
 
-
 .menubtn:nth-child(7), .menubtn:nth-child(8) {
 	position: relative;
 	top: 250px;
@@ -100,7 +103,7 @@ a, a:hover, a:visited, a:active, a:link {
 	display: none;
 }
 
-/* Comment, guestbook and login section styles */
+/* Styles for forms */
 form {
 	margin-top: 4em;
 }
@@ -124,10 +127,6 @@ form {
     color: white;
 }
 
-.table td, .table th {
-	border-top: none !important;
-}
-
 .commentfield {
 	margin-top: 2%;
 	float: left;
@@ -144,10 +143,6 @@ form {
 	background-color: lightgrey;
 }
 
-.row {
-	overflow: hidden;
-}
-
 .content.container-fluid h1 {
 	font-size: 400%;
 }
@@ -162,6 +157,7 @@ form {
 	width: 100%;
 }
 
+/* Login Page Styles */
 #loginwelcomemsg {
 	display: none;
 	position: fixed;
@@ -211,9 +207,7 @@ form {
 	color: black;
 }
 
-
 /* SelectedWhisky */
-
 #selectedWhiskyMainRow {
 	border: 10px double rgb(141,141,141);
 	border-bottom-color: black;
@@ -250,7 +244,6 @@ form {
 }
 
 /* Styles for index page. */
-
 .indexdiv {
 	margin-top: 3em;
 	position: relative;
