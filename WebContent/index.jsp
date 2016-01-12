@@ -37,7 +37,7 @@
 			<div class="col-lg-8 indexdiv">
 				<a href="${pageContext.request.contextPath}/guestbookform.jsp">
 					<img class="img-responsive indeximg" src="${pageContext.request.contextPath}/images/indeximg-c.jpg">
-					<p>Guestbook</p>
+					<p id="titleguestbook">Guestbook</p>
 				</a>
 			</div>
 			<div class="col-lg-2"></div>

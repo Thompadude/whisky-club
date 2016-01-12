@@ -261,11 +261,19 @@ form {
 
 .indexdiv p {
 	color: white;
-	font-size: 3em;
+	font-size: 225%;
 	position: absolute;
-	top: 200px;
-	left: 20px;
-	right: 0;
+	top: 40%;
+	left: 20%;
+	margin: auto;
+}
+
+#titleguestbook {
+	left: 40%;
+}
+
+#imgurladdwhisky {
+	padding-top: 10.5px;
 }
 
 /* Media Settings */
@@ -283,16 +291,20 @@ form {
 		text-align: left;
 	}
 	.indexdiv p {
-		font-size: 2em;
+		font-size: 175%;
 		position: absolute;
-		top: 0;
+	}
+	#titleguestbook {
+		left: 35%;
 	}
 }
 
 @media (max-width :639px) {
 	.indexdiv p {
-		font-size: 2em;
-		top: 0;
+		font-size: 175%;
+	}
+	#titleguestbook {
+		left: 35%;
 	}
 }
 
@@ -309,8 +321,4 @@ form {
     .formfield {
          min-width: 600px;
     }
-}
-
-#imgurladdwhisky {
-	padding-top: 10.5px;
 }
