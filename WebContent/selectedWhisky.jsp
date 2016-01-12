@@ -75,49 +75,31 @@
 	<div class="row">
 		<div class="col-lg-12">
 		<!-- Comment form -->
-			<form action="CommentServlet" method="post" name="validate">
+			<form method="post">
 				<h4>Write a comment</h4>
 				<label>
-					<input class="formfield" id="uName" type="text" name="userName" placeholder="Name">
+					<input class="formfield" type="text" name="name" placeholder="Name" id="formName">
 				</label>
 				<br>
 				<label>
-					<textarea class="formfield" rows="10" cols="21" name="comment" placeholder="Comment"></textarea>
+					<textarea class="formfield" rows="10" cols="21" name="comment" placeholder="Comment" id="formComment"></textarea>
 				</label>
 				<br>
 				<input type="reset" class="formbutton" value="Clear">
-				<input type="submit" class="formbutton" value="Submit">
-				<!-- Using a hidden input to hide a value. -->
-				<input type="hidden" name="whiskyId" value="${chosenWhisky.getId()}">
+				<button type="button" class="formbutton" id="submit">Submit</button>
 			</form>
 		</div>
 	</div>
-	<div class="container-fluid commentfield">
-		<%
-		ArrayList<WhiskyComments> comments = (ArrayList<WhiskyComments>) session.getAttribute("commentObjects");
-		for (int i = comments.size()-1; i >= 0; i--){
-		%>
-		<div class="row">
-			<div class="col-lg-11">
-				<p><%=comments.get(i).getUserName()%>
-				<br>
-				<%=comments.get(i).getDate()%></p>
-				<h4><%=comments.get(i).getComment()%></h4>
-			</div>
-			<div class="col-lg-1">
-				<a href="ListServlet?whisky=${chosenWhisky.getId()}&deleteWhiskyCommentItemNr=<%=(i)%>">
-					<img class="icon" alt="Delete" src="http://www.entypo.com/images/circle-with-cross.svg">
-				</a>
-			</div>
-		</div>		
-		<%
-		}
-		%>
+	<div>
+		<div class="container-fluid commentfield" id="commentDiv">
+			<!-- Here comes the saved comments -->
+		</div>
 	</div>
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="validateSelectedWhiskyForm.js"></script>
 <script src="hoverstareffect.js"></script>
+<script src="whiskycomment.js"></script>
 </body>
 </html>
