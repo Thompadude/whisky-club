@@ -1,9 +1,22 @@
 $(document).ready(function(){
 	
+	var validateForm = function(){
+		var isFieldsFilled = true;
+		$('input').each(function(index){
+			if ($(this).val() === '' || $(this).val() === null) {
+				isFieldsFilled = false;
+				$('#result').html("Please fill in all forms");
+				return false;
+			}
+		});
+		return isFieldsFilled;;
+	}
+	
 	var $name, $region, $country, $type, $info, $imgurl, $alc;
 	
 	$('#submit').click(function() {
-	
+		var isCreatingNewWhisky = validateForm();
+		if (isCreatingNewWhisky) {
 		$name = $('#name').val();
 		$region = $('#region').val();
 		$country = $('#country').val();
@@ -22,6 +35,6 @@ $(document).ready(function(){
 					$('form').trigger("reset");
 					}
 			});
-	
+		}
 	})
 });
