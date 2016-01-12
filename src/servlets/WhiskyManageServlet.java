@@ -66,7 +66,7 @@ public class WhiskyManageServlet extends HttpServlet {
 					
 		// Returns response
 		PrintWriter out = response.getWriter();
-		out.print("<h2>New whisky added!</h2>");
+		out.print("New whisky added!");
 	}
 
 	/**

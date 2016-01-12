@@ -44,7 +44,6 @@
 							onmouseout="src='http://www.entypo.com/images/heart-outlined.svg'">
 						</a>
 					</li>
-					
 					<li>
 						<a href="${pageContext.request.contextPath}/guestbookform.jsp">
 						<img class="icon" alt="Guestbook" title="Guestbook"
@@ -57,10 +56,7 @@
     		</div>
   		</div>
 	</nav>
-	
 	<h1>Add Whisky</h1>
-	
-	<div id="addwhiskymargin">
 		<form class="form-horizontal" role="form" method="POST">
 		<div class="row">
 			<div class="col-md-5">
@@ -79,17 +75,16 @@
 				</div>
 				<label class="control-label" for="alc">Alcohol Volume:</label>
 				<input type="text" class="form-control" id="alc" placeholder=" Without % (i.e 45.5)">
-				<div id="result"></div>
 				<br>
 			</div>
 			<div class="col-md-7">
-						<label class="control-label" for="info">Info:</label>
-						<textarea rows="10" class="form-control" id="info" placeholder="Enter info"></textarea>
-						<br>
-						<label class="control-label" id="imgurladdwhisky" for="imgurl">Image URL:</label>
-						<input type="text" class="form-control" id="imgurl" value="http://www.">
+				<label class="control-label" for="info">Info:</label>
+				<textarea rows="10" class="form-control" id="info" placeholder="Enter info"></textarea>
+				<br>
+				<label class="control-label" id="imgurladdwhisky" for="imgurl">Image URL:</label>
+				<input type="text" class="form-control" id="imgurl" value="http://www.">
 			</div>
-			</div>
+		</div>
 			<div class="row">
 				<div class="col-md-12">
 					<input type="reset" class="formbutton" value="Clear">
@@ -97,7 +92,7 @@
 				</div>
 			</div>
 		</form>
-	</div>
+		<h2 id="result"></h2>
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

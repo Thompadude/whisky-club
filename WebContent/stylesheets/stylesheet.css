@@ -31,6 +31,13 @@ a, a:hover, a:visited, a:active, a:link {
 	text-decoration: none;
 }
 
+.form-horizontal {
+	max-width: 600px;
+	background-color: #333333;
+	padding: 2%;
+	border-radius: 1em; 
+}
+
 /* Used in "About Us"-section. */
 
 .jumbotron {
@@ -306,13 +313,4 @@ form {
 
 #imgurladdwhisky {
 	padding-top: 10.5px;
-}
-
-#addwhiskymargin {
-	background-color: #333333;
-	border-radius: 2em;
-	margin-right: 500px;
-	padding-right: 20px;
-	padding-left: 20px;
-	padding-bottom: 10px;
 }

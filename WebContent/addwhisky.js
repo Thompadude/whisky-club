@@ -5,11 +5,12 @@ $(document).ready(function(){
 		$('input').each(function(index){
 			if ($(this).val() === '' || $(this).val() === null) {
 				isFieldsFilled = false;
-				$('#result').html("Please fill in all forms");
+				$('#result').css('color', 'red');
+				$('#result').html("Please fill in all forms!").hide().fadeIn('normal');
 				return false;
 			}
 		});
-		return isFieldsFilled;;
+		return isFieldsFilled;
 	}
 	
 	var $name, $region, $country, $type, $info, $imgurl, $alc;
@@ -31,7 +32,8 @@ $(document).ready(function(){
 			data: {name:$name, region:$region, country:$country, type:$type, info:$info, imgurl:$imgurl, alc:$alc},
 			url: 'WhiskyManageServlet',
 			success: function(servletResponse){
-					$('#result').html(servletResponse);
+					$('#result').css('color', 'white');
+					$('#result').html(servletResponse).hide().fadeIn('normal');
 					$('form').trigger("reset");
 					}
 			});
