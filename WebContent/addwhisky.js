@@ -17,6 +17,7 @@ $(document).ready(function(){
 	
 	$('#submit').click(function() {
 		var isCreatingNewWhisky = validateForm();
+		
 		if (isCreatingNewWhisky) {
 		$name = $('#name').val();
 		$region = $('#region').val();
@@ -26,17 +27,21 @@ $(document).ready(function(){
 		$imgurl = $('#imgurl').val();
 		$alc = $('#alc').val();
 		
-		$.ajax(
-			{
-			type: 'POST',
-			data: {name:$name, region:$region, country:$country, type:$type, info:$info, imgurl:$imgurl, alc:$alc},
-			url: 'WhiskyManageServlet',
-			success: function(servletResponse){
-					$('#result').css('color', 'white');
-					$('#result').html(servletResponse).hide().fadeIn('normal');
-					$('form').trigger("reset");
-					}
-			});
+		if (!isNaN($alc)) {
+			$.ajax(
+				{
+				type: 'POST',
+				data: {name:$name, region:$region, country:$country, type:$type, info:$info, imgurl:$imgurl, alc:$alc},
+				url: 'WhiskyManageServlet',
+				success: function(servletResponse){
+						$('#result').css('color', 'white');
+						$('#result').html(servletResponse).hide().fadeIn('normal');
+						$('form').trigger("reset");
+						}
+				});
+			} else {
+				$('#alc').val('Needs to be a number');
+			}
 		}
 	})
 });
