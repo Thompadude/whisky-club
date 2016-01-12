@@ -2,12 +2,13 @@ $(document).ready(function(){
 	
 	var validateForm = function(){
 		var isFieldsFilled = true;
-		$('input').each(function(index){
+		$('input, textarea').each(function(index){
 			if ($(this).val() === '' || $(this).val() === null) {
 				isFieldsFilled = false;
+				$(this).fadeOut().fadeIn();
 				$('#result').css('color', 'red');
 				$('#result').html("Please fill in all forms!").hide().fadeIn('normal');
-				return false;
+				isFieldsFilled = false;
 			}
 		});
 		return isFieldsFilled;
@@ -40,7 +41,7 @@ $(document).ready(function(){
 						}
 				});
 			} else {
-				$('#alc').val('Needs to be a number');
+				$('#alc').val('Number without percent sign.').css('color', 'red').fadeOut().fadeIn();
 			}
 		}
 	})

@@ -17,25 +17,25 @@
 		<div class="row">
 			<div class="col-md-5">
 				<label class="control-label" for="name">Name:</label>
-				<input type="text" class="form-control" id="name" placeholder="i.e Laphroaig 10 year">
+				<input type="text" class="form-control" id="name" placeholder="i.e. Laphroaig 10 year">
 				<label class="control-label" for="region">Region:</label>
-				<input type="text" class="form-control" id="region" placeholder="i.e Islay">
+				<input type="text" class="form-control" id="region" placeholder="i.e. Islay">
 				<label class="control-label" for="country">Country:</label>
-				<input type="text" class="form-control" id="country" placeholder="i.e Scotland">
+				<input type="text" class="form-control" id="country" placeholder="i.e. Scotland">
 				<label class="control-label">Type: </label>
 				<div class="radio">
-				<label><input type="radio" name="type" id="singlemalt" value="Single Malt">&nbsp;Single Malt</label>
+				<label><input type="radio" name="type" id="singlemalt" value="Single Malt" checked="checked">&nbsp;Single Malt</label>
 				</div>
 				<div class="radio">
 				<label><input type="radio" name="type" id="blended" value="Blended">&nbsp;Blended</label>
 				</div>
 				<label class="control-label" for="alc">Alcohol Volume:</label>
-				<input type="text" class="form-control" id="alc" placeholder=" Without % (i.e 45.5)">
+				<input type="text" class="form-control" id="alc" placeholder="No percent sign (i.e. 45.5)">
 				<br>
 			</div>
 			<div class="col-md-7">
 				<label class="control-label" for="info">Info:</label>
-				<textarea rows="10" class="form-control" id="info" placeholder="Enter info"></textarea>
+				<textarea rows="10" class="form-control" id="info"></textarea>
 				<br>
 				<label class="control-label" id="imgurladdwhisky" for="imgurl">Image URL:</label>
 				<input type="text" class="form-control" id="imgurl" value="http://www.">
