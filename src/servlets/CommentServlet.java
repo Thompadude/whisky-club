@@ -54,7 +54,7 @@ public class CommentServlet extends HttpServlet {
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");	
 		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePath);
 		
-		// Get the selected whisky from ListServlet setAttribute("chosenwhisky")
+		// Get the selected whisky from ListServlet setAttribute("chosenWhisky")
 		Whisky tempWhisky = (Whisky)request.getSession().getAttribute("chosenWhisky");
 		
 		// Get the user name and comment from the user's input.
@@ -88,19 +88,20 @@ public class CommentServlet extends HttpServlet {
 					saveToFile.saveWhiskiesToFile(whiskies, filePath);
 				}
 			}	
-		}
-		
-		
+		}	
 	}
 	
 	// Method to print out all comments to the selected Whisky page.
 	public void loadWhiskyCommentsHTML(Whisky whisky, PrintWriter out) {
 		for(int i = whisky.getComments().size()-1; i >= 0; i--) {
+			
 			out.println("<div class=\"row\"><div class=\"col-lg-11\"><p>"
 					+ whisky.getComments().get(i).getUserName() + "<br>");
 			out.println(whisky.getComments().get(i).getDate() + "</p>");
-			out.println("<h4>" + whisky.getComments().get(i).getComment()
-					+ "</h4></div><div class=\"col-lg-1\"></div></div>");
+			out.println("<h4>" + whisky.getComments().get(i).getComment()+ "</h4></div>"
+					+ "<div class=\"col-lg-1\">"
+					+ "<a href=\"ListServlet?whisky=" + whisky.getId() + "&deleteWhiskyCommentItemNr=" + i + "\">"
+					+ "<img class=\"icon\" alt=\"Delete\" src=\"http://www.entypo.com/images/circle-with-cross.svg\"></a></div></div>");
 		}
 	}
 }
