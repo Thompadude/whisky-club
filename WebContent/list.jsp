@@ -24,20 +24,44 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
   		<div class="container-fluid">
     		<div class="navbar-header">
-      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="mylistnavbar">
         			<span>Navigation</span>
       			</button>
     		</div>
-    		<div class="collapse navbar-collapse" id="myNavbar">
+    		<div class="collapse navbar-collapse" id="mylistnavbar">
       			<ul class="nav navbar-nav">
 	        		<li>
-	        			<a href="${pageContext.request.contextPath}/favorites.jsp">
-	        			<img class="icon" alt="Favorites" title="Favorites"
-	        			src="http://www.entypo.com/images/heart-outlined.svg"
-	        			onmouseover="this.src='http://www.entypo.com/images/heart.svg'"
-	        			onmouseout="this.src='http://www.entypo.com/images/heart-outlined.svg'">
-	        			</a>
+	        			<a href="${pageContext.request.contextPath}/index.jsp">
+					 	<img class="icon" alt="Home" title="Home" src="http://www.entypo.com/images/home.svg"
+					 	onmouseover="src='http://www.entypo.com/images/arrow-with-circle-up.svg'"
+					 	onmouseout="src='http://www.entypo.com/images/home.svg'"></a>
 	        		</li>
+	        		
+	        		<li>
+	        			<a href="${pageContext.request.contextPath}/list.jsp">
+						<img class="icon" alt="Whiskies" title="Whiskies"
+							src="http://www.entypo.com/images/document.svg"
+							onmouseover="src='http://www.entypo.com/images/documents.svg'"
+							onmouseout="src='http://www.entypo.com/images/document.svg'">
+						</a>
+	        		</li>
+	        		
+	        		<li>
+						<a href="${pageContext.request.contextPath}/favorites.jsp">
+						<img class="icon" alt="Favorites" title="Favorites" 
+							src="http://www.entypo.com/images/heart-outlined.svg"
+							onmouseover="src='http://www.entypo.com/images/heart.svg'"
+							onmouseout="src='http://www.entypo.com/images/heart-outlined.svg'">
+						</a>
+					</li>
+					<li>
+						<a href="${pageContext.request.contextPath}/guestbookform.jsp">
+						<img class="icon" alt="Guestbook" title="Guestbook"
+							src="http://www.entypo.com/images/book.svg"
+							onmouseover="src='http://www.entypo.com/images/open-book.svg'"
+							onmouseout="src='http://www.entypo.com/images/book.svg'">
+						</a>
+					</li>
 					<li><a href="#abc">ABC</a></li>
 					<li><a href="#def">DEF</a></li>
 					<li><a href="#ghi">GHI</a></li>
