@@ -22,11 +22,11 @@
 		<!-- Comment form -->
 			<form method="post">
 				<label>
-					<input class="formfield" type="text" name="testName" placeholder="Name" id="testName">
+					<input class="formfield" type="text" name="guestbookName" placeholder="Name" id="guestbookName">
 				</label>
 				<br>
 				<label>
-					<textarea class="formfield" rows="10" cols="21" name="entryName" placeholder="Entry" id="testEntry"></textarea>
+					<textarea class="formfield" rows="10" cols="21" name="guestbookEntry" placeholder="Entry" id="guestbookEntry"></textarea>
 				</label>
 				<br>
 				<input type="reset" class="formbutton" value="Clear">
