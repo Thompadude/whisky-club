@@ -53,7 +53,9 @@ $(document).ready(function() {
 		event.preventDefault();
 		
 		idNumber = $(this).attr('id');
+		$('#fade' + idNumber).fadeOut('slow');
 		
+		setTimeout(function() {
 		$.ajax({	
 			type: 'POST',
 			// passes values of comment id to CommentServlet.
@@ -63,9 +65,7 @@ $(document).ready(function() {
 			success: function() {
 				//prints the response into commentDiv.
 				$('#commentDiv').load(document.URL +  ' #commentDiv');
-			}
-			
-		});		
+			}})	}, 500);		
 	});
 	
 });

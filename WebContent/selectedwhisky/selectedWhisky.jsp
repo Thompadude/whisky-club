@@ -95,7 +95,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 		<div class="container-fluid commentfield">
 			<div>
 			<% for (int i = chosenWhisky.getComments().size()-1; i>= 0; i--) {%>
-			<div class="row">
+			<div class="row" id="fade<%=i%>">
 				<div class="col-lg-11">
 					<p>
 						<%=chosenWhisky.getComments().get(i).getUserName()%>
