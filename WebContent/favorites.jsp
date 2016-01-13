@@ -18,7 +18,7 @@
 		<h1><img class="icon" src="http://www.entypo.com/images/heart.svg">&nbsp;&nbsp;Favorites</h1>
 		<%
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
-		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().getWhiskies(filePath);
+		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().loadWhiskies(filePath);
 		%>
 	<ul class="listPictures">
 		<%

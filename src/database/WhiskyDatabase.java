@@ -26,15 +26,6 @@ import whiskies.Whisky;
 public class WhiskyDatabase {
 
 	private ArrayList<Whisky> whiskies;
-	
-	public ArrayList<Whisky> getWhiskies(String filePath) {
-		loadWhiskies(filePath);
-		if (whiskies == null) {
-			whiskies = new ArrayList<>();
-			addAllWhiskies();
-		}
-		return whiskies;
-	}
 
 	/**
 	 * Loads all the whiskies from a file. If no whiskies are found in the
@@ -59,7 +50,7 @@ public class WhiskyDatabase {
 	}
 
 	/**
-	 * Add all the hardcoded whiskes to this array list.
+	 * Add all the hardcoded whiskies to this array list.
 	 */
 	public void addAllWhiskies() {
 		this.whiskies.add(new Talisker());
@@ -77,7 +68,12 @@ public class WhiskyDatabase {
 		sortAllWhiskies(whiskies);
 	}
 	
-	public ArrayList<Whisky> resetWhiskes() {
+	/**
+	 * Resets all the whiskies to default state.
+	 * 
+	 * @return the clean list with only hardcoded whiskies. 
+	 */
+	public ArrayList<Whisky> resetWhiskies() {
 		this.whiskies = new ArrayList<>();
 		addAllWhiskies();
 		return whiskies;

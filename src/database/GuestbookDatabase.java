@@ -11,13 +11,6 @@ public class GuestbookDatabase {
 
 	private ArrayList<GuestbookEntries> entries;
 
-	public ArrayList<GuestbookEntries> getEntries() {
-		if (entries == null) {
-			entries = new ArrayList<GuestbookEntries>();
-		}
-		return entries;
-	}
-
 	public void addEntry(GuestbookEntries entry) {
 		if (this.entries == null) {
 			this.entries = new ArrayList<GuestbookEntries>();

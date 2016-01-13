@@ -53,7 +53,7 @@ public class SettingsServlet extends HttpServlet {
 		String resetAllWhiskies = request.getParameter("resetWhiskies");
 		
 		if(resetAllWhiskies != null && resetAllWhiskies.equals("reset")) {
-			whiskies = whiskyDatabase.resetWhiskes();
+			whiskies = whiskyDatabase.resetWhiskies();
 			
 			// Saves any changes to the file.
 			SaveToFile saveToFile = new SaveToFile();
