@@ -14,7 +14,7 @@
 </head>
 <body>
 <%@ include file="menu/menu.jsp"%>
-<%@ include file="topmenu.jsp"%>
+<%@ include file="menu/topmenu.jsp"%>
 <!-- Get selected whisky -->
 <%
 Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");

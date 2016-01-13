@@ -13,7 +13,7 @@
 <title>Guestbook</title>
 </head>
 <%@ include file="../menu/menu.jsp"%>
-<%@ include file="../topmenu.jsp"%>
+<%@ include file="../menu/topmenu.jsp"%>
 <body>
 <div class="content container-fluid" >
 	<h1><img class="icon" src="http://www.entypo.com/images/open-book.svg">&nbsp;&nbsp;Guestbook</h1>

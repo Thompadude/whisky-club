@@ -10,7 +10,7 @@
 </head>
 <body>
 <%@ include file="../menu/menu.jsp"%>
-<%@ include file="../topmenu.jsp"%>
+<%@ include file="../menu/topmenu.jsp"%>
 <div class="content container-fluid">
 	<h1><img class="icon" src="http://www.entypo.com/images/circle-with-plus.svg">&nbsp;&nbsp;Add Whisky</h1>
 		<form class="form-horizontal" role="form" method="POST">
