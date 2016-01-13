@@ -16,10 +16,10 @@
 				<a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-default menubtn menulink">
 					 <img class="menuSmallIcon" src="http://www.entypo.com/images/home.svg">&nbsp;&nbsp;Home
 				</a>
-				<a href="${pageContext.request.contextPath}/list.jsp" class="btn btn-default menubtn menulink">
+				<a href="${pageContext.request.contextPath}/whiskylists/list.jsp" class="btn btn-default menubtn menulink">
 					<img class="menuSmallIcon" src="http://www.entypo.com/images/documents.svg">&nbsp;&nbsp;Whiskies</a>
 				
-				<a href="${pageContext.request.contextPath}/favorites.jsp" class="btn btn-default menubtn menulink">
+				<a href="${pageContext.request.contextPath}/whiskylists/favorites.jsp" class="btn btn-default menubtn menulink">
 					<img class="menuSmallIcon" src="http://www.entypo.com/images/heart.svg">&nbsp;&nbsp;Favorites</a>
 				
 				<a href="${pageContext.request.contextPath}/guestbook/guestbook.jsp" class="btn btn-default menubtn menulink">

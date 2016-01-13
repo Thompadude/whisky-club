@@ -12,8 +12,8 @@
 <title>Favorites</title>
 </head>
 <body>
-<%@ include file="menu/menu.jsp"%>
-<%@ include file="menu/topmenu.jsp"%>
+<%@ include file="../menu/menu.jsp"%>
+<%@ include file="../menu/topmenu.jsp"%>
 <div class="content container-fluid">
 		<h1><img class="icon" src="http://www.entypo.com/images/heart.svg">&nbsp;&nbsp;Favorites</h1>
 		<%
@@ -29,7 +29,7 @@
 				favIsEmpty = false;%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 							<img class="img-responsive"
 							src="<%=allWhiskies.get(i).getImgUrl()%>"
 							alt="<%=allWhiskies.get(i).getName()%>">
@@ -42,7 +42,7 @@
 		if(favIsEmpty) {%>
 			<div class="listheader">
 				<h2>You don't have any favorites yet.
-				<p>Go to all whiskies <a href="${pageContext.request.contextPath}/list.jsp">here</a></p></h2>
+				<p>Go to all whiskies <a href="${pageContext.request.contextPath}/whiskylists/list.jsp">here</a></p></h2>
 			</div>
 		<%}%>
 	</ul>
@@ -50,6 +50,6 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="menu/menu.js"></script>
-<script src="smoothPage.js"></script>
+<script src="${pageContext.request.contextPath}/menu/menu.js"></script>
+<script src="${pageContext.request.contextPath}/whiskylists/list.js"></script>
 </html>

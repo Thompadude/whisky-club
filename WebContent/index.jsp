@@ -16,13 +16,13 @@
 			<button class="hiddenbutton"></button>
 		</div>
 			<div class="col-lg-4 indexdiv">
-				<a href="${pageContext.request.contextPath}/list.jsp">
+				<a href="${pageContext.request.contextPath}/whiskylists/list.jsp">
 					<img class="img-responsive" src="${pageContext.request.contextPath}/images/indeximg-a.jpg">
 					<p>List All Whiskies</p>
 				</a>
 			</div>
 			<div class="col-lg-4 indexdiv">
-				<a href="${pageContext.request.contextPath}/favorites.jsp">
+				<a href="${pageContext.request.contextPath}/whiskylists/favorites.jsp">
 					<img class="img-responsive" src="${pageContext.request.contextPath}/images/indeximg-b.jpg">
 					<p>Favorite Whiskies</p>
 				</a>

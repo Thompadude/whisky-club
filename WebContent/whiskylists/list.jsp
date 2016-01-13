@@ -15,7 +15,7 @@
 	<title>Whiskey in the Jar</title>
 </head>
 <body>
-<%@ include file="menu/menu.jsp"%>
+<%@ include file="../menu/menu.jsp"%>
 <%
 	String filePath = getServletContext().getRealPath("/whiskyData.dat");
 	ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().loadWhiskies(filePath);
@@ -38,7 +38,7 @@
 	        		</li>
 	        		
 	        		<li>
-	        			<a href="${pageContext.request.contextPath}/list.jsp">
+	        			<a href="${pageContext.request.contextPath}/whiskylists/list.jsp">
 						<img class="icon" alt="Whiskies" title="Whiskies"
 							src="http://www.entypo.com/images/document.svg"
 							onmouseover="src='http://www.entypo.com/images/documents.svg'"
@@ -47,7 +47,7 @@
 	        		</li>
 	        		
 	        		<li>
-						<a href="${pageContext.request.contextPath}/favorites.jsp">
+						<a href="${pageContext.request.contextPath}/whiskylists/favorites.jsp">
 						<img class="icon" alt="Favorites" title="Favorites" 
 							src="http://www.entypo.com/images/heart-outlined.svg"
 							onmouseover="src='http://www.entypo.com/images/heart.svg'"
@@ -85,7 +85,7 @@
 		%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
 						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
@@ -110,7 +110,7 @@
 		%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
 						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
@@ -135,7 +135,7 @@
 		%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
 						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
@@ -160,7 +160,7 @@
 		%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
 						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
@@ -185,7 +185,7 @@
 		%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
 						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
@@ -210,7 +210,7 @@
 		%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
 						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
@@ -235,7 +235,7 @@
 		%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
 						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
@@ -260,7 +260,7 @@
 		%>
 				<li>
 					<div class="whiskywrapper">
-						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+						<a href="${pageContext.request.contextPath}/ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
 						<img class="img-responsive"
 						src="<%=allWhiskies.get(i).getImgUrl()%>"
 						alt="<%=allWhiskies.get(i).getName()%>">
@@ -277,6 +277,6 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="menu/menu.js"></script>
-<script src="smoothPage.js"></script>
+<script src="${pageContext.request.contextPath}/menu/menu.js"></script>
+<script src="${pageContext.request.contextPath}/whiskylists/list.js"></script>
 </html>

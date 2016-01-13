@@ -27,7 +27,7 @@
         		</li>
         		
         		<li>
-        			<a href="${pageContext.request.contextPath}/list.jsp">
+        			<a href="${pageContext.request.contextPath}/whiskylists/list.jsp">
 					<img class="icon" alt="Whiskies" title="Whiskies"
 						src="http://www.entypo.com/images/document.svg"
 						onmouseover="src='http://www.entypo.com/images/documents.svg'"
@@ -36,7 +36,7 @@
         		</li>
         		
         		<li>
-					<a href="${pageContext.request.contextPath}/favorites.jsp">
+					<a href="${pageContext.request.contextPath}/whiskylists/favorites.jsp">
 					<img class="icon" alt="Favorites" title="Favorites" 
 						src="http://www.entypo.com/images/heart-outlined.svg"
 						onmouseover="src='http://www.entypo.com/images/heart.svg'"
