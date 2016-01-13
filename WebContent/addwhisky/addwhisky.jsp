@@ -9,8 +9,8 @@
 <title>Add New Whisky</title>
 </head>
 <body>
-<%@ include file="menu/menu.jsp"%>
-<%@ include file="topmenu.jsp"%>
+<%@ include file="../menu/menu.jsp"%>
+<%@ include file="../topmenu.jsp"%>
 <div class="content container-fluid">
 	<h1><img class="icon" src="http://www.entypo.com/images/circle-with-plus.svg">&nbsp;&nbsp;Add Whisky</h1>
 		<form class="form-horizontal" role="form" method="POST">
@@ -52,7 +52,7 @@
 </div>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="menu/menu.js"></script>
-<script src="addwhisky.js"></script>
+<script src="${pageContext.request.contextPath}/menu/menu.js"></script>
+<script src="${pageContext.request.contextPath}/addwhisky/addwhisky.js"></script>
 </body>
 </html>

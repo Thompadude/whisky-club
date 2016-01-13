@@ -25,7 +25,7 @@
 				<a href="${pageContext.request.contextPath}/guestbook/guestbook.jsp" class="btn btn-default menubtn menulink">
 					<img class="menuSmallIcon" src="http://www.entypo.com/images/open-book.svg">&nbsp;&nbsp;Guestbook</a>
 
-				<a href="${pageContext.request.contextPath}/addwhisky.jsp" class="btn btn-default menubtn menulink">
+				<a href="${pageContext.request.contextPath}/addwhisky/addwhisky.jsp" class="btn btn-default menubtn menulink">
 					<img class="menuSmallIcon" src="http://www.entypo.com/images/circle-with-plus.svg">&nbsp;&nbsp;Add Whisky</a>
 				
 				<a href="${pageContext.request.contextPath}/settings.jsp" class="btn btn-default menubtn menulink">
