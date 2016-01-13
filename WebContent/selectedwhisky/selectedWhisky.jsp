@@ -107,7 +107,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 					</h4>
 				</div>
 				<div class="col-lg-1">
-					<a href="#saknarlänkhäränsålänge">
+					<a class="deleteComment" id="<%=i%>">
       				<img class="icon" alt="Delete entry"
        				src="http://www.entypo.com/images/circle-with-cross.svg"
         			onmouseover="src='http://www.entypo.com/images/circle-with-minus.svg'"

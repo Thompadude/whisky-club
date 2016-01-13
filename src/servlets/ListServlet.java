@@ -48,30 +48,12 @@ public class ListServlet extends HttpServlet {
 		 */
 		String userWhiskyChoice = request.getParameter("whisky");
 		
-		/*
-		 * Get which of the comments the user want to remove.
-		 * If-statement to check if the user wanted to remove comment,
-		 * or used servlet as redirection.
-		 */
-		String commentNrAsString = request.getParameter("deleteWhiskyCommentItemNr");
-		int commentNrAsInt;
-		if (commentNrAsString != null) {
-			commentNrAsInt = Integer.parseInt(commentNrAsString);			
-		} else {
-			commentNrAsInt = 999999;
-		}
-		
 		// boolean to check if the whisky is found. Primarily used to help the developer.
 		boolean whiskyFound = false;	
 		
 		// Search in the database for the whisky the user has clicked on.
 		for (int i = 0; i < whiskies.size(); i++) {
 			if (whiskies.get(i).getId().equals(userWhiskyChoice)) {
-				
-				// If the user has made the choice to delete a comment, removes it.
-				if(commentNrAsInt != 999999) {
-					whiskies.get(i).getComments().remove(commentNrAsInt);
-				}
 				
 				// Redirect the user to the selectedWhisky.jsp.
 				response.sendRedirect("selectedwhisky/selectedWhisky.jsp");

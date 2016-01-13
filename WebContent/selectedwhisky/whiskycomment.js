@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var formName, formComment;
+	var formName, formComment, idNumber;
 	
 	/*
 	 * Function to post a new whisky comment.
@@ -10,7 +10,8 @@ $(document).ready(function() {
 	 * Finally the function clears the name and comment.
 	 * 
 	 */
-	$('#submit').click(function() {
+	
+	$("#submit").click(function() {
 		
 		// If-statement to validate name and comment.
 		if (document.getElementById("formName").value == ""
@@ -38,4 +39,33 @@ $(document).ready(function() {
 			});
 		}
 	});
+	
+	
+	/*
+	 * $(document).on("click", ".deleteComment", function(event) is to make buttons inside
+	 * a loaded entry from another ajax call 'live', and be able to use these buttons
+	 * in this ajax call.
+	 * event.preventDefault(); is called to disable the <a href=""> .
+	 * 
+	 */
+	
+	$(document).on("click", ".deleteComment", function(event) {
+		event.preventDefault();
+		
+		idNumber = $(this).attr('id');
+		
+		$.ajax({	
+			type: 'POST',
+			// passes values of comment id to CommentServlet.
+			data: {ajaxIdNumber : idNumber},
+			url: '../CommentServlet',
+			
+			success: function() {
+				//prints the response into commentDiv.
+				$('#commentDiv').load(document.URL +  ' #commentDiv');
+			}
+			
+		});		
+	});
+	
 });
