@@ -42,9 +42,9 @@ public class WhiskyManageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Load the previous whiskies from the file.
 		String filePathWhiskies = getServletContext().getRealPath("/whiskyData.dat");
-		
 		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePathWhiskies);
 		
+		// Get the user's input
 		String name = request.getParameter("name");
 		String region = request.getParameter("region");
 		String country = request.getParameter("country");
@@ -55,9 +55,11 @@ public class WhiskyManageServlet extends HttpServlet {
 		double alcDouble = Double.parseDouble(alc);
 		String id = name.toLowerCase();
 		
+		// Create the new whisky and add to the array list of whiskies.
 		Whisky newWhisky = new Whisky(id, name, region, country, type, info, imgurl, alcDouble, 0);
 		whiskies.add(newWhisky);
 		
+		// Sort the whiskies in alphabetic order.
 		whiskyDatabase.sortAllWhiskies(whiskies);
 		
 		// Saves any changes to the file.

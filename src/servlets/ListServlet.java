@@ -73,12 +73,11 @@ public class ListServlet extends HttpServlet {
 					whiskies.get(i).getComments().remove(commentNrAsInt);
 				}
 				
-				// Redirect the user to the selected whisky .jsp.
+				// Redirect the user to the selectedWhisky.jsp.
 				response.sendRedirect("selectedWhisky.jsp");
 				// Sets the attributes used in selectedWhisky.jsp.
 				HttpSession session = request.getSession();
 				session.setAttribute("chosenWhisky", whiskies.get(i));
-				session.setAttribute("commentObjects", whiskies.get(i).getComments());
 				
 				// Saves any changes to the file.
 				SaveToFile saveToFile = new SaveToFile();

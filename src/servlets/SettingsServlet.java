@@ -44,12 +44,12 @@ public class SettingsServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		// Load the previous whiskies from the file.
 		String filePathWhiskies = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> whiskies = whiskyDatabase.loadWhiskies(filePathWhiskies);
 		
+		// Check if the user has choosen to reset whiskies. If so, value will be "reset".
 		String resetAllWhiskies = request.getParameter("resetWhiskies");
 		
 		if(resetAllWhiskies != null && resetAllWhiskies.equals("reset")) {
@@ -71,6 +71,7 @@ public class SettingsServlet extends HttpServlet {
 		String filePathGuestbook = getServletContext().getRealPath("/guestbookData.dat");
 		ArrayList<GuestbookEntries> allEntries = guestbookDatabase.loadGuestbookEntries(filePathGuestbook);
 		
+		// Check if the user has choosen to reset guestbook entries. If so, value will be "reset".
 		String resetAllGuestbookEntries = request.getParameter("resetGuestbook");
 		
 		if(resetAllGuestbookEntries != null && resetAllGuestbookEntries.equals("reset")) {

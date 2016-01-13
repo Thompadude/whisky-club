@@ -66,9 +66,11 @@ public class CommentServlet extends HttpServlet {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM YYYY HH:mm");
 		String todaysDate = localDateTime.format(formatter).toString();
 
+		// tempWhisky and correct whisky do not share object id. Finding the correct whisky.
 		for (int i = 0; i < whiskies.size(); i++) {
 			if (whiskies.get(i).getId().equals(tempWhisky.getId())) {
 				
+				// Check if name and comment is not null and add comment to the correct whisky.
 				if (name != null && comment != null) {
 					WhiskyComments newComment = new WhiskyComments(name, comment, todaysDate);
 					whiskies.get(i).addComment(newComment);
@@ -77,6 +79,7 @@ public class CommentServlet extends HttpServlet {
 					SaveToFile saveToFile = new SaveToFile();
 					saveToFile.saveWhiskiesToFile(whiskies, filePath);
 					
+					// Updating the attribute chosenWhisky to make sure the correct whisky is modified.
 					request.getSession().setAttribute("chosenWhisky", whiskies.get(i));
 				}
 			}

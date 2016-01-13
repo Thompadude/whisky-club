@@ -40,12 +40,11 @@ public class LoginServlet extends HttpServlet {
 		boolean isSuccessfulLogin = loginHandler.authenticate(usrName, password);
 
 		// Prints out a message to the user depending on if login is successful or not.
-		PrintWriter out = response.getWriter();
 		if (isSuccessfulLogin) {
 			// The success print is important in login.js. The string is the key for redirection.
-			out.print("Login Successful!");
+			response.getWriter().print("Login Successful!");
 		} else {
-			out.print("Login Failed!");
+			response.getWriter().print("Login Failed!");
 		}
 	}
 

@@ -30,7 +30,6 @@ public class GuestbookServlet extends HttpServlet {
      */
     public GuestbookServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
     public void init() throws ServletException{

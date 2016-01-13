@@ -42,9 +42,6 @@ public class FavoriteServlet extends HttpServlet {
 		String filePath = getServletContext().getRealPath("/whiskyData.dat");
 		ArrayList<Whisky> whiskies = whiskyHandler.loadWhiskies(filePath);
 		
-		// Sets the attribute for the whiskies array list.
-		request.getSession().setAttribute("allWhiskies", whiskies);
-		
 		// Getting params from selectedWhisky.jsp depending on what link the user has clicked on.
 		String setWhiskyFavorite = request.getParameter("setWhiskyFavorite");
 		String chosenWhiskyID = request.getParameter("chosenWhiskyId");
@@ -56,7 +53,7 @@ public class FavoriteServlet extends HttpServlet {
 		}
 		int gradeAsInt = Integer.parseInt(setGradeAsString);
 		
-		// Creates the favorite boolean. If the user has click on the favorite link - set to true.
+		// Creates the favorite boolean. If the user has clicked on the favorite link - set to true.
 		boolean favorite;
 		if (setWhiskyFavorite.equals("true")) {
 			favorite = true;
@@ -77,7 +74,6 @@ public class FavoriteServlet extends HttpServlet {
 				// Reloads the page with a redirect.
 				response.sendRedirect("selectedWhisky.jsp");
 				request.getSession().setAttribute("chosenWhisky", whiskies.get(i));
-				request.getSession().setAttribute("commentObjects", whiskies.get(i).getComments());
 			}
 		}
 	}
