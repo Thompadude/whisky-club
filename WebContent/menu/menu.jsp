@@ -34,7 +34,7 @@
 				<a href="${pageContext.request.contextPath}/about.jsp" class="btn btn-default menubtn menulink">
 					<img class="menuSmallIcon" src="http://www.entypo.com/images/info-with-circle.svg">&nbsp;&nbsp;About</a>
 				
-				<a href="${pageContext.request.contextPath}/login/login.jsp" class="btn btn-default menubtn menulink">
+				<a href="${pageContext.request.contextPath}" class="btn btn-default menubtn menulink">
 					<img class="menuSmallIcon" src="http://www.entypo.com/images/log-out.svg">&nbsp;&nbsp;Log out</a>
 			</div>
 	</div>
