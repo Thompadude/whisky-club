@@ -13,7 +13,7 @@ public class HighlandPark extends Whisky {
 				+ "of the Orkney Islands' most prized distillery. It finishes with heather and "
 				+ "honey mixed with earth, dried fruit and nuts."
 
-		, "images/highland.jpg", 43, 0);
+		, "../images/highland.jpg", 43, 0);
 	}
 
 }

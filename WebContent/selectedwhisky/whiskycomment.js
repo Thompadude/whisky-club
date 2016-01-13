@@ -24,7 +24,7 @@ $(document).ready(function() {
 				type: 'POST',
 				// passes values of name and comment to CommentServlet.
 				data: {ajaxSelWhiskyName : formName, ajaxSelWhiskyComment : formComment},
-				url: 'CommentServlet',
+				url: '../CommentServlet',
 				
 				success: function() {					
 					//prints the response into commentDiv.

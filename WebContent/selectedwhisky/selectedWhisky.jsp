@@ -13,8 +13,8 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheetList.css">
 </head>
 <body>
-<%@ include file="menu/menu.jsp"%>
-<%@ include file="menu/topmenu.jsp"%>
+<%@ include file="../menu/menu.jsp"%>
+<%@ include file="../menu/topmenu.jsp"%>
 <!-- Get selected whisky -->
 <%
 Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
@@ -38,7 +38,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 				<h1>Rating</h1>
 				<!-- Show the grade stars -->
 				<% for (int i = 1; i <= 5; i++) {%>
-				<a href="FavoriteServlet?setWhiskyGrade=<%=i%>&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyFavorite=${chosenWhisky.isFavorite()}">
+				<a href="../FavoriteServlet?setWhiskyGrade=<%=i%>&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyFavorite=${chosenWhisky.isFavorite()}">
 				<img class="icon" id="star<%=i%>" src="http://www.entypo.com/images/star-outlined.svg">
 				</a>
 				<%}%>
@@ -50,7 +50,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 			%>
 			<br><br>
 			<h3>
-				<a href="FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
+				<a href="../FavoriteServlet?setWhiskyFavorite=false&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
 				<img class="icon" alt="Favorites" title="Favorites"
 					src="http://www.entypo.com/images/heart.svg"
 					onmouseover="src='http://www.entypo.com/images/heart-outlined.svg'"
@@ -61,7 +61,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 			<%}else{%>
 			<br><br>
 			<h3>
-				<a href="FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
+				<a href="../FavoriteServlet?setWhiskyFavorite=true&chosenWhiskyId=${chosenWhisky.getId()}&setWhiskyGrade=${chosenWhisky.getGrade()}">
 				<img class="icon" alt="Favorites" title="Favorites"
 					src="http://www.entypo.com/images/heart-outlined.svg"
 					onmouseover="src='http://www.entypo.com/images/heart.svg'"
@@ -123,7 +123,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 </body>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="menu/menu.js"></script>
-<script src="hoverstareffect.js"></script>
-<script src="whiskycomment.js"></script>
+<script src="${pageContext.request.contextPath}/menu/menu.js"></script>
+<script src="${pageContext.request.contextPath}/selectedwhisky/hoverstareffect.js"></script>
+<script src="${pageContext.request.contextPath}/selectedwhisky/whiskycomment.js"></script>
 </html>

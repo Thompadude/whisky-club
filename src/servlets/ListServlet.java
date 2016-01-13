@@ -74,7 +74,7 @@ public class ListServlet extends HttpServlet {
 				}
 				
 				// Redirect the user to the selectedWhisky.jsp.
-				response.sendRedirect("selectedWhisky.jsp");
+				response.sendRedirect("selectedwhisky/selectedWhisky.jsp");
 				// Sets the attributes used in selectedWhisky.jsp.
 				HttpSession session = request.getSession();
 				session.setAttribute("chosenWhisky", whiskies.get(i));

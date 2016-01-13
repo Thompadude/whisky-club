@@ -9,7 +9,7 @@ public class Dalwhinnie extends Whisky {
 				+ " � elegant, smooth and medium-bodied, with a light, fruity palate and a whiff"
 				+ " of heather on the finish. Part of Diageo's Classic Malt range."
 
-		, "images/dalwhinnie.jpg", 43, 0);
+		, "../images/dalwhinnie.jpg", 43, 0);
 	}
 
 }

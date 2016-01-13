@@ -72,7 +72,7 @@ public class FavoriteServlet extends HttpServlet {
 				saveToFile.saveWhiskiesToFile(whiskies, filePath);
 				
 				// Reloads the page with a redirect.
-				response.sendRedirect("selectedWhisky.jsp");
+				response.sendRedirect("selectedwhisky/selectedWhisky.jsp");
 				request.getSession().setAttribute("chosenWhisky", whiskies.get(i));
 			}
 		}
