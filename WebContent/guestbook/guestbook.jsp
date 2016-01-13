@@ -60,6 +60,7 @@
 					</div>
 				<% }%>
 			</div>
+		<h2 id="result"></h2>
 		</div>
 	</div>
 </div>
