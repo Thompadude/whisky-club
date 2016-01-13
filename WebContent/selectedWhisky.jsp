@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ page import="whiskies.*"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="database.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,15 +10,15 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheetList.css">
-<script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="menu/menu.js"></script>
 </head>
-<body>
+<body id="body">
 <%@ include file="menu/menu.jsp"%>
 <%@ include file="topmenu.jsp"%>
 <!-- Get selected whisky -->
-<% Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky"); %>
+<% 
+String filePath = getServletContext().getRealPath("/whiskyData.dat");
+ArrayList<Whisky> whiskies = Data.getWhiskyHandler().loadWhiskies(filePath);
+Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky"); %>
 <!-- Using a hidden input to get grade value. -->
 <input type="hidden" id="grade" value="<%=chosenWhisky.getGrade()%>"></input>
 <div class="content container-fluid">
@@ -92,13 +93,37 @@
 	</div>
 	<div>
 		<div class="container-fluid commentfield" id="commentDiv">
-			<!-- Here comes the saved comments -->
+			<div>
+			<% for (int i = chosenWhisky.getComments().size()-1; i>= 0; i--) {%>
+			<div class="row">
+				<div class="col-lg-11">
+					<p>
+						<%=chosenWhisky.getComments().get(i).getUserName()%>
+						<br>
+						<%=chosenWhisky.getComments().get(i).getDate()%>
+					</p>
+					<h4>
+						<%=chosenWhisky.getComments().get(i).getComment()%>					
+					</h4>
+				</div>
+				<div class="col-lg-1">
+					<a href="#saknarlänkhäränsålänge">
+      				<img class="icon" alt="Delete entry"
+       				src="http://www.entypo.com/images/circle-with-cross.svg"
+        			onmouseover="src='http://www.entypo.com/images/circle-with-minus.svg'"
+        			onmouseout="src='http://www.entypo.com/images/circle-with-cross.svg'">
+       				</a>
+				</div>
+			</div>
+			<% } %>
+			</div>
 		</div>
 	</div>
 </div>
-<script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="menu/menu.js"></script>
 <script src="hoverstareffect.js"></script>
 <script src="whiskycomment.js"></script>
-</body>
 </html>

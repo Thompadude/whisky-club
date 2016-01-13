@@ -65,43 +65,21 @@ public class CommentServlet extends HttpServlet {
 		LocalDateTime localDateTime = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM YYYY HH:mm");
 		String todaysDate = localDateTime.format(formatter).toString();
-		
-		PrintWriter out = response.getWriter();
 
-		// Print all comments at page startup.
-		if (name == null || comment == null) {
-			
-			loadWhiskyCommentsHTML(tempWhisky, out);
-			
-		} else {
-			for(int i=0; i < whiskies.size(); i++) {
-				if(whiskies.get(i).getId().equals(tempWhisky.getId())) {
+		for (int i = 0; i < whiskies.size(); i++) {
+			if (whiskies.get(i).getId().equals(tempWhisky.getId())) {
 				
-					// Create a new WhiskyComments object with the above information and add to the whisky.
-					WhiskyComments whiskyComment = new WhiskyComments(name, comment, todaysDate);
-					whiskies.get(i).addComment(whiskyComment);
-					
-					loadWhiskyCommentsHTML(whiskies.get(i), out);
-				
+				if (name != null && comment != null) {
+					WhiskyComments newComment = new WhiskyComments(name, comment, todaysDate);
+					whiskies.get(i).addComment(newComment);
+			
 					//Save changes to the file.
 					SaveToFile saveToFile = new SaveToFile();
 					saveToFile.saveWhiskiesToFile(whiskies, filePath);
+					whiskies = whiskyDatabase.loadWhiskies(filePath);
 				}
-			}	
-		}	
-	}
-	
-	// Method to print out all comments to the selected Whisky page.
-	public void loadWhiskyCommentsHTML(Whisky whisky, PrintWriter out) {
-		for(int i = whisky.getComments().size()-1; i >= 0; i--) {
-			
-			out.println("<div class=\"row\"><div class=\"col-lg-11\"><p>"
-					+ whisky.getComments().get(i).getUserName() + "<br>");
-			out.println(whisky.getComments().get(i).getDate() + "</p>");
-			out.println("<h4>" + whisky.getComments().get(i).getComment()+ "</h4></div>"
-					+ "<div class=\"col-lg-1\">"
-					+ "<a href=\"ListServlet?whisky=" + whisky.getId() + "&deleteWhiskyCommentItemNr=" + i + "\">"
-					+ "<img class=\"icon\" alt=\"Delete\" src=\"http://www.entypo.com/images/circle-with-cross.svg\"></a></div></div>");
+			}
 		}
-	}
+	}	
+	
 }
