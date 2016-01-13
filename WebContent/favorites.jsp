@@ -2,7 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="whiskies.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -21,29 +21,29 @@
 		ArrayList<Whisky> allWhiskies = Data.getWhiskyHandler().loadWhiskies(filePath);
 		%>
 	<ul class="listPictures">
-		<%
-		boolean favIsEmpty = true;
+		<%boolean favIsEmpty = true;
+		// Loop thru all the whiskies.
 		for(int i = 0; i < allWhiskies.size(); i++) {
+			// List whisky if it's a favorite.
 			if(allWhiskies.get(i).isFavorite()) {
-				favIsEmpty = false;
-		%>
-		<li>
-			<div class="whiskywrapper">
-				<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
-					<img class="img-responsive"
-					src="<%=allWhiskies.get(i).getImgUrl()%>"
-					alt="<%=allWhiskies.get(i).getName()%>">
-				</a>
-				<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
-			</div>
-		</li>				
-		<%}
+				favIsEmpty = false;%>
+				<li>
+					<div class="whiskywrapper">
+						<a href="ListServlet?whisky=<%=allWhiskies.get(i).getId()%>">
+							<img class="img-responsive"
+							src="<%=allWhiskies.get(i).getImgUrl()%>"
+							alt="<%=allWhiskies.get(i).getName()%>">
+						</a>
+						<p class="whiskytitle"><%=allWhiskies.get(i).getName()%></p>
+					</div>
+				</li>				
+		<%	}
 		}
 		if(favIsEmpty) {%>
 			<div class="listheader">
 				<h2>You don't have any favorites yet.
 				<p>Go to all whiskies <a href="${pageContext.request.contextPath}/list.jsp">here</a></p></h2>
-	</div>
+			</div>
 		<%}%>
 	</ul>
 </div>
