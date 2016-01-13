@@ -14,7 +14,7 @@
 </head>
 <%@ include file="../menu/menu.jsp"%>
 <%@ include file="../topmenu.jsp"%>
-<body id="reload">
+<body>
 <div class="content container-fluid" >
 	<h1><img class="icon" src="http://www.entypo.com/images/open-book.svg">&nbsp;&nbsp;Guestbook</h1>
 	<div class="row">
@@ -34,30 +34,32 @@
 			</form>
 		</div>
 	</div>
-	<% 
-		String filePath = getServletContext().getRealPath("/guestbookData.dat");
-		ArrayList<GuestbookEntries> entries = Data.getGuestbookDatabase().loadGuestbookEntries(filePath);
-	%>
-	<div class="container-fluid commentfield">
-		<div>
-			<%for (int i=entries.size()-1; i >= 0 ; i--) {%>
-				<div class="row">
-					<div class="col-lg-11">
-						<p><%=entries.get(i).getName()%>
-						<br>
-						<%=entries.get(i).getDate()%></p>
-						<h4><%=entries.get(i).getEntry()%></h4>
+	<div id="reload">
+		<% 
+			String filePath = getServletContext().getRealPath("/guestbookData.dat");
+			ArrayList<GuestbookEntries> entries = Data.getGuestbookDatabase().loadGuestbookEntries(filePath);
+		%>
+		<div class="container-fluid commentfield">
+			<div>
+				<%for (int i=entries.size()-1; i >= 0 ; i--) {%>
+					<div class="row">
+						<div class="col-lg-11">
+							<p><%=entries.get(i).getName()%>
+							<br>
+							<%=entries.get(i).getDate()%></p>
+							<h4><%=entries.get(i).getEntry()%></h4>
+						</div>
+						<div class="col-lg-1">
+							<a href="#saknarlänkhäränsålänge">
+							<img class="icon" alt="Delete entry"
+								src="http://www.entypo.com/images/circle-with-cross.svg"
+							 	onmouseover="src='http://www.entypo.com/images/circle-with-minus.svg'"
+						 		onmouseout="src='http://www.entypo.com/images/circle-with-cross.svg'">
+						 	</a>
+						</div>
 					</div>
-					<div class="col-lg-1">
-						<a href="#saknarlänkhäränsålänge">
-						<img class="icon" alt="Delete entry"
-							src="http://www.entypo.com/images/circle-with-cross.svg"
-						 	onmouseover="src='http://www.entypo.com/images/circle-with-minus.svg'"
-					 		onmouseout="src='http://www.entypo.com/images/circle-with-cross.svg'">
-					 	</a>
-					</div>
-				</div>
-			<% }%>
+				<% }%>
+			</div>
 		</div>
 	</div>
 </div>

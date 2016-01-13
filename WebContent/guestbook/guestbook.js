@@ -18,7 +18,7 @@ $(document).ready(function() {
 				url: '../GuestbookServlet',
 				
 				success: function() {
-					$('#body').load("guestbook.jsp");
+					$('#reload').load(document.URL +  ' #reload');
 					document.getElementById("guestbookName").value = "";
 					document.getElementById("guestbookEntry").value = "";
 					}
