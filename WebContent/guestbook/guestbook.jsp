@@ -49,8 +49,8 @@
 							<%=entries.get(i).getDate()%></p>
 							<h4><%=entries.get(i).getEntry()%></h4>
 						</div>
-						<div class="col-lg-1">
-							<a href="#saknarlänkhäränsålänge">
+						<div class="col-lg-1 deleteEntry" id="<%=i%>">
+							<a href="">
 							<img class="icon" alt="Delete entry"
 								src="http://www.entypo.com/images/circle-with-cross.svg"
 							 	onmouseover="src='http://www.entypo.com/images/circle-with-minus.svg'"

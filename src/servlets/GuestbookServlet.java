@@ -57,15 +57,30 @@ public class GuestbookServlet extends HttpServlet {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM YYYY HH:mm");
 		String todaysDate = localDateTime.format(formatter).toString();
 		
+		// Get which entry the user wants to remove. (IF the user want to remove an entry).
+		String entryNrAsString = request.getParameter("ajaxIdEntryNumber");
+		
+		// Check if the user wants to remove a comment.
+		int entryNrAsInt;
+		if (entryNrAsString != null) {
+			entryNrAsInt = Integer.parseInt(entryNrAsString);			
+		} else {
+			entryNrAsInt = 999999;
+		}
+		
 		// If guestbook form is empty - load all previous entries.
 		if (name != null && entry != null) {
 			GuestbookEntries newEntry = new GuestbookEntries(name, entry, todaysDate);
 			allEntries.add(newEntry);
-			
-			// Save any changes to the file.
-			SaveToFile saveToFile = new SaveToFile();
-			saveToFile.saveGuestbookToFile(allEntries, filePath);
 		}
+		
+		if (entryNrAsInt != 999999) {
+			allEntries.remove(entryNrAsInt);
+		}
+
+		// Save any changes to the file.
+		SaveToFile saveToFile = new SaveToFile();
+		saveToFile.saveGuestbookToFile(allEntries, filePath);
 	}
 	
 	/**
