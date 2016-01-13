@@ -76,7 +76,8 @@ public class CommentServlet extends HttpServlet {
 					//Save changes to the file.
 					SaveToFile saveToFile = new SaveToFile();
 					saveToFile.saveWhiskiesToFile(whiskies, filePath);
-					whiskies = whiskyDatabase.loadWhiskies(filePath);
+					
+					request.getSession().setAttribute("chosenWhisky", whiskies.get(i));
 				}
 			}
 		}

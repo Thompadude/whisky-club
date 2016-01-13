@@ -1,4 +1,5 @@
 <!-- Handles presentation of selected whisky. -->
+<%@page import="javax.websocket.MessageHandler.Whole"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ page import="whiskies.*"%>
 <%@ page import="java.util.ArrayList"%>
@@ -11,14 +12,13 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheetList.css">
 </head>
-<body id="body">
+<body>
 <%@ include file="menu/menu.jsp"%>
 <%@ include file="topmenu.jsp"%>
 <!-- Get selected whisky -->
-<% 
-String filePath = getServletContext().getRealPath("/whiskyData.dat");
-ArrayList<Whisky> whiskies = Data.getWhiskyHandler().loadWhiskies(filePath);
-Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky"); %>
+<%
+Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
+%>
 <!-- Using a hidden input to get grade value. -->
 <input type="hidden" id="grade" value="<%=chosenWhisky.getGrade()%>"></input>
 <div class="content container-fluid">
@@ -91,8 +91,8 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky"); %>
 			</form>
 		</div>
 	</div>
-	<div>
-		<div class="container-fluid commentfield" id="commentDiv">
+	<div id="commentDiv">
+		<div class="container-fluid commentfield">
 			<div>
 			<% for (int i = chosenWhisky.getComments().size()-1; i>= 0; i--) {%>
 			<div class="row">

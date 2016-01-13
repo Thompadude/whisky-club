@@ -28,7 +28,7 @@ $(document).ready(function() {
 				
 				success: function() {					
 					//prints the response into commentDiv.
-					$('#body').load('selectedWhisky.jsp');
+					$('#commentDiv').load(document.URL +  ' #commentDiv');
 					//fading in the last entry to the page.
 					$('#1').hide().fadeIn('slow');
 					//clears the name and entry values
