@@ -48,6 +48,9 @@
 		till exempel skriver ett gästboksinlägg.<br>
 		Vi har valt att spara data i en fil som gör att man får känslan av att alla ändringar som görs
 		sparas på en server.<br>
+		Som loggbok har vi använt <a href="http://www.toggl.com" target="_blank">Toggl</a>.
+		För versionhantering har vi använt git och laddat upp vårt projekt till
+		<a href="http://www.gitlab.com" target="_blank">GitLab</a>.<br>
 		Som slutsats är vi mycket nöjda med resultatet och hur vi satt mål, och nått dem i tid.
 	</p>
 	<h3>Vad vi tar med oss</h3>
