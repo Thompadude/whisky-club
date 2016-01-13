@@ -35,7 +35,7 @@
 				<button class="hiddenbutton indeximg"></button>
 			</div>
 			<div class="col-lg-8 indexdiv">
-				<a href="${pageContext.request.contextPath}/guestbookform.jsp">
+				<a href="${pageContext.request.contextPath}/guestbook/guestbook.jsp">
 					<img class="img-responsive indeximg" src="${pageContext.request.contextPath}/images/indeximg-c.jpg">
 					<p id="titleguestbook">Guestbook</p>
 				</a>

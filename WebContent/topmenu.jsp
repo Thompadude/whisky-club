@@ -44,7 +44,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/guestbookform.jsp">
+						<a href="${pageContext.request.contextPath}/guestbook/guestbook.jsp">
 						<img class="icon" alt="Guestbook" title="Guestbook"
 							src="http://www.entypo.com/images/book.svg"
 							onmouseover="src='http://www.entypo.com/images/open-book.svg'"

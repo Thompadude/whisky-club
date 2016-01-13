@@ -9,21 +9,19 @@ $(document).ready(function() {
 	var printEntries = function() {
 			var xhttp = new XMLHttpRequest();
 			
-			xhttp.open("GET", "GuestbookServlet", true);
+			xhttp.open("GET", "../GuestbookServlet", true);
 			
 			xhttp.onreadystatechange = function() {
 				if (xhttp.readyState == 4 && xhttp.status == 200) {
 					document.getElementById("entryDiv").innerHTML = xhttp.responseText;
 				}
 			};
-			
 			xhttp.send();
 		}
 	
 	// Runs the function to load all past entries to the webpage.
 	printEntries();
 
-	
 	/*
 	 * Function to post a new guestbook entry.
 	 * If-statement to check that submit doesn't pass an entry without
@@ -34,22 +32,21 @@ $(document).ready(function() {
 	 * 
 	 */
 	$('#submit').click(function() {
-		
 		// If-statement to validate name and entry.
 		if (document.getElementById("formName").value == ""
 			|| document.getElementById("formEntry").value == "") {
 			document.getElementById("formName").value = "ERROR!";
 		} else {
-		formName = $('#formName').val();
-		formEntry = $('#formEntry').val();
-		
+			formName = $('#formName').val();
+			formEntry = $('#formEntry').val();
+			
 			$.ajax( {
 				type: 'POST',
 				// passes values of name and entry to GuestbookServlet.
 				data: {ajaxName : formName, ajaxEntry : formEntry},
-				url: 'GuestbookServlet',
+				url: '../GuestbookServlet',
 				
-				success: function(servletResponse) {					
+				success: function(servletResponse){					
 					//prints the response into entryDiv.
 					$('#entryDiv').html(servletResponse);
 					//fading in the last entry to the page.
