@@ -77,7 +77,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 		<div class="col-lg-8">
 		<!-- Comment form -->
 			<form method="post">
-				<h4>Write a comment</h4>
+				<h4 id="formHeadline">Write a comment</h4>
 				<label>
 					<input class="formfield" type="text" name="name" placeholder="Name" id="formName">
 				</label>

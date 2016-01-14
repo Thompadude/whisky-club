@@ -45,7 +45,7 @@ $(document).ready(function() {
 					//prints the response into commentDiv.
 					$('#commentDiv').load(
 							document.URL +  ' #commentDiv', function() {
-								$(window).scrollTop($('#result').offset().top)
+								$(window).scrollTop($('#formHeadline').offset().top)
 								$('#fade' + commentCounter).hide().fadeIn('slow')
 								}
 							);
