@@ -119,7 +119,8 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 				</div>
 			</div>
 			<% } %>
-			<span id="newcomment<%=chosenWhisky.getComments().size()%>"></span>
+			<!-- Used in jQuery to keep count of number of comments. -->
+			<input type=hidden id="commentsize" value="<%=chosenWhisky.getComments().size()%>"></input>
 			</div>
 		</div>
 	</div>

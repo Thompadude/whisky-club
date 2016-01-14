@@ -1,5 +1,4 @@
-$(document).ready(function() {
-	
+$(document).ready(function() {	
 	/**
 	 * Checks the form for the empty inputs and textareas
 	 * and flashes them if so. Also displays a error message.
@@ -28,6 +27,12 @@ $(document).ready(function() {
 	 * 
 	 */
 	$("#submit").click(function() {
+		
+		// Number to keep track of comments in order to create fadeIn-effect on latest comment.
+		var commentCounter = $('#commentsize').val();
+		$('#fade' + commentCounter).hide().fadeIn('slow');
+		console.log(commentCounter);
+		
 		// If-statement to validate name and comment.
 		if (validateForm()){
 		$('#result').fadeOut('slow');
@@ -41,13 +46,15 @@ $(document).ready(function() {
 				url: '../CommentServlet',			
 				success: function() {					
 					//prints the response into commentDiv.
-					$('#commentDiv').load(document.URL +  ' #commentDiv');
+					$('#commentDiv').load(
+							document.URL +  ' #commentDiv', function() {
+							$('#fade' + commentCounter).hide().fadeIn('slow')
+							});
 					//fading in the last entry to the page.
-					$('#1').hide().fadeIn('slow');
 					//clears the name and entry values
 					document.getElementById("formName").value = "";
 					document.getElementById("formComment").value = "";
-					}
+					},
 				});
 			}
 	});
