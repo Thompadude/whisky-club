@@ -357,10 +357,6 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 	body > div.content.container-fluid > h3:nth-child(4) {
 		padding: 0;
 	}
-	.claes ul {
-		width: 70%;
-		margin: auto;
-	}
 
 }
 
@@ -368,6 +364,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 @media (max-width: 480px) {
 	.content {
 		text-align: center;
+	}
+	.centerList ul {
+		width: 70%;
+		margin: auto;
 	}
 	.formfield {
 		width: 225px;

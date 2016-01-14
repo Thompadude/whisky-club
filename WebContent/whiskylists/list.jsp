@@ -74,8 +74,8 @@
 	</nav>
 	<div class="listheader" id="abc"></div>
 	<br>
+	<div class="centerList">
 	<h3 class="listheader">ABC</h3>
-	<div class="claes">
 		<ul class="listPictures">
 			<%
 				for (int i = 0; i < allWhiskies.size(); i++) {
@@ -97,7 +97,6 @@
 				}
 			%>
 		</ul>
-	</div>
 	<div class="clear"></div>
 	<div id="def"></div>
 	<br>
@@ -273,6 +272,7 @@
 			}
 		%>
 	</ul>
+	</div>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

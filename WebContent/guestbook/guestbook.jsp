@@ -17,7 +17,7 @@
 <div class="content container-fluid" >
 	<h1><img class="icon" src="http://www.entypo.com/images/open-book.svg">&nbsp;&nbsp;Guestbook</h1>
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-12">
 		<!-- Comment form -->
 			<form method="post">
 				<label>
@@ -30,10 +30,8 @@
 				<br>
 				<input type="reset" class="formbutton" value="Clear">
 				<button type="button" class="formbutton" id="submit">Submit</button>
+				<span id="result"></span>
 			</form>
-		</div>
-		<div class="col-lg-6">
-			<h2 id="result"></h2>
 		</div>
 	</div>
 	<div id="guestbookDiv">

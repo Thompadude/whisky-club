@@ -9,7 +9,7 @@ $(document).ready(function() {
 				isFieldsFilled = false;
 				$(this).fadeOut().fadeIn();
 				$('#result').css({'color' : 'red', 'margin-top' : '15%'});
-				$('#result').html("Please fill in all forms!").hide().fadeIn('normal');
+				$('#result').html("&nbsp;&nbsp;Please fill in all forms!").hide().fadeIn('normal');
 				isFieldsFilled = false;
 			}
 		});

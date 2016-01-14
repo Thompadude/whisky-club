@@ -8,7 +8,7 @@ $(document).ready(function() {
 				isFieldsFilled = false;
 				$(this).fadeOut().fadeIn();
 				$('#result').css({'color' : 'red', 'margin-top' : '25%'});
-				$('#result').hide().fadeIn('slow').html("Please fill in all forms!").hide().fadeIn('normal');
+				$('#result').hide().fadeIn('slow').html("&nbsp;&nbsp;Please fill in all forms!").hide().fadeIn('normal');
 				isFieldsFilled = false;
 			}
 		});
