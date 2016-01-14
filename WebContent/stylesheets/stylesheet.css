@@ -50,7 +50,6 @@ a, a:hover, a:visited, a:active, a:link {
 	display: none;
 }
 
-/* Size setting for all icons across the web site */
 .icon {
 	width: 2.5em;
 	height: 2.5em;
@@ -152,11 +151,6 @@ form {
 	height: 1em;
 }
 
-#selectedWhiskyTable {
-	margin-top: 2em;
-	width: 100%;
-}
-
 /* Login Page Styles */
 #loginwelcomemsg {
 	display: none;
@@ -172,6 +166,7 @@ form {
 	left: 3%;
 	color: white;
 }
+
 
 #errormsg {
 	position: fixed;
@@ -206,19 +201,7 @@ form {
 	background-color: lightgrey;
 	color: black;
 }
-
-/* SelectedWhisky */
-#selectedWhiskyMainRow {
-	border: 10px double rgb(141,141,141);
-	border-bottom-color: black;
-	border-top-color: black;
-}
-
-#selectedWhiskyMiddleDiv {
-	border: 10px double rgb(141,141,141);
-	border-bottom-color: black;
-	border-top-color: black;
-}
+/** DAVODA DANSAR SOM EN JÄVLA GALNING **/
 
 /* Id for right window in Selected Whisky */
 .page-header {
@@ -271,6 +254,85 @@ form {
 	padding-top: 10.5px;
 }
 
+/* List Navbar */
+.listheader {
+	padding-top: 50px;
+}
+
+.navbar {
+	margin-left: 12.5% !important;
+	margin-right: 12.5% !important;
+	border-bottom: 1px solid white !important;
+	background-image: url("../images/blackBackground.jpg") !important;
+	z-index: 9 !important;
+}
+
+nav.navbar.navbar-inverse.navbar-fixed-top {
+	left: 31px;
+	top: 1px;
+}
+
+.specialnav {
+	margin-left: 0% !important;
+	margin-right: 0% !important;
+}
+
+
+/* List Pictures formats */
+.listPictures {
+	padding: 0;
+	list-style-type: none;
+}
+
+.listPictures img {
+	width: 250px;
+	height: 300px;
+}
+
+.listPictures li {
+	float: left;
+	margin: 10px;
+}
+
+.listPictures li p {
+	text-align: center;
+}
+
+.clear {
+	clear: left;
+}
+
+/* Adds an effect on all images in the list when hovering */
+.whiskywrapper img {
+	border-radius: 2em;
+}
+
+.whiskywrapper {
+	position: relative;
+	font-variant: small-caps;
+	font-family: Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 1.25em;
+  	letter-spacing: 1.25px;
+	text-align: center;
+}
+
+.whiskytitle, .whiskygrade {
+	display: none;
+	position: absolute;
+    left: 0;
+  	right: 0;
+}
+
+.whiskytitle {	
+	top: 150px;
+	color: white;
+}
+
+.whiskygrade {
+	top: 100px;
+}
+
 /* Media Settings */
 @media (max-width: 480px) {
 	.content {
@@ -301,6 +363,13 @@ form {
 	#titleguestbook {
 		left: 35%;
 	}
+    .navbar-fixed-top {
+        position: relative !important;
+        top: auto !important;
+    }
+    .navbar-collapse {
+        max-height: none !important;
+    }
 }
 
 @media (min-width :640px) {
