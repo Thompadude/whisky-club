@@ -41,7 +41,7 @@
 			String filePath = getServletContext().getRealPath("/guestbookData.dat");
 			ArrayList<GuestbookEntries> entries = Data.getGuestbookDatabase().loadGuestbookEntries(filePath);
 		%>
-		<div class="container-fluid commentfield">
+		<div class="commentfield">
 			<div>
 				<%for (int i=entries.size()-1; i >= 0 ; i--) {%>
 					<div class="row" id="newEntry<%=i%>">

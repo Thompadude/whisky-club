@@ -98,7 +98,7 @@ a, a:hover, a:visited, a:active, a:link {
 /* Styles for forms */
 form {
 	margin-top: 4em;
-	margin-bottom: 2px;
+	margin-bottom: 2em;
 }
 
 .form-horizontal {
@@ -140,6 +140,7 @@ form {
 .commentfield .row {
 	background-color: lightgrey;
 	border-radius: 1em;
+	margin-top: 2%;
 }
 
 .content.container-fluid h1 {
@@ -369,10 +370,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 		text-align: center;
 	}
 	.formfield {
-		width: 200px;
+		width: 225px;
     }
     .commentfield {
-    	max-width: 200px;
+    	width: auto;
     }
 	.indexdiv p {
 		position: absolute;
