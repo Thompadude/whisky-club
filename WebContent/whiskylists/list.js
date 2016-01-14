@@ -6,6 +6,10 @@ $(document).ready(function() {
 	 */
 	$('a[href*=#]').on('click', function(event){     
 		event.preventDefault();
+		 /** 
+		 * this.hash gets the attribute of 'this' excluding the # and scrolls the user
+		 * to ABC, DEF etc, etc.
+		 */
 		$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
 	})
 	

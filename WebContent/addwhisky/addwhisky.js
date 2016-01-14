@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	
+	 // Check the form's inputs and text areas and flashes them if empty. Also displays a error message.
 	var validateForm = function(){
 		var isFieldsFilled = true;
 		$('input, textarea').each(function(index){
@@ -16,33 +17,36 @@ $(document).ready(function(){
 	
 	var $name, $region, $country, $type, $info, $imgurl, $alc;
 	
-	$('#submit').click(function() {
-		var isCreatingNewWhisky = validateForm();
-		
-		if (isCreatingNewWhisky) {
-		$name = $('#name').val();
-		$region = $('#region').val();
-		$country = $('#country').val();
-		$type = $('input:radio[name=type]:checked').val();
-		$info = $('#info').val();
-		$imgurl = $('#imgurl').val();
-		$alc = $('#alc').val();
-		
-		if (!isNaN($alc)) {
-			$.ajax(
-				{
-				type: 'POST',
-				data: {name:$name, region:$region, country:$country, type:$type, info:$info, imgurl:$imgurl, alc:$alc},
-				url: '../WhiskyManageServlet',
-				success: function(servletResponse){
-						$('#result').css('color', 'white');
-						$('#result').html(servletResponse).hide().fadeIn('normal');
-						$('form').trigger("reset");
-						}
-				});
-			} else {
-				$('#alc').val('Number without percent sign.').css('color', 'red').fadeOut().fadeIn();
-			}
+	$('#submit').click(function() {		
+		// Check if the form inputs is valid.
+		if (validateForm()) {
+			// Get the user's input.
+			$name = $('#name').val();
+			$region = $('#region').val();
+			$country = $('#country').val();
+			$type = $('input:radio[name=type]:checked').val();
+			$info = $('#info').val();
+			$imgurl = $('#imgurl').val();
+			$alc = $('#alc').val();
+			
+			// Check if the alcohol volume input is a number.
+			if (!isNaN($alc)) {
+				$.ajax(
+					{
+					type: 'POST',
+					data: {name:$name, region:$region, country:$country, type:$type, info:$info, imgurl:$imgurl, alc:$alc},
+					url: '../WhiskyManageServlet',
+					success: function(servletResponse){
+							// Display a success message and reset the form.
+							$('#result').css('color', 'white');
+							$('#result').html(servletResponse).hide().fadeIn('normal');
+							$('form').trigger("reset");
+							}
+					});
+				} else {
+					// Display an error message if alcohol volume input is not a number.
+					$('#alc').val('Number without percent sign.').css('color', 'red').fadeOut().fadeIn();
+				}
 		}
 	})
 });

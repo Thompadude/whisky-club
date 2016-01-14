@@ -1,9 +1,16 @@
+/**
+ * Handles the filling and unfilling of stars depending on
+ * the rating and on what star the mouse is hovering.
+ */
+
 $(document).ready(function($) {
+	// Get the currently selected whisky rating.
 	var grade = $('#grade').attr("value");
 	
 	var $filledImg = "url(http://www.entypo.com/images/star.svg)";
 	var $outlinedImg = "url(http://www.entypo.com/images/star-outlined.svg)";
-	
+
+	// Depending on the rating, filling X amount of stars.
 	var $fillStars = function() {
 	switch(grade) {
 	case '1':
@@ -43,6 +50,7 @@ $(document).ready(function($) {
 	
 	$fillStars();
 	
+	// When hovering over a star, filling adjacent stars behind the hovered star.
 	$('#star1').hover(
 		function() {
 			$('#star1').css({'content' : $filledImg})

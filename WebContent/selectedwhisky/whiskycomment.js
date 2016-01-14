@@ -1,8 +1,6 @@
 $(document).ready(function() {	
-	/**
-	 * Checks the form for the empty inputs and textareas
-	 * and flashes them if so. Also displays a error message.
-	 */
+
+	// Check the form's inputs and text areas and flashes them if empty. Also displays a error message.
 	var validateForm = function(){
 		var isFieldsFilled = true;
 		$('input, textarea').each(function(index){
@@ -30,7 +28,7 @@ $(document).ready(function() {
 		// Number to keep track of comments in order to create fadeIn-effect on latest comment.
 		var commentCounter = $('#commentsize').val();
 		
-		// If-statement to validate name and comment.
+		// Check if the form inputs is valid.
 		if (validateForm()){
 		$('#result').fadeOut('slow');
 		formName = $('#formName').val();
@@ -38,21 +36,18 @@ $(document).ready(function() {
 		
 			$.ajax( {
 				type: 'POST',
-				// passes values of name and comment to CommentServlet.
+				// Passes the values of name and comment to CommentServlet.
 				data: {ajaxSelWhiskyName : formName, ajaxSelWhiskyComment : formComment},
 				url: '../CommentServlet',			
 				success: function() {					
-					//prints the response into commentDiv.
+					// Print the response into commentDiv.
 					$('#commentDiv').load(
 							document.URL +  ' #commentDiv', function() {
 								$(window).scrollTop($('#formHeadline').offset().top)
 								$('#fade' + commentCounter).hide().fadeIn('slow')
 								}
 							);
-					//fading in the last entry to the page.
-					//clears the name and entry values
-					document.getElementById("formName").value = "";
-					document.getElementById("formComment").value = "";
+					$('form').trigger("reset");
 					},
 				});
 			}
@@ -73,11 +68,11 @@ $(document).ready(function() {
 		setTimeout(function() {
 		$.ajax({	
 			type: 'POST',
-			// passes values of comment id to CommentServlet.
+			// Pass the values of comment id to CommentServlet.
 			data: {ajaxIdNumber : idNumber},
 			url: '../CommentServlet',
 			success: function() {
-				//prints the response into commentDiv.
+				// Prints the response into commentDiv.
 				$('#commentDiv').load(document.URL +  ' #commentDiv')
 			}})	}, 500);		
 	});

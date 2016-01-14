@@ -54,7 +54,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 					src="http://www.entypo.com/images/heart.svg"
 					onmouseover="src='http://www.entypo.com/images/heart-outlined.svg'"
 					onmouseout="src='http://www.entypo.com/images/heart.svg'">
-					Remove from favorites
+					Remove favorite
 				</a>
 			</h3>
 			<%}else{%>
@@ -65,7 +65,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 					src="http://www.entypo.com/images/heart-outlined.svg"
 					onmouseover="src='http://www.entypo.com/images/heart.svg'"
 					onmouseout="src='http://www.entypo.com/images/heart-outlined.svg'">
-					Add to favorites
+					Add favorite
 				</a>
 				</h3>
 			<%}%>
@@ -73,7 +73,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 		<div class="col-lg-4"></div>
 	</div>
 	<div class="row">
-		<div class="col-lg-8">
+		<div class="col-lg-6">
 		<!-- Comment form -->
 			<form method="post">
 				<h4 id="formHeadline">Write a comment</h4>
@@ -89,13 +89,11 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 				<button type="button" class="formbutton" id="submit">Submit</button>
 			</form>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-6">
 			<h2 id="result"></h2>
 		</div>
 	</div>
-	<div id="commentDiv">
-		<div class="container-fluid commentfield">
-			<div>
+		<div class="commentfield" id="commentDiv">
 			<% for (int i = chosenWhisky.getComments().size()-1; i>= 0; i--) {%>
 			<div class="row" id="fade<%=i%>">
 				<div class="col-lg-11">
@@ -120,9 +118,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 			<% } %>
 			<!-- Used in jQuery to keep count of number of comments. -->
 			<input type=hidden id="commentsize" value="<%=chosenWhisky.getComments().size()%>"></input>
-			</div>
 		</div>
-	</div>
 </div>
 </body>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
