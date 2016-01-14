@@ -74,7 +74,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 		<div class="col-lg-4"></div>
 	</div>
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-8">
 		<!-- Comment form -->
 			<form method="post">
 				<h4>Write a comment</h4>
@@ -89,6 +89,9 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 				<input type="reset" class="formbutton" value="Clear">
 				<button type="button" class="formbutton" id="submit">Submit</button>
 			</form>
+		</div>
+		<div class="col-lg-4">
+			<h2 id="result"></h2>
 		</div>
 	</div>
 	<div id="commentDiv">
@@ -116,6 +119,7 @@ Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
 				</div>
 			</div>
 			<% } %>
+			<span id="newcomment<%=chosenWhisky.getComments().size()%>"></span>
 			</div>
 		</div>
 	</div>
