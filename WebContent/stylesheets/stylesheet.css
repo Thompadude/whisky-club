@@ -1,5 +1,5 @@
 /* Removes scroll bar. */
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -28,13 +28,6 @@ body {
 
 a, a:hover, a:visited, a:active, a:link {
 	text-decoration: none;
-}
-
-.form-horizontal {
-	max-width: 600px;
-	background-color: #333333;
-	padding: 2%;
-	border-radius: 1em; 
 }
 
 .row {
@@ -107,6 +100,13 @@ form {
 	margin-top: 4em;
 }
 
+.form-horizontal {
+	max-width: 600px;
+	background-color: #333333;
+	padding: 2%;
+	border-radius: 1em; 
+}
+
 .formfield {
 	color: black;
 	border-radius: .5em;
@@ -167,7 +167,6 @@ form {
 	color: white;
 }
 
-
 #errormsg {
 	position: fixed;
 	top: 100px;
@@ -201,7 +200,6 @@ form {
 	background-color: lightgrey;
 	color: black;
 }
-/** DAVODA DANSAR SOM EN JÄVLA GALNING **/
 
 /* Id for right window in Selected Whisky */
 .page-header {
@@ -218,12 +216,6 @@ form {
 	margin-top: 3em; 
 	border-radius: 1em;
 	width: 450px;
-}
-
-.selectedWhiskyH1 {
-	font-size: 3em;
-	color: rgb(180,180,100);
-	font-family: Lucida Bright, Georgia, Serif;
 }
 
 /* Styles for index page. */
