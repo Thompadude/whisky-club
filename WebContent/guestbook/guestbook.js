@@ -23,8 +23,12 @@ $(document).ready(function() {
 	
 	$('#submit').click(function() {
 		
+		// Number to keep track of entries in order to create fadeIn-effect on latest entry.
+		var guestbookCounter = $('#guestbookSize').val();
+		
 		// Check if the form is valid for submit.
 		if (validateForm()) {
+		$('#result').fadeOut('slow');
 		guestbookName = $('#guestbookName').val();
 		guestbookEntry = $('#guestbookEntry').val();
 		
@@ -35,7 +39,11 @@ $(document).ready(function() {
 				url: '../GuestbookServlet',
 				
 				success: function() {
-					$('#reload').load(document.URL +  ' #reload');
+					// Prints the response into guestbookDiv.
+					$('#guestbookDiv').load(
+							document.URL +  ' #guestbookDiv', function() {
+								$('#newEntry' + guestbookCounter).hide().fadeIn('slow')
+							});
 					document.getElementById("guestbookName").value = "";
 					document.getElementById("guestbookEntry").value = "";
 					}
@@ -51,10 +59,13 @@ $(document).ready(function() {
 	 * 
 	 */
 	
-	$(document).on("click", ".deleteEntry", function() {
+	$(document).on("click", ".deleteEntry", function(event) {
+		event.preventDefault();
 		
 		idEntryNumber = $(this).attr('id');
+		$('#newEntry' + idEntryNumber).fadeOut('slow');
 		
+		setTimeout(function() {
 		$.ajax({	
 			type: 'POST',
 			// passes values of entry id to GuestbookServlet.
@@ -62,10 +73,9 @@ $(document).ready(function() {
 			url: '../GuestbookServlet',
 			
 			success: function() {
-				//prints the response into the reload div.
-				$('#reload').load(document.URL +  ' #reload');
-			}
-			
-		});		
+				//prints the response into commentDiv.
+				$('#guestbookDiv').load(document.URL +  ' #guestbookDiv');
+			}})	}, 500);		
 	});
+	
 });

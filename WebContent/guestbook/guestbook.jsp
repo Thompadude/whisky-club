@@ -18,7 +18,7 @@
 <div class="content container-fluid" >
 	<h1><img class="icon" src="http://www.entypo.com/images/open-book.svg">&nbsp;&nbsp;Guestbook</h1>
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-8">
 		<!-- Comment form -->
 			<form method="post">
 				<label>
@@ -33,8 +33,11 @@
 				<button type="button" class="formbutton" id="submit">Submit</button>
 			</form>
 		</div>
+		<div class="col-lg-4">
+			<h2 id="result"></h2>
+		</div>
 	</div>
-	<div id="reload">
+	<div id="guestbookDiv">
 		<% 
 			String filePath = getServletContext().getRealPath("/guestbookData.dat");
 			ArrayList<GuestbookEntries> entries = Data.getGuestbookDatabase().loadGuestbookEntries(filePath);
@@ -42,7 +45,7 @@
 		<div class="container-fluid commentfield">
 			<div>
 				<%for (int i=entries.size()-1; i >= 0 ; i--) {%>
-					<div class="row">
+					<div class="row" id="newEntry<%=i%>">
 						<div class="col-lg-11">
 							<p><%=entries.get(i).getName()%>
 							<br>
@@ -59,6 +62,8 @@
 						</div>
 					</div>
 				<% }%>
+				<!-- Used in jQuery to keep count of number of entries. -->
+				<input type=hidden id="guestbookSize" value="<%=entries.size()%>"></input>
 			</div>
 		<h2 id="result"></h2>
 		</div>
