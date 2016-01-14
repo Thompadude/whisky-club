@@ -24,14 +24,11 @@ $(document).ready(function() {
 	 * Ajax passes the values of the comment to the CommentServlet, which
 	 * responds with the html that passes into the commentdiv, with a fadeIn.
 	 * Finally the function clears the name and comment.
-	 * 
 	 */
 	$("#submit").click(function() {
 		
 		// Number to keep track of comments in order to create fadeIn-effect on latest comment.
 		var commentCounter = $('#commentsize').val();
-		$('#fade' + commentCounter).hide().fadeIn('slow');
-		console.log(commentCounter);
 		
 		// If-statement to validate name and comment.
 		if (validateForm()){
@@ -48,8 +45,10 @@ $(document).ready(function() {
 					//prints the response into commentDiv.
 					$('#commentDiv').load(
 							document.URL +  ' #commentDiv', function() {
-							$('#fade' + commentCounter).hide().fadeIn('slow')
-							});
+								$(window).scrollTop($('#result').offset().top)
+								$('#fade' + commentCounter).hide().fadeIn('slow')
+								}
+							);
 					//fading in the last entry to the page.
 					//clears the name and entry values
 					document.getElementById("formName").value = "";
@@ -77,10 +76,9 @@ $(document).ready(function() {
 			// passes values of comment id to CommentServlet.
 			data: {ajaxIdNumber : idNumber},
 			url: '../CommentServlet',
-			
 			success: function() {
 				//prints the response into commentDiv.
-				$('#commentDiv').load(document.URL +  ' #commentDiv');
+				$('#commentDiv').load(document.URL +  ' #commentDiv')
 			}})	}, 500);		
 	});
 	
