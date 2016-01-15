@@ -56,7 +56,7 @@ $(document).ready(function() {
 		if(servletResponse === "Login Successful!") {
 			document.location.replace("index.jsp");
 		} else {
-			document.location.replace("login/login.jsp");
+			document.location.reload();
 		}
 	}
 
