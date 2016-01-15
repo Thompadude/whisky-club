@@ -20,9 +20,8 @@
 	</h2>
 	<h3>Hemsidans syfte</h3>
 	<p>
-		Syftet med sidan är att ha ett "hem" för sina egna whiskies där man kan spara betyg, favoriter och noteringar.
-		Vi har jobbat utefter att det är en admin som loggar in på sidan, men grundtanken är att sidan ska vara
-		ett forum för en grupp whiskyälskande personer - en form av community.
+		Grundtanken med sidan är att det ska vara ett "hem" för en grupp whiskyälskande personer - en form av community.
+		Man ska kunna kan spara betyg, favoriter och noteringar. Vi har jobbat utefter att det är en admin som loggar in på sidan. 
 	</p>
 	<h3>Funktioner</h3>
 	<p>
