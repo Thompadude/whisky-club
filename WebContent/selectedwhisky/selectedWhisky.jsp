@@ -4,20 +4,21 @@
 <%@ page import="whiskies.*"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="database.*"%>
+<%
+Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/stylesheets/stylesheet.css">
+<title><%=chosenWhisky.getName()%></title>
 </head>
 <body>
 <%@ include file="../menu/menu.jsp"%>
 <%@ include file="../menu/topmenu.jsp"%>
 <!-- Get selected whisky -->
-<%
-Whisky chosenWhisky = (Whisky) session.getAttribute("chosenWhisky");
-%>
 <!-- Using a hidden input to get grade value. -->
 <input type="hidden" id="grade" value="<%=chosenWhisky.getGrade()%>"></input>
 <div class="content container-fluid">
